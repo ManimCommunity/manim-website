@@ -1,7 +1,6 @@
 'use strict';
 
 var INCORRECT_LIST = ["manim-ext", "manim-live", "manim-notebook"];
-
 $(document).ready(function () {
     $.getJSON("plugins.json", function (old_data) {
         var data = [];
@@ -17,11 +16,15 @@ $(document).ready(function () {
                     className: ''
                 })
             );
-            if (i + 2 < data.length) {
+            if (i+1 <= data.length-1) {
                 $.fn.get_pypi(data[i], data[i + 1], '#plugin-flex' + i)
-            } else if (i === data.length -1 ) {
-                $.fn.get_pypi(data[i], "no", '#plugin-flex' + i)
-            }
+            } else if (i === data.length - 1) {
+				if (i%2 === 0){
+					$.fn.get_pypi(data[i], "no", '#plugin-flex' + i)
+				}
+            } else{
+				console.log(i,data.length)
+			}
         }
     }).fail(function () {
         console.error("Can't get list of plugins");
