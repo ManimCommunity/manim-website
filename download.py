@@ -4,11 +4,11 @@ import re
 
 REGEX = re.compile(r"<(.*)>manim-(?P<name>.*)<(.*)>")
 IDS = []
-#content = requests.get("https://pypi.org/simple")
-#with open("content.html","wb") as f:
-#    f.write(content.content)
-with open("content.html","r") as f:
-    content = f.readlines()
+content = requests.get("https://pypi.org/simple")
+with open("content.html","wb") as f:
+    f.write(content.content)
+#with open("content.html","r") as f:
+#    content = f.readlines()
 
 for i in content:
     if 'manim' in i:
