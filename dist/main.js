@@ -42,6 +42,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
             }
         })).then(
             function (data1) {
+				$("#loading-screen").hide();
                 $(node_id).append($('<div>').prop({
                     id: name1 + 'alone',
                     innerHTML: `
@@ -82,6 +83,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                 }
             })).then(
                 function (data1, data2) {
+					$("loading-screen").hide()
                     $(node_id).append($('<div>').prop({
                         id: name1 + '-' + name2,
                         innerHTML: `
