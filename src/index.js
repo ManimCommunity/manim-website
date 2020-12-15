@@ -109,7 +109,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                 <p class="card-text mb-auto py-3 summary">${data1[0].info.summary}</p>
                 <div class="row no-gutters flex-md-row position-relative">
                     <a href="${data1[0].info.package_url}" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-primary m-1"><i class="fab fa-python"></i> PyPi Page</button></a>
-                    <a href="${data1[0].info.home_page}" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-info m-1"><i class="fas fa-home"></i>Home Page</button></a>
+                    <a href="${data1[0].info.home_page}" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-info m-1"><i class="fas fa-home"></i> Home Page</button></a>
                 </div>
             </div>
         </div>
