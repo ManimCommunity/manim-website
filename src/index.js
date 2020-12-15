@@ -58,9 +58,9 @@ $.fn.get_pypi = function (name1, name2, node_id) {
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">${data1.info.author}</strong>
-                    <h3 class="mb-0">${name1}</h3>
+                    <h3 class="mb-0">${name1} v${data1.info.version}</h3>
                     <div class="mb-1 text-muted">${date}</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text mb-auto py-3 summary">${data1.info.summary}</p>
                     <a href="${data1.info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
                 </div>
             </div>
@@ -101,9 +101,9 @@ $.fn.get_pypi = function (name1, name2, node_id) {
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">${data1[0].info.author}</strong>
-                <h3 class="mb-0">${name1}</h3>
+                <h3 class="mb-0">${name1} v${data1[0].info.version}</h3>
                 <div class="mb-1 text-muted">${date1}</div>
-                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text mb-auto py-3 summary">${data1[0].info.summary}</p>
                 <a href="${data1[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
             </div>
         </div>
@@ -112,9 +112,9 @@ $.fn.get_pypi = function (name1, name2, node_id) {
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success">${data2[0].info.author}</strong>
-                <h3 class="mb-0">${name2}</h3>
+                <h3 class="mb-0">${name2} v${data2[0].info.version}</h3>
                 <div class="mb-1 text-muted">${date2}</div>
-                <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="mb-auto py-3 summary">${data2[0].info.summary}</p>
                 <a href="${data2[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-success mt-2">Project Page</button></a>
             </div>
         </div>
