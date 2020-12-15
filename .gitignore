@@ -82,7 +82,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+dist/*.js
+dist/*.css
 
 # Gatsby files
 .cache/
@@ -116,4 +117,3 @@ dist
 .pnp.*
 
 scripts/*.html
-dist/build.js

@@ -8,7 +8,7 @@ LOC = Path(__file__).parent / "../" / "dist" / "plugins.json"
 REGEX = re.compile(r"<(.*)>manim-(?P<name>.*)<(.*)>")
 IDS = []
 content = requests.get("https://pypi.org/simple")
-content = content.text
+content = content.text.split('\n')
 
 for i in content:
     if "manim" in i:
