@@ -1,0 +1,40 @@
+name: Update Things and Deploy
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install Dependencies
+      run: |
+        pip install requests
+    - name: Get Latest
+      run: |
+        python scripts/download.py
+    - name: Build Site
+      run: |
+        npm install
+        npm run build
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+          GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          SINGLE_COMMIT: true
+
