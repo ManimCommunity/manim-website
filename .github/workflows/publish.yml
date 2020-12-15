@@ -25,7 +25,8 @@ jobs:
         python-version: '3.8'
     - name: Install Dependencies
       run: |
-        pip install requests
+        cd scripts
+        pip install -r requirements.txt
     - name: Get Latest
       run: |
         python scripts/download.py
