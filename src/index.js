@@ -61,7 +61,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                     <h3 class="mb-0">${name1} v${data1.info.version}</h3>
                     <div class="mb-1 text-muted">${date}</div>
                     <p class="card-text mb-auto py-3 summary">${data1.info.summary}</p>
-                    <a href="${data1.info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
+                    <a href="${data1.info.package_url}" class="stretched-link" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                 <h3 class="mb-0">${name1} v${data1[0].info.version}</h3>
                 <div class="mb-1 text-muted">${date1}</div>
                 <p class="card-text mb-auto py-3 summary">${data1[0].info.summary}</p>
-                <a href="${data1[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
+                <a href="${data1[0].info.package_url}" class="stretched-link" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                 <h3 class="mb-0">${name2} v${data2[0].info.version}</h3>
                 <div class="mb-1 text-muted">${date2}</div>
                 <p class="mb-auto py-3 summary">${data2[0].info.summary}</p>
-                <a href="${data2[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-success mt-2">Project Page</button></a>
+                <a href="${data2[0].info.package_url}" class="stretched-link" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-outline-success mt-2">Project Page</button></a>
             </div>
         </div>
     </div>
