@@ -56,3 +56,6 @@ body {
   margin-top: -15px;
   margin-left: -15px;
 }
+.hover-card{
+  transition: all 0.3s ease-out;
+}

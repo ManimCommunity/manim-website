@@ -31,6 +31,11 @@ $(document).ready(function () {
         console.error("Can't get list of plugins");
     });
 });
+$.fn.get_date = function(date_string){
+    var a=new Date(date_string);
+    var options = {year: 'numeric', month: 'short', day: 'numeric' };
+    return a.toLocaleDateString("en-US", options)
+}
 $.fn.get_pypi = function (name1, name2, node_id) {
     if (name2 === "no") {
         $.when($.ajax({
@@ -44,18 +49,19 @@ $.fn.get_pypi = function (name1, name2, node_id) {
         })).then(
             function (data1) {
                 $("#loading-screen").hide();
+                var date = $.fn.get_date(data1.urls[0].upload_time_iso_8601)
                 $(node_id).append($('<div>').prop({
                     id: name1 + 'alone',
                     innerHTML: `
     <div class="row mb-2">
         <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">${data1.info.author}</strong>
                     <h3 class="mb-0">${name1}</h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
+                    <div class="mb-1 text-muted">${date}</div>
                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="${data1.info.home_page}" class="stretched-link">Project Page</a>
+                    <a href="${data1.info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
                 </div>
             </div>
         </div>
@@ -85,29 +91,31 @@ $.fn.get_pypi = function (name1, name2, node_id) {
             })).then(
                 function (data1, data2) {
                     $("#loading-screen").hide()
+                    var date1 = $.fn.get_date(data1[0].urls[0].upload_time_iso_8601)
+                    var date2 = $.fn.get_date(data2[0].urls[0].upload_time_iso_8601)
                     $(node_id).append($('<div>').prop({
                         id: name1 + '-' + name2,
                         innerHTML: `
 <div class="row mb-2">
     <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">${data1[0].info.author}</strong>
                 <h3 class="mb-0">${name1}</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
+                <div class="mb-1 text-muted">${date1}</div>
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="${data1[0].info.home_page}" class="stretched-link">Project Page</a>
+                <a href="${data1[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-primary mt-2">Project Page</button></a>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success">${data2[0].info.author}</strong>
                 <h3 class="mb-0">${name2}</h3>
-                <div class="mb-1 text-muted">Nov 11</div>
+                <div class="mb-1 text-muted">${date2}</div>
                 <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="${data2[0].info.home_page}" class="stretched-link">Project Page</a>
+                <a href="${data2[0].info.package_url}" class="stretched-link"><button type="button" class="btn btn-outline-success mt-2">Project Page</button></a>
             </div>
         </div>
     </div>
