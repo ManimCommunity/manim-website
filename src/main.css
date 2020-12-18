@@ -57,9 +57,13 @@ body {
   margin-left: -15px;
 }
 .hover-card{
-  transition: all 0.3s ease-out;
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
 }
 .summary{
   height:75px;
   overflow: hidden;
+}
+.hover-card:hover {
+   transform: scale(1.07);
 }
