@@ -55,7 +55,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                     innerHTML: `
     <div class="row mb-2">
         <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative hover-card">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">${data1.info.author}</strong>
                     <h3 class="mb-0">${name1} v${data1.info.version}</h3>
@@ -101,7 +101,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
                         innerHTML: `
 <div class="row mb-2">
     <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">${data1[0].info.author}</strong>
                 <h3 class="mb-0">${name1} v${data1[0].info.version}</h3>
@@ -115,7 +115,7 @@ $.fn.get_pypi = function (name1, name2, node_id) {
         </div>
     </div>
     <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hover-card">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative hover-card">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-success">${data2[0].info.author}</strong>
                 <h3 class="mb-0">${name2} v${data2[0].info.version}</h3>

@@ -1,8 +1,6 @@
 body {
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #ece6e2;
 }
-
 :root {
   --loader-width: 70px;
   --loader-height: 70px;

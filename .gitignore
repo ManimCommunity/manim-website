@@ -117,3 +117,7 @@ dist/*.css
 .pnp.*
 
 scripts/*.html
+.vscode
+dist/*.txt
+dist/*.js
+dist/*.json
