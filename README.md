@@ -1,10 +1,7 @@
-# Manim Community
-
+# manim-website
 
 This repository is displayed at [manim.community](https://www.manim.community/).
 
-# Code of Conduct
+## Code of Conduct
 
-
-If you haven't read our code of conduct, please do so at the
-[manim repository](https://github.com/ManimCommunity/manim/blob/master/CODE_OF_CONDUCT.md#code-of-conduct).
+Our full code of conduct, and how we enforce it, can be read on [our website](https://docs.manim.community/en/latest/conduct.html).
