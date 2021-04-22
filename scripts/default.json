@@ -1,0 +1,8 @@
+{
+    "extras": [],
+    "exclude": [
+        "manim-ext",
+        "manim-live",
+        "manim-notebook"
+    ]
+}

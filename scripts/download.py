@@ -10,10 +10,16 @@ IDS = []
 content = requests.get("https://pypi.org/simple")
 content = content.text.split('\n')
 
+with open(Path(__file__).parent / 'default.json') as f:
+    default = json.load(f)
+
 for i in content:
     if "manim" in i:
         things = REGEX.search(i)
         if things:
-            IDS.append("manim-" + things.group("name"))
+            if "manim-" + things.group("name") not in default["exclude"]:
+                IDS.append("manim-" + things.group("name"))
+IDS.extend(default['extras'])
+
 with open(LOC, "w") as f:
     json.dump(IDS, f)
