@@ -1,5 +1,7 @@
 {
-    "extras": [],
+    "extras": [
+        "chanim"
+    ],
     "exclude": [
         "manim-ext",
         "manim-live",
