@@ -5,6 +5,8 @@
     "exclude": [
         "manim-ext",
         "manim-live",
-        "manim-notebook"
+        "manim-notebook",
+        "manim-express",
+        "manim-kunyuan"
     ]
 }
