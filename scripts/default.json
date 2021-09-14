@@ -8,5 +8,8 @@
         "manim-notebook",
         "manim-express",
         "manim-kunyuan"
+    ],
+    "archive": [
+        "manim-graphing"
     ]
 }

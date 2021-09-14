@@ -17,9 +17,9 @@ for i in content:
     if "manim" in i:
         things = REGEX.search(i)
         if things:
-            if "manim-" + things.group("name") not in default["exclude"]:
+            if "manim-" + things.group("name") not in default["exclude"] + default["archive"]:
                 IDS.append("manim-" + things.group("name"))
 IDS.extend(default['extras'])
 
 with open(LOC, "w") as f:
-    json.dump(IDS, f)
+    json.dump([IDS, default["archive"]], f)
