@@ -1,0 +1,31 @@
+name: Update
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Build Files
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install Dependencies
+      run: |
+        yarn install --verbose
+
+    - name: Upload Artifacts 🔺
+      uses: actions/upload-artifact@v1
+      with:
+          name: dist
+          path: *.json
+
