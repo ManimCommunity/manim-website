@@ -121,3 +121,4 @@ scripts/*.html
 dist/*.txt
 dist/*.js
 dist/*.json
+public/
