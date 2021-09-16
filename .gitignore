@@ -122,3 +122,4 @@ dist/*.txt
 dist/*.js
 dist/*.json
 public/
+content/

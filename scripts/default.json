@@ -1,0 +1,15 @@
+{
+    "extras": [
+        "chanim"
+    ],
+    "exclude": [
+        "manim-ext",
+        "manim-live",
+        "manim-notebook",
+        "manim-express",
+        "manim-kunyuan"
+    ],
+    "archive": [
+        "manim-graphing"
+    ]
+}
