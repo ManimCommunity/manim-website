@@ -22,6 +22,8 @@
     "eslint": "^7.32.0",
     "gatsby": "^3.13.0",
     "gatsby-plugin-sass": "^4.13.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-transformer-json": "^3.13.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "react": "^17.0.1",

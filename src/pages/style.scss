@@ -2,20 +2,20 @@ $body-bg: #ece6e2;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.hover-card{
+.hover-card {
   transition: transform 0.2s ease-out;
   box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
 }
 
-.summary{
-  height:75px;
+.summary {
+  height: 75px;
   overflow: hidden;
 }
 
 .hover-card:hover {
-   transform: scale(1.07);
+  transform: scale(1.07);
 }
 
 .archived {
-  background-color:#cccccc
+  background-color: #cccccc;
 }

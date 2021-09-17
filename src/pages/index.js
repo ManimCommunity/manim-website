@@ -1,12 +1,32 @@
 import * as React from "react";
-import 'bootstrap';
-import './style.scss';
-import '@fortawesome/fontawesome-free/css/all.css'
+import { useStaticQuery, graphql } from "gatsby";
 
-// data
+import "bootstrap";
+import "./style.scss";
+import "@fortawesome/fontawesome-free/css/all.css";
 
-// markup
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentJson(limit: 10) {
+        nodes {
+          info {
+            author
+            author_email
+            name
+            version
+            summary
+            license
+            home_page
+            project_url
+          }
+          urls {
+            upload_time_iso_8601(formatString: "MMM D, yyyy")
+          }
+        }
+      }
+    }
+  `);
   return (
     <div>
       <header class="border-bottom border-dark mb-4">
@@ -36,12 +56,14 @@ const IndexPage = () => {
           <div class="collapse navbar-collapse" id="social">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="https://www.manim.community">Home</a>
+                <a class="nav-link" href="https://www.manim.community">
+                  Home
+                </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#"
-                >Plugins<span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link" href="#">
+                  Plugins<span class="sr-only">(current)</span>
+                </a>
               </li>
             </ul>
             <ul class="navbar-nav">
@@ -51,10 +73,11 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fas fa-book"></i> Documentation
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fas fa-book"></i> Documentation
+                  </button>
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -62,10 +85,11 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fab fa-github"></i> GitHub
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fab fa-github"></i> GitHub
+                  </button>
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -73,10 +97,11 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fab fa-twitter"></i> Twitter
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fab fa-twitter"></i> Twitter
+                  </button>
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -84,10 +109,11 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fab fa-discord"></i> Discord
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fab fa-discord"></i> Discord
+                  </button>
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -95,10 +121,11 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fab fa-reddit"></i> Reddit
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fab fa-reddit"></i> Reddit
+                  </button>
+                </a>
               </li>
               <li class="nav-item">
                 <a
@@ -106,19 +133,22 @@ const IndexPage = () => {
                   class="nav-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                ><button type="button" class="btn btn-outline-light">
-                    <i class="fa fa-gavel"></i> Conduct
-                  </button></a
                 >
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fa fa-gavel"></i> Conduct
+                  </button>
+                </a>
               </li>
             </ul>
           </div>
         </nav>
       </header>
-
-
+      <h1>{data.allContentJson.nodes[0].info.name}</h1>
+      {data.allContentJson.nodes.map((element, key) => (
+        <h1 id={key}>{element.info.author}</h1>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
