@@ -15,12 +15,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.10.1",
     "babel-eslint": "^10.0.0",
-    "bootstrap": "^5.1.1",
+    "bootstrap": "^4.6",
     "eslint": "^7.32.0",
     "gatsby": "^3.13.0",
     "gatsby-plugin-sass": "^4.13.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.41.0",
