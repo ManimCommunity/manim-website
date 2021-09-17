@@ -8,6 +8,9 @@ const basicTemplate = props => {
     <div style={{ maxWidth: `960px`, margin: `1.45rem` }}>
       <h1>{pageContent.info.name}</h1>
       <h2>{pageContent.info.summary}</h2>
+      <div
+        dangerouslySetInnerHTML={{ __html: pageContent.info.description }}
+      />
     </div>
   )
 }
