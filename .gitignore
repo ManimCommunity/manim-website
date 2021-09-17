@@ -123,3 +123,4 @@ dist/*.js
 dist/*.json
 public/
 content/
+.venv
