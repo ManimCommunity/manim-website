@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://plugins.manim.community`,
     },
     plugins: [`gatsby-plugin-sass`],
 }

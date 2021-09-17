@@ -1,12 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
 
 const basicTemplate = props => {
-  const { pageContent } = props
+  const { pageContext } = props
+  const { pageContent } = pageContext
 
   return (
     <div style={{ maxWidth: `960px`, margin: `1.45rem` }}>
-      <h1>{pageContent.name}</h1>
+      <h1>{pageContent.info.name}</h1>
+      <h2>{pageContent.info.summary}</h2>
     </div>
   )
 }
