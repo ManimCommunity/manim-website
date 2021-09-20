@@ -2,7 +2,7 @@ import * as React from "react";
 import "./navbar.scss";
 export default function NavBar() {
   return (
-    <header class="main-header border-bottom border-dark mb-4">
+    <header class="border-bottom border-dark mb-4">
       <nav class="nav-class navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
           <img
