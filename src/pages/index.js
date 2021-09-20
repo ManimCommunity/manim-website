@@ -143,10 +143,25 @@ const IndexPage = () => {
           </div>
         </nav>
       </header>
-      <h1>{data.allContentJson.nodes[0].info.name}</h1>
-      {data.allContentJson.nodes.map((element, key) => (
-        <h1 id={key}>{element.info.author}</h1>
-      ))}
+      <main class="main-div">
+        <div className="plugin-div">
+          {data.allContentJson.nodes.map((element, key) => {
+            // <h1 id={key}>{element.info.author_email}</h1>
+
+            let date1 = element.urls[0].upload_time_iso_8601;
+            return (
+              <div class="child-plugin-div hover-card">
+                <strong class="author-name">{element.info.author}</strong>
+                <h3 class="plugin-name">
+                  {element.info.name} v{element.info.version}
+                </h3>
+                <div class="plugin-date text-muted">{date1}</div>
+                <p class="plugin-summary">{element.info.summary}</p>
+              </div>
+            );
+          })}
+        </div>
+      </main>
     </div>
   );
 };

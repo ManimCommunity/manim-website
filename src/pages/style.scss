@@ -1,4 +1,6 @@
 $body-bg: #ece6e2;
+$primary-color: #007bff;
+$text-muted-color: #6c757d;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -7,15 +9,46 @@ $body-bg: #ece6e2;
   box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
 }
 
-.summary {
-  height: 75px;
-  overflow: hidden;
-}
-
 .hover-card:hover {
   transform: scale(1.07);
 }
 
 .archived {
   background-color: #cccccc;
+}
+
+.main-div {
+  padding: 1.5rem;
+}
+
+.plugin-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+
+  .child-plugin-div {
+    margin: auto;
+    width: auto;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .author-name {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .plugin-name {
+    margin-bottom: 0rem;
+  }
+  .plugin-date {
+    margin-bottom: 0.25rem;
+    color: $text-muted-color;
+  }
+  .plugin-summary{
+    margin-bottom: auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
 }
