@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import {useStaticQuery, graphql} from "gatsby";
 import PluginDiv from "../components/plugin_div.js";
 import NavBar from "../components/navbar.js";
 import "bootstrap";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./plugin_div.scss";
-export default function PluginDiv({ element }) {
+export default function PluginDiv({element}) {
   let date1 = element.urls[0].upload_time_iso_8601;
   return (
     <div class="child-plugin-div hover-card">
