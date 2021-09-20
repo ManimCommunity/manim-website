@@ -15,7 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@fontsource/roboto": "^4.5.0",
+    "@fontsource/ibm-plex-sans": "^4.5.1",
+    "@fontsource/plus-jakarta-sans": "^4.5.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.10.1",
     "babel-eslint": "^10.0.0",
