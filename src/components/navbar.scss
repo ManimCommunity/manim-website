@@ -1,0 +1,13 @@
+@import "../variables";
+
+.main-header {
+  margin-bottom: 1.5rem !important;
+  background-color: rgb(39, 36, 36);
+  padding: 0.5rem;
+  min-height: 6vh;
+  .manim-logo {
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+  }
+}
