@@ -5,9 +5,34 @@
   background-color: rgb(39, 36, 36);
   padding: 0.5rem;
   min-height: 6vh;
-  .manim-logo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .manim-logo-a {
     color: #fff;
     padding: 0.5rem;
     font-size: 1.25rem;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  .navbar-toggler-button {
+    height: 100%;
+    display: inline-flex;
+    background-color: inherit;
+
+    padding: 1rem;
+
+    border: 1px solid rgb(54, 58, 63);
+    border-radius: 10px;
+    background: rgb(31, 32, 32) none repeat scroll 0% 0%;
+    color: rgb(255, 255, 255);
+
+    visibility: hidden;
+  }
+  @media (max-width: 768px) {
+    .navbar-toggler-button {
+      visibility: visible;
+    }
   }
 }
