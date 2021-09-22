@@ -22,6 +22,10 @@
     width: 600px;
     padding: 1.5rem;
     margin-top: 0.5rem;
+
+    border-radius: 10px;
+    box-shadow: -0.2rem 0 0.6rem rgb(1, 1, 1);
+    box-sizing: border-box;
   }
   .author-name {
     color: $primary-color;

@@ -31,9 +31,20 @@ const IndexPage = () => {
   `);
   return (
     <div>
-      <title>Manim Community Plugins</title>
+      <title>Manim Community Plugin Library</title>
       <NavBar />
       <main class="main-div">
+        <div className="welcome-screen">
+          <h1 className="welcome-title">
+            Welcome to the <span>Manim Community Plugin Library</span>
+          </h1>
+          <div className="welcome-text-div">
+            <p className="welcome-text">
+              Add functionality and extend Manim with plugins built by our
+              amazing developer community.
+            </p>
+          </div>
+        </div>
         <div className="plugin-div">
           {data.allContentJson.nodes.map((element, key) => (
             <PluginDiv element={element} key={key} />
