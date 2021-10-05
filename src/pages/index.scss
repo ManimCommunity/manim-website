@@ -33,26 +33,24 @@ body {
       "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji";
     span {
-        display: block;
-        background-image: linear-gradient(
-          90deg,
-          #c414c4,
-          #ebcb19,
-          rgb(221, 18, 18)
-        );
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+      display: block;
+      background-image: linear-gradient(
+        90deg,
+        #c414c4,
+        #ebcb19,
+        rgb(221, 18, 18)
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
-  .welcome-text-div{
+  .welcome-text-div {
     margin-bottom: 1rem;
-    .welcome-text{
-      
+    .welcome-text {
       color: #635e69;
       font-size: 1.7rem;
       line-height: 1.5;
       margin: 0;
     }
   }
-  
 }

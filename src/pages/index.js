@@ -44,11 +44,13 @@ const IndexPage = () => {
               amazing developer community.
             </p>
           </div>
-        </div>
-        <div className="plugin-div">
-          {data.allContentJson.nodes.map((element, key) => (
-            <PluginDiv element={element} key={key} />
-          ))}
+          <nav>
+            <div className="plugin-div">
+              {data.allContentJson.nodes.map((element, key) => (
+                <PluginDiv element={element} key={key} />
+              ))}
+            </div>
+          </nav>
         </div>
       </main>
     </div>
