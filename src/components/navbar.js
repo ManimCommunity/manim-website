@@ -2,86 +2,66 @@ import * as React from "react";
 import "./navbar.scss";
 function onClickNavButton() {
   if (typeof document !== `undefined`) {
-    if (
-      document.getElementById("hidden-on-mobile").style.visibility == "visible"
-    ) {
-      document.getElementById("hidden-on-mobile").style.visibility = "hidden";
+    if (document.getElementById("hidden-on-mobile").style.display === "none") {
+      document.getElementById("hidden-on-mobile").style.display = "initial";
     } else {
-      document.getElementById("hidden-on-mobile").style.visibility = "visible";
+      document.getElementById("hidden-on-mobile").style.display = "none";
     }
   }
 }
 export default function NavBar() {
   return (
     <header className="main-header">
-      <div class="manim-logo-div">
-        <a class="manim-logo-a" href="/">
-          <img
-            src="/logo.svg"
-            width="60"
-            height="60"
-            alt="Manim Community Logo"
-            loading="lazy"
-          />
-          Manim Community
-        </a>
-      </div>
-      <div className="nav-items" id="hidden-on-mobile">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.manim.community">
-              Home
-            </a>
-          </li>
-        </ul>
-      </div>
-      <button
-        class="navbar-toggler-button"
-        type="button"
-        aria-label="Toggle navigation"
-        onClick={onClickNavButton}
-      >
-        <span class="fa fa-bars"></span>
-      </button>
+      <div className="main-header-div">
+        <div class="manim-logo-div">
+          <a class="manim-logo-a" href="/" aria-label="Go to Homepage">
+            <img
+              src="/logo.svg"
+              width="60"
+              height="60"
+              alt="Manim Community Logo"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <div className="nav-items" id="hidden-on-mobile">
+          <nav>
+            <ul role="menubar">
+              <li role="none">
+                <a
+                  href="https://docs.manim.community/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Docs
+                </a>
+              </li>
+              <li role="none">
+                <a
+                  href="https://github.com/ManimCommunity/manim"
+                  class="nav-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <button
+          class="navbar-toggler-button"
+          type="button"
+          aria-label="Toggle navigation"
+          onClick={onClickNavButton}
+        >
+          <span class="fa fa-bars"></span>
+        </button>
 
-      {/* <div class="collapse navbar-collapse" id="social">
+        {/* <div class="collapse navbar-collapse" id="social">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.manim.community">
-              Home
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Plugins<span class="sr-only">(current)</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a
-              href="https://docs.manim.community"
-              class="nav-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button type="button" class="btn btn-outline-light">
-                <i class="fas fa-book"></i> Documentation
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="https://github.com/ManimCommunity/manim"
-              class="nav-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button type="button" class="btn btn-outline-light">
-                <i class="fab fa-github"></i> GitHub
-              </button>
-            </a>
-          </li>
+        
+          
           <li class="nav-item">
             <a
               href="https://twitter.com/manim_community/"
@@ -132,6 +112,7 @@ export default function NavBar() {
           </li>
         </ul>
       </div> */}
+      </div>
     </header>
   );
 }

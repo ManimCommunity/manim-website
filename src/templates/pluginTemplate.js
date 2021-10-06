@@ -6,7 +6,7 @@ const basicTemplate = props => {
   const {pageContent} = pageContext;
 
   return (
-    <div className="container">
+    <div>
       <NavBar />
       <h1>{pageContent.info.name}</h1>
       <h2>{pageContent.info.summary}</h2>
