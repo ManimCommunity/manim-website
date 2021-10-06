@@ -1,5 +1,16 @@
 import * as React from "react";
 import "./navbar.scss";
+function onClickNavButton() {
+  if (typeof document !== `undefined`) {
+    if (
+      document.getElementById("hidden-on-mobile").style.visibility == "visible"
+    ) {
+      document.getElementById("hidden-on-mobile").style.visibility = "hidden";
+    } else {
+      document.getElementById("hidden-on-mobile").style.visibility = "visible";
+    }
+  }
+}
 export default function NavBar() {
   return (
     <header className="main-header">
@@ -15,13 +26,24 @@ export default function NavBar() {
           Manim Community
         </a>
       </div>
+      <div className="nav-items" id="hidden-on-mobile">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.manim.community">
+              Home
+            </a>
+          </li>
+        </ul>
+      </div>
       <button
         class="navbar-toggler-button"
         type="button"
         aria-label="Toggle navigation"
+        onClick={onClickNavButton}
       >
         <span class="fa fa-bars"></span>
       </button>
+
       {/* <div class="collapse navbar-collapse" id="social">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">

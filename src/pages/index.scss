@@ -3,7 +3,15 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .main-div {
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: $mobile-max-width) {
+  .main-div {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 body {
@@ -32,6 +40,7 @@ body {
       "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
       "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji";
+    text-align: center;
     span {
       display: block;
       background-image: linear-gradient(
@@ -46,6 +55,7 @@ body {
   }
   .welcome-text-div {
     margin-bottom: 1rem;
+    text-align: center;
     .welcome-text {
       color: #635e69;
       font-size: 1.7rem;

@@ -30,9 +30,12 @@
 
     visibility: hidden;
   }
-  @media (max-width: 992px) {
+  @media (max-width: $mobile-max-width) {
     .navbar-toggler-button {
       visibility: visible;
+    }
+    .nav-items {
+      visibility: collapse;
     }
   }
 }
