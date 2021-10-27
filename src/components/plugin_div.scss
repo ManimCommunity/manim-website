@@ -55,3 +55,12 @@
 .hover-card:hover {
     transform: scale(1.02);
 }
+
+.dark {
+    .author-name {
+        color: $primary-color-dark;
+    }
+    .plugin-date {
+        color: $text-muted-color-dark;
+    }
+}
