@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./navbar.scss";
 import Headroom from "react-headroom";
+import {MoonIcon} from './icons.js'
 
 function onClickNavButton() {
     if (typeof document !== `undefined`) {
@@ -60,6 +61,9 @@ export default function NavBar() {
                                 </ul>
                             </nav>
                         </div>
+                        <button id='theme-toggle' aria-label='theme-toggle' className='theme-toggle-button'>
+                          <MoonIcon />
+                        </button>
                     </div>
                     <button
                         class="navbar-toggler-button"

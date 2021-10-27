@@ -34,6 +34,14 @@
             display: flex;
             align-items: center;
 
+            .theme-toggle-button{
+                color: $navbar-links-color;
+                border: 0 solid;
+                padding: 0;
+                line-height: inherit;
+                background-color: transparent;
+                background-image: none;
+            }
             .manim-logo-a {
                 color: #fff;
                 padding: 0.5rem;
@@ -43,6 +51,7 @@
             }
             .nav-items {
                 display: initial;
+                padding-right: .5rem;
                 nav {
                     display: block;
                     ul {
