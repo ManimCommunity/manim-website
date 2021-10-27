@@ -45,10 +45,18 @@
         margin-bottom: 1rem;
         text-align: center;
         .welcome-text {
-            color: #635e69;
+            color: $welcome-text-light;
             font-size: 1.7rem;
             line-height: 1.5;
             margin: 0;
         }
+    }
+}
+.dark{
+    .welcome-title{
+        color: $welcome-title-dark!important;
+    }
+    .welcome-text{
+        color: $welcome-text-dark!important;
     }
 }
