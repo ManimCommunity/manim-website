@@ -1,57 +1,57 @@
 @import "../variables";
 
 .plugin-div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-  //justify-content: center;
-  //align-items: baseline;
-  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
-  font-weight: 400;
+    //justify-content: center;
+    //align-items: baseline;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
 
-  .child-plugin-div {
-    margin: auto;
-    width: 600px;
-    padding: 1.5rem;
-    margin-top: 0.5rem;
+    .child-plugin-div {
+        margin: auto;
+        width: 600px;
+        padding: 1.5rem;
+        margin-top: 0.5rem;
 
-    border-radius: 10px;
-    box-shadow: -0.2rem 0 0.6rem rgb(1, 1, 1);
-    box-sizing: border-box;
-  }
-  .author-name {
-    color: $primary-color;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
+        border-radius: 10px;
+        box-shadow: -0.2rem 0 0.6rem rgb(1, 1, 1);
+        box-sizing: border-box;
+    }
+    .author-name {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
 
-  .plugin-name {
-    margin-bottom: 0rem;
-  }
-  .plugin-date {
-    margin-bottom: 0.25rem;
-    color: $text-muted-color;
-  }
-  .plugin-summary {
-    margin-bottom: auto;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
+    .plugin-name {
+        margin-bottom: 0rem;
+    }
+    .plugin-date {
+        margin-bottom: 0.25rem;
+        color: $text-muted-color;
+    }
+    .plugin-summary {
+        margin-bottom: auto;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
 }
 
 .hover-card {
-  transition: transform 0.2s ease-out;
-  box-shadow: 0 4px 5px 0 rgba(22, 212, 26, 0.18);
+    transition: transform 0.2s ease-out;
+    box-shadow: 0 4px 5px 0 rgba(22, 212, 26, 0.18);
 }
 
 .hover-card:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }

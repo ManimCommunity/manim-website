@@ -3,65 +3,72 @@ import "./navbar.scss";
 import Headroom from "react-headroom";
 
 function onClickNavButton() {
-  if (typeof document !== `undefined`) {
-    if (document.getElementById("hidden-on-mobile").style.display === "none") {
-      document.getElementById("hidden-on-mobile").style.display = "initial";
-    } else {
-      document.getElementById("hidden-on-mobile").style.display = "none";
+    if (typeof document !== `undefined`) {
+        if (
+            document.getElementById("hidden-on-mobile").style.display === "none"
+        ) {
+            document.getElementById("hidden-on-mobile").style.display =
+                "initial";
+        } else {
+            document.getElementById("hidden-on-mobile").style.display = "none";
+        }
     }
-  }
 }
 export default function NavBar() {
-  return (
-    <Headroom>
-      <header className="main-header">
-        <div className="main-header-div">
-          <div class="manim-logo-div">
-            <a class="manim-logo-a" href="/" aria-label="Go to Homepage">
-              <img
-                src="/logo.svg"
-                width="60"
-                height="60"
-                alt="Manim Community Logo"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div className="nav-items" id="hidden-on-mobile">
-            <nav>
-              <ul role="menubar">
-                <li role="none">
-                  <a
-                    href="https://docs.manim.community/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Docs
-                  </a>
-                </li>
-                <li role="none">
-                  <a
-                    href="https://github.com/ManimCommunity/manim"
-                    class="nav-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <button
-            class="navbar-toggler-button"
-            type="button"
-            aria-label="Toggle navigation"
-            onClick={onClickNavButton}
-          >
-            <span class="fa fa-bars"></span>
-          </button>
+    return (
+        <Headroom>
+            <header className="main-header">
+                <div className="main-header-div">
+                    <div class="manim-logo-div">
+                        <a
+                            class="manim-logo-a"
+                            href="/"
+                            aria-label="Go to Homepage"
+                        >
+                            <img
+                                src="/logo.svg"
+                                width="60"
+                                height="60"
+                                alt="Manim Community Logo"
+                                loading="lazy"
+                            />
+                        </a>
+                    </div>
+                    <div className="nav-items" id="hidden-on-mobile">
+                        <nav>
+                            <ul role="menubar">
+                                <li role="none">
+                                    <a
+                                        href="https://docs.manim.community/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Docs
+                                    </a>
+                                </li>
+                                <li role="none">
+                                    <a
+                                        href="https://github.com/ManimCommunity/manim"
+                                        class="nav-link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Github
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <button
+                        class="navbar-toggler-button"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        onClick={onClickNavButton}
+                    >
+                        <span class="fa fa-bars"></span>
+                    </button>
 
-          {/* <div class="collapse navbar-collapse" id="social">
+                    {/* <div class="collapse navbar-collapse" id="social">
         <ul class="navbar-nav mr-auto">
         
           
@@ -115,10 +122,10 @@ export default function NavBar() {
           </li>
         </ul>
       </div> */}
-        </div>
-      </header>
-    </Headroom>
-  );
+                </div>
+            </header>
+        </Headroom>
+    );
 }
 // export default function NavBar() {
 //   return (
