@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./navbar.scss";
 import Headroom from "react-headroom";
-import {DarkToggle} from "./ThemeToggler.js";
 import {MoonIcon} from './icons.js';
 
 function onClickNavButton() {
