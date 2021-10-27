@@ -8,7 +8,7 @@ exports.createPages = ({actions}) => {
             let contents = JSON.parse(
                 fs.readFileSync("./content/" + file, "utf-8")
             );
-            let page_link = "/plugins/" + contents.info.name;
+            let page_link = "/plugin/" + contents.info.name;
             createPage({
                 path: page_link,
                 component: require.resolve("./src/templates/pluginTemplate.js"),
