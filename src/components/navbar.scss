@@ -5,9 +5,9 @@
     background-color: $navbar-background-light;
 
     .main-header-div {
-        padding-left: 2rem;
+        padding-left: 1rem;
         padding-right: 2rem;
-        padding-top: 0.5rem;
+        padding-top: 0px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -15,12 +15,12 @@
         min-height: 70px;
         display: flex;
 
-        .manim-logo-a {
-            color: #fff;
-            padding: 0.5rem;
-            font-size: 1.25rem;
-            text-decoration: none;
-            background-color: transparent;
+            .manim-logo-a {
+                color: #fff;
+                padding: 0.5rem;
+                font-size: 1.25rem;
+                text-decoration: none;
+                background-color: transparent;
         }
         .navbar-toggler-button {
             height: 100%;
