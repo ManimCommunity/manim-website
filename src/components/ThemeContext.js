@@ -1,6 +1,9 @@
 import React from "react";
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = React.createContext({
+    colorMode: "dark",
+    setColorMode: function () {}
+});
 
 export const ThemeProvider = ({children}) => {
     const [colorMode, rawSetColorMode] = React.useState(undefined);
