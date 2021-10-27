@@ -19,45 +19,47 @@ export default function NavBar() {
         <Headroom>
             <header className="main-header">
                 <div className="main-header-div">
-                    <div class="manim-logo-div">
-                        <a
-                            class="manim-logo-a"
-                            href="/"
-                            aria-label="Go to Homepage"
-                        >
-                            <img
-                                src="/logo.svg"
-                                width="60"
-                                height="60"
-                                alt="Manim Community Logo"
-                                loading="lazy"
-                            />
-                        </a>
-                    </div>
-                    <div className="nav-items" id="hidden-on-mobile">
-                        <nav>
-                            <ul role="menubar">
-                                <li role="none">
-                                    <a
-                                        href="https://docs.manim.community/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Docs
-                                    </a>
-                                </li>
-                                <li role="none">
-                                    <a
-                                        href="https://github.com/ManimCommunity/manim"
-                                        class="nav-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Github
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div className="logo-and-links-div">
+                        <div class="manim-logo-div">
+                            <a
+                                class="manim-logo-a"
+                                href="/"
+                                aria-label="Go to Homepage"
+                            >
+                                <img
+                                    src="/logo.svg"
+                                    width="60"
+                                    height="60"
+                                    alt="Manim Community Logo"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </div>
+                        <div className="nav-items" id="hidden-on-mobile">
+                            <nav>
+                                <ul role="menubar">
+                                    <li role="none">
+                                        <a
+                                            href="https://docs.manim.community/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Docs
+                                        </a>
+                                    </li>
+                                    <li role="none">
+                                        <a
+                                            href="https://github.com/ManimCommunity/manim"
+                                            class="nav-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Github
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                     <button
                         class="navbar-toggler-button"
