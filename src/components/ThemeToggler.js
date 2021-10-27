@@ -5,12 +5,12 @@ import {MoonIcon, SunIcon} from "./icons.js";
 const DarkToggle = () => {
     const {colorMode, setColorMode} = React.useContext(ThemeContext);
     const changeTheme = () => {
-        if (colorMode === 'dark'){
-            setColorMode('light')
+        if (colorMode === "dark") {
+            setColorMode("light");
         } else {
-            setColorMode('dark')
+            setColorMode("dark");
         }
-    }
+    };
     if (colorMode === "dark") {
         return (
             <button
