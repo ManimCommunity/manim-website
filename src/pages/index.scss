@@ -24,7 +24,7 @@ body {
     line-height: 1.5;
 
     text-align: left;
-    background-color: $body-bg;
+    background-color: $body-bg-light;
 }
 .welcome-screen {
     display: flex;
@@ -63,5 +63,10 @@ body {
             line-height: 1.5;
             margin: 0;
         }
+    }
+}
+.dark {
+    body {
+        background-color: $body-bg-dark;
     }
 }

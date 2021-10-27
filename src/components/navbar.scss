@@ -34,7 +34,7 @@
             display: flex;
             align-items: center;
 
-            .theme-toggle-button{
+            .theme-toggle-button {
                 color: $navbar-links-color;
                 border: 0 solid;
                 padding: 0;
@@ -51,7 +51,7 @@
             }
             .nav-items {
                 display: initial;
-                padding-right: .5rem;
+                padding-right: 0.5rem;
                 nav {
                     display: block;
                     ul {
@@ -87,5 +87,11 @@
                 }
             }
         }
+    }
+}
+
+.dark {
+    .main-header {
+        background-color: $navbar-background-dark;
     }
 }

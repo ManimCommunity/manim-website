@@ -1,7 +1,8 @@
 import * as React from "react";
 import "./navbar.scss";
 import Headroom from "react-headroom";
-import {MoonIcon} from './icons.js'
+import {DarkToggle} from "./ThemeToggler.js";
+import {MoonIcon} from './icons.js';
 
 function onClickNavButton() {
     if (typeof document !== `undefined`) {
@@ -62,7 +63,7 @@ export default function NavBar() {
                             </nav>
                         </div>
                         <button id='theme-toggle' aria-label='theme-toggle' className='theme-toggle-button'>
-                          <MoonIcon />
+                            <MoonIcon />
                         </button>
                     </div>
                     <button
@@ -73,7 +74,7 @@ export default function NavBar() {
                     >
                         <span class="fa fa-bars"></span>
                     </button>
-
+                    
                     {/* <div class="collapse navbar-collapse" id="social">
         <ul class="navbar-nav mr-auto">
         
