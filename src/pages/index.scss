@@ -1,1 +1,32 @@
 @import "../global.scss";
+
+.index-main-div {
+    display: flex;
+    padding-top: 1rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    flex-direction: column;
+    font-size: 26px;
+    text-align: center;
+
+    .link-div{
+        display: flex;
+        justify-content: center;
+
+        a{
+            text-decoration: none;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border: 1px solid;
+            color: inherit;
+            margin: .5rem;
+            border-radius: 1rem;
+        }
+    }
+}

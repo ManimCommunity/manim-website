@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/navbar.js";
+import "./pluginTemplate.scss";
 
 const basicTemplate = props => {
     const {pageContext} = props;
@@ -8,9 +9,8 @@ const basicTemplate = props => {
     return (
         <div>
             <NavBar />
-            <h1>{pageContent.info.name}</h1>
-            <h2>{pageContent.info.summary}</h2>
             <div
+                className="plugin-info-div"
                 dangerouslySetInnerHTML={{__html: pageContent.info.description}}
             />
         </div>
