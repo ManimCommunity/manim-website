@@ -1,8 +1,8 @@
 import * as React from "react";
 import "./plugin_div.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython } from '@fortawesome/free-brands-svg-icons'
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPython} from "@fortawesome/free-brands-svg-icons";
+import {faHome} from "@fortawesome/free-solid-svg-icons";
 
 export default function PluginDiv({element}) {
     let date1 = element.urls[0].upload_time_iso_8601;
@@ -30,7 +30,7 @@ export default function PluginDiv({element}) {
                     rel="noopener noreferrer"
                 >
                     <button type="button" class="btn btn-outline-info m-1">
-                        <FontAwesomeIcon icon={faHome}/> Home Page
+                        <FontAwesomeIcon icon={faHome} /> Home Page
                     </button>
                 </a>
             </div>

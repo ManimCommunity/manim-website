@@ -4,7 +4,7 @@ import "./manim-banner.scss";
 
 const ManimBanner = () => {
     const {colorMode} = React.useContext(ThemeContext);
-    if (!colorMode){
+    if (!colorMode) {
         return <img src="banner-light.svg" className="manim-banner" />;
     }
     if (colorMode === "dark") {
