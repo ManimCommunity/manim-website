@@ -1,0 +1,44 @@
+@import "../variables";
+.super-footer-div {
+    padding-top: 2rem;
+    background-color: $footer-bg-light;
+    margin: 0 auto;
+    color: #fff;
+
+    .footer-div {
+        display: flex;
+        margin: 0 auto;
+        padding: 0 4.16667%;
+        justify-content: space-evenly;
+
+        .column-div {
+            padding: 0;
+        }
+        .last-child {
+            padding: 0;
+            margin-right: 0;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        ul {
+            list-style: none;
+            margin: 15px 0 0 0;
+            padding: 0 0 30px;
+            font-size: 18px;
+            li {
+                margin: 10px 0 0;
+                padding: 0;
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+.dark {
+    .super-footer-div {
+        background-color: $footer-bg-dark;
+    }
+}

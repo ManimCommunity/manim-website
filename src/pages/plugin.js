@@ -2,6 +2,7 @@ import * as React from "react";
 import {useStaticQuery, graphql} from "gatsby";
 import PluginDiv from "../components/plugin_div.js";
 import NavBar from "../components/navbar.js";
+import {Footer} from "../components/footer.js";
 
 import "./plugin.scss";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -52,6 +53,7 @@ const IndexPage = () => {
                     </div>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };

@@ -5,7 +5,7 @@ import "./index.scss";
 import {Link} from "gatsby";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle, faBook} from "@fortawesome/free-solid-svg-icons";
-
+import {Footer} from "../components/footer";
 const IndexPage = () => {
     return (
         <div>
@@ -30,6 +30,7 @@ const IndexPage = () => {
                     </Link>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

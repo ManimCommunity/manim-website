@@ -58,6 +58,17 @@ export default function NavBar() {
                                             Github
                                         </a>
                                     </li>
+                                    <li role="none">
+                                        <a
+                                            href="https://try.manim.community"
+                                            href="https://github.com/ManimCommunity/manim"
+                                            class="nav-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Try Manim Online
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
