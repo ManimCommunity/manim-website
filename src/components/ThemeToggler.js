@@ -34,6 +34,5 @@ const DarkToggle = () => {
             </button>
         );
     }
-    return <label>Dark</label>;
 };
 export {DarkToggle};
