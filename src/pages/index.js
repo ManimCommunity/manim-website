@@ -6,7 +6,22 @@ import {Link} from "gatsby";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle, faBook} from "@fortawesome/free-solid-svg-icons";
 import {Footer} from "../components/footer";
+import Prism from "prismjs";
+
+// The code we will be displaying
+const code = `from manim import *
+class HelloWorld(Scene):
+    def construct(self):
+        a = Square()
+        self.add(a)
+`;
+
 const IndexPage = () => {
+    React.useEffect(() => {
+        // call the highlightAll() function to style our code blocks
+        Prism.highlightAll();
+    });
+
     return (
         <div>
             <NavBar />
@@ -28,6 +43,11 @@ const IndexPage = () => {
                     <Link href="https://docs.manim.community/en/stable/examples.html">
                         <FontAwesomeIcon icon={faPlayCircle} /> Examples
                     </Link>
+                </div>
+                <div>
+                    <pre>
+                        <code className="language-python">{code}</code>
+                    </pre>
                 </div>
             </div>
             <Footer />

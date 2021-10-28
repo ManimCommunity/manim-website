@@ -21,4 +21,7 @@ body {
         background-color: $body-bg-dark !important;
         color: $text-color-dark !important;
     }
+    pre[class*="language-"] {
+        background-color: $code-background-dark!important;
+    }
 }
