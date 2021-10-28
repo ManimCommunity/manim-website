@@ -1,7 +1,7 @@
 import React from "react";
 
 export const ThemeContext = React.createContext({
-    colorMode: "dark",
+    colorMode: null,
     setColorMode: function () {}
 });
 
