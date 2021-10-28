@@ -2,8 +2,9 @@ import * as React from "react";
 import {ManimBanner} from "../components/manim-banner";
 import NavBar from "../components/navbar";
 import "./index.scss";
-import { Link } from "gatsby"
-
+import {Link} from "gatsby";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlayCircle, faBook } from '@fortawesome/free-solid-svg-icons'
 
 const IndexPage = () => {
     return (
@@ -22,10 +23,10 @@ const IndexPage = () => {
                 </p>
                 <div className="link-div">
                     <Link href="https://docs.manim.community">
-                        <i class="fas fa-book"></i> Documentation
+                        <FontAwesomeIcon icon={faBook}/> Documentation
                     </Link>
                     <Link href="https://docs.manim.community/en/stable/examples.html">
-                        <i class="fas fa-play-circle"></i> Examples
+                        <FontAwesomeIcon icon={faPlayCircle} /> Examples
                     </Link>
                 </div>
             </div>

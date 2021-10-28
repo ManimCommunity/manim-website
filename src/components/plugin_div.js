@@ -1,5 +1,9 @@
 import * as React from "react";
 import "./plugin_div.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPython } from '@fortawesome/free-brands-svg-icons'
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+
 export default function PluginDiv({element}) {
     let date1 = element.urls[0].upload_time_iso_8601;
     return (
@@ -17,7 +21,7 @@ export default function PluginDiv({element}) {
                     rel="noopener noreferrer"
                 >
                     <button type="button" class="btn btn-outline-primary m-1">
-                        <i class="fab fa-python"></i> PyPi Page
+                        <FontAwesomeIcon icon={faPython} /> PyPi Page
                     </button>
                 </a>
                 <a
@@ -26,7 +30,7 @@ export default function PluginDiv({element}) {
                     rel="noopener noreferrer"
                 >
                     <button type="button" class="btn btn-outline-info m-1">
-                        <i class="fas fa-home"></i> Home Page
+                        <FontAwesomeIcon icon={faHome}/> Home Page
                     </button>
                 </a>
             </div>
