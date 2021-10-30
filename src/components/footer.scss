@@ -10,6 +10,8 @@
         margin: 0 auto;
         padding: 0 4.16667%;
         justify-content: space-evenly;
+        min-width: 300px;
+        flex-wrap: wrap;
 
         .column-div {
             padding: 0;
