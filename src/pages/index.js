@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle, faBook} from "@fortawesome/free-solid-svg-icons";
 import {Footer} from "../components/footer";
 import Prism from "prismjs";
-
+import {ManimExample} from "../components/manim-example.js";
 // The code we will be displaying
 const code = `from manim import *
 class HelloWorld(Scene):
@@ -24,6 +24,7 @@ const IndexPage = () => {
 
     return (
         <div>
+            <title>Manim Community - Homepage</title>
             <NavBar />
             <div className="index-main-div">
                 <ManimBanner />
@@ -44,11 +45,7 @@ const IndexPage = () => {
                         <FontAwesomeIcon icon={faPlayCircle} /> Examples
                     </Link>
                 </div>
-                <div>
-                    <pre>
-                        <code className="language-python">{code}</code>
-                    </pre>
-                </div>
+                <ManimExample />
             </div>
             <Footer />
         </div>

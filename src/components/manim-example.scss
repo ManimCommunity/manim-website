@@ -1,0 +1,19 @@
+.main-example {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    pre {
+        padding-top: 0;
+        code[class*="language-"] {
+            font-size: 22px;
+            border-top: hidden;
+            
+        }
+    }
+    video {
+        max-width: 500px;
+        height: 100%;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+}

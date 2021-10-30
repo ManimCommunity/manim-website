@@ -5,7 +5,7 @@
             "prismjs",
             {
                 "languages": ["javascript", "css", "python"],
-                "plugins": ["show-language", "line-numbers"],
+                "plugins": [],
                 "theme": "solarizedlight",
                 "css": true
             }
