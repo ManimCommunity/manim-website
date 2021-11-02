@@ -10,11 +10,14 @@ class CircleExample(Scene):
         self.add(circle)
     `;
     return (
-        <div className="main-example">
-            <pre>
-                <code className="language-python">{example_scene}</code>
-            </pre>
-            <img src="/CircleExample.png" />
+        <div className="example-div">
+            <h2>Examples</h2>
+            <div className="main-example">
+                <pre>
+                    <code className="language-python">{example_scene}</code>
+                </pre>
+                <img src="/CircleExample.png" />
+            </div>
         </div>
     );
 };

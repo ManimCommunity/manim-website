@@ -1,24 +1,27 @@
-.main-example {
-    display: flex;
-    align-items: top;
-    justify-content: space-between;
-    pre {
-        padding-top: 0;
-        code[class*="language-"] {
-            font-size: 22px;
-            border-top: hidden;
+.example-div {
+    text-align: left;
+    .main-example {
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        pre {
+            padding-top: 0;
+            code[class*="language-"] {
+                font-size: 22px;
+                border-top: hidden;
+            }
         }
-    }
-    img {
-        max-width: 500px;
-        height: 100%;
-        margin-left: 1rem;
-        margin-top: 1rem;
-    }
-    video {
-        max-width: 500px;
-        height: 100%;
-        margin-left: 1rem;
-        margin-top: 1rem;
+        img {
+            max-width: 500px;
+            height: 100%;
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+        video {
+            max-width: 500px;
+            height: 100%;
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
     }
 }

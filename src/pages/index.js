@@ -6,7 +6,6 @@ import {Footer} from "../components/footer";
 import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
 
-
 const IndexPage = () => {
     React.useEffect(() => {
         // call the highlightAll() function to style our code blocks
