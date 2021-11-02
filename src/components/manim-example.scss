@@ -31,7 +31,39 @@
         width: 400px;
         border-radius: 20px;
         padding: 0.5rem;
+        position: relative;
     }
+    .next-button:before,
+    .next-button:after {
+        border-color: $secondary-color-light;
+        -webkit-transition: all 0.25s;
+        transition: all 0.25s;
+        border-style: solid;
+        border-width: 0;
+        content: "";
+        height: 24px;
+        position: absolute;
+        width: 24px;
+    }
+    .next-button:before {
+        border-left-width: 2px;
+        border-top-width: 2px;
+        left: -5px;
+        top: -5px;
+    }
+
+    .next-button:after {
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+        bottom: -5px;
+        right: -5px;
+    }
+    .next-button:hover:before,
+    .next-button:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+
     .main-example {
         display: flex;
         align-items: stretch;
@@ -66,8 +98,11 @@
         }
     }
 }
-.dark{
-    .next-button{
-        background-color: $button-background-dark;
+.dark {
+    .next-button {
+        background-color: $button-background-dark !important;
+    }
+    .next-button:after {
+        border-color: $secondary-color-dark!important;
     }
 }
