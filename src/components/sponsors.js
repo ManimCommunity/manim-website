@@ -19,7 +19,6 @@ const Sponsors = () => {
                     img="https://d2srrzh48sp2nh.cloudfront.net/enterprise/87aa097e/images/logo/emblem.svg"
                     name="Crowdin"
                 /> */}
-                
             </div>
         </div>
     );
