@@ -5,6 +5,7 @@ import "./index.scss";
 import {Footer} from "../components/footer";
 import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
+import { Sponsors } from "../components/sponsors";
 
 const IndexPage = () => {
     React.useEffect(() => {
@@ -33,6 +34,7 @@ const IndexPage = () => {
                     </div>
                 </div>
                 <ManimExample />
+                <Sponsors />
             </div>
             <Footer />
         </div>

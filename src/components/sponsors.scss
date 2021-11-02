@@ -1,0 +1,30 @@
+.sponsors-div {
+    max-width: 1200px;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: left;
+    h2{
+       padding-bottom: 1rem;
+    }
+    .sponsor-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .sponsor {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 200px;
+            min-height: 200px;
+            img {
+                min-width: 200px;
+                max-width: 300px;
+            }
+        }
+    }
+}
