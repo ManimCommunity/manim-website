@@ -1,9 +1,14 @@
 .example-div {
+    padding: 2rem;
+    width: 100%;
     text-align: left;
     .main-example {
         display: flex;
         align-items: top;
         justify-content: space-between;
+        .example-child{
+            flex: 1 1 50%;
+        }
         pre {
             padding-top: 0;
             code[class*="language-"] {

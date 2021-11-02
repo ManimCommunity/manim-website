@@ -19,3 +19,23 @@ exports.createPages = ({actions}) => {
         }
     });
 };
+
+exports.sourceNodes = ({actions, createNodeId, createContentDigest}) => {
+    let files = require("fs");
+
+    let examples = {};
+    examples = JSON.parse(files.readFileSync("./manim_examples.json", "utf8"));
+    examples.forEach(example => {
+        const node = {
+            name: example.name,
+            code: example.code,
+            output: example.output,
+            id: createNodeId(`ManimExample-${example.name}`),
+            internal: {
+                type: "ManimExample",
+                contentDigest: createContentDigest(examples)
+            }
+        };
+        actions.createNode(node);
+    });
+};
