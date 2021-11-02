@@ -37,6 +37,7 @@ exports.sourceNodes = ({actions, createNodeId, createContentDigest}) => {
             code: example.code,
             output: example.output,
             visible: visible,
+            type: example.type,
             id: createNodeId(`ManimExample-${example.name}`),
             internal: {
                 type: "ManimExample",

@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: center;
 
-    h2{
-        width: 100%
+    h2 {
+        width: 100%;
     }
     .visible {
         visibility: visible;
@@ -21,7 +21,7 @@
         height: 0;
         width: 0;
     }
-    .next-button{
+    .next-button {
         color: white;
         margin-left: auto;
         margin-right: auto;
@@ -30,7 +30,7 @@
         margin: 2rem;
         width: 400px;
         border-radius: 20px;
-        padding: .5rem;
+        padding: 0.5rem;
     }
     .main-example {
         display: flex;
@@ -49,17 +49,20 @@
             }
             width: 100%;
         }
-        img {
+        .img-div {
             width: 50%;
-            height: 100%;
-            margin-left: 1rem;
-            margin-top: 1rem;
-        }
-        video {
-            max-width: 500px;
-            height: 100%;
-            margin-left: 1rem;
-            margin-top: 1rem;
+            img {
+                width: 100%;
+                height: 100%;
+                margin-left: 1rem;
+                margin-top: 1rem;
+            }
+            video {
+                width: 100%;
+                height: 100%;
+                margin-left: 1rem;
+                margin-top: 1rem;
+            }
         }
     }
 }
