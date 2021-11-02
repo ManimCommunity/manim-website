@@ -1,23 +1,56 @@
+@import "../global.scss";
+
 .example-div {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
     width: 100%;
     text-align: left;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        width: 100%
+    }
+    .visible {
+        visibility: visible;
+        width: max-content;
+        height: max-content;
+    }
+    .hidden {
+        height: 0;
+        width: 0;
+    }
+    .next-button{
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $button-background-light;
+        border: 0 solid;
+        margin: 2rem;
+        width: 400px;
+        border-radius: 20px;
+        padding: .5rem;
+    }
     .main-example {
         display: flex;
-        align-items: top;
+        align-items: stretch;
         justify-content: space-between;
+        visibility: collapse;
+        width: 100%;
+
         .example-child {
-            flex: 1 1 50%;
+            flex: 1 2 50%;
         }
         pre {
-            padding-top: 0;
             code[class*="language-"] {
                 font-size: 22px;
                 border-top: hidden;
             }
+            width: 100%;
         }
         img {
-            max-width: 500px;
+            width: 50%;
             height: 100%;
             margin-left: 1rem;
             margin-top: 1rem;

@@ -24,7 +24,7 @@
             .get-started-link {
                 display: inline-block;
                 padding: 0.8em 50px 0.8em;
-                background: $get-started-button-background-light;
+                background: $button-background-light;
                 text-decoration: none;
                 color: inherit;
                 font-weight: 700;
@@ -38,6 +38,6 @@
 }
 .dark {
     .get-started-link {
-        background: $get-started-button-background-dark !important;
+        background: $button-background-dark !important;
     }
 }
