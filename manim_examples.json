@@ -25,5 +25,11 @@
         "type": "video",
         "output": "WarpSquare",
         "visible": false
+    },
+    {
+        "code": "class SquareToCircle(Scene):\n    def construct(self):\n        circle = Circle()\n        square = Square()\n        square.flip(RIGHT)\n        square.rotate(-3 * TAU / 8)\n        circle.set_fill(PINK, opacity=0.5)\n\n        self.play(Create(square))\n        self.play(Transform(square, circle))\n        self.play(FadeOut(square))\n",
+        "output": "SquareToCircle",
+        "name": "SquareToCircle",
+        "visible": false
     }
 ]
