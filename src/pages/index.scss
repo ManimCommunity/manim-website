@@ -2,8 +2,9 @@
 
 .index-main-div {
     display: flex;
-    padding-top: 1rem;
     padding: 2rem;
+    padding-left: 0;
+    padding-right: 0;
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -16,21 +17,27 @@
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
         "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol", "Noto Color Emoji";
-
-    .link-div {
-        display: flex;
-        justify-content: center;
-
-        a {
-            text-decoration: none;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            border: 1px solid;
-            color: inherit;
-            margin: 0.5rem;
-            border-radius: 1rem;
+    .about-manim-div {
+        width: 100%;
+        .get-started-link-div {
+            color: #fff;
+            .get-started-link {
+                display: inline-block;
+                padding: 0.8em 50px 0.8em;
+                background: $get-started-button-background-light;
+                text-decoration: none;
+                color: inherit;
+                font-weight: 700;
+                font-size: 24px;
+                margin: 0 0 1rem 0;
+                border-radius: 0.5rem;
+                border: 0;
+            }
         }
+    }
+}
+.dark {
+    .get-started-link {
+        background: $get-started-button-background-dark!important;
     }
 }
