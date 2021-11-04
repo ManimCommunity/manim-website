@@ -1,4 +1,5 @@
 import React from "react";
+import {minify} from "terser";
 const MagicScriptTag = () => {
     const codeToRunOnClient = `
   (function() {
@@ -23,8 +24,9 @@ const MagicScriptTag = () => {
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
     `;
+    const minified = minify(codeToRunOnClient)
     // eslint-disable-next-line react/no-danger
-    return <script dangerouslySetInnerHTML={{__html: codeToRunOnClient}} />;
+    return <script dangerouslySetInnerHTML={{__html: minified.code}} />;
 };
 export const onRenderBody = ({setPreBodyComponents}) => {
     setPreBodyComponents(<MagicScriptTag key="unique" />);
