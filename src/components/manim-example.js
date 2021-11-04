@@ -58,7 +58,7 @@ const ManimExample = () => {
                             ) : (
                                 <video
                                     loop=""
-                                    controls="true"
+                                    controls={true}
                                 >
                                     <source
                                         src={"/examples/" + element.output + ".webm"}
