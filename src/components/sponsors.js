@@ -4,8 +4,10 @@ import "./sponsors.scss";
 const Sponsor = props => {
     return (
         <div className="sponsor">
-            <img src={props.img} />
-            <p>{props.name}</p>
+            <a href={props.link}>
+                <img src={props.img} />
+                <p>{props.name}</p>
+            </a>
         </div>
     );
 };
@@ -15,10 +17,11 @@ const Sponsors = () => {
         <div className="sponsors-div">
             <h2>Sponsors</h2>
             <div className="sponsor-flex">
-                {/* <Sponsor
-                    img="https://d2srrzh48sp2nh.cloudfront.net/enterprise/87aa097e/images/logo/emblem.svg"
-                    name="Crowdin"
-                /> */}
+                <Sponsor
+                    img="/sponsors/tutanota-logo-red-black-font.png"
+                    name="Tutanota"
+                    link="https://tutanota.com/"
+                />
             </div>
         </div>
     );
