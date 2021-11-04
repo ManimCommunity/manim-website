@@ -10,6 +10,9 @@ module.exports = {
             options: {
                 path: `./content`
             }
-        }
+        },
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`
     ]
 };
