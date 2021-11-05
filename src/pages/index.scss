@@ -44,8 +44,8 @@
 
 @media (min-width: $tab-screens) {
     .index-main-div {
-        font-size: 26px;
-        padding: 2rem;
+        font-size: 26px!important;
+        padding: 2rem 0!important;
     }
     .get-started-link {
         font-size: 24px !important;

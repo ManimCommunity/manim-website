@@ -16,6 +16,9 @@ body {
     background-color: $body-bg-light;
     color: $text-color;
 }
+h2 {
+    font-size: 24px;
+}
 .dark {
     body {
         background-color: $body-bg-dark !important;
@@ -32,5 +35,8 @@ body {
 @media (min-width: $mobile-screens) {
     body {
         font-size: 18px;
+    }
+    h2 {
+        font-size: 32px;
     }
 }

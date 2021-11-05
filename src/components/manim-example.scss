@@ -3,7 +3,7 @@
 .example-div {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     text-align: left;
     align-items: center;
@@ -70,21 +70,22 @@
         justify-content: space-between;
         visibility: collapse;
         width: 100%;
+        flex-direction: column;
 
         .example-child {
             flex: 1 2 50%;
         }
         pre {
             code[class*="language-"] {
-                font-size: 22px;
+                font-size: 18px;
                 border-top: hidden;
             }
             width: 100%;
         }
         .img-div {
-            width: 50%;
+            width: 100%;
             img {
-                width: 100%;
+                width: 96%;
                 height: 100%;
                 margin-left: 1rem;
                 margin-top: 1rem;
@@ -104,5 +105,24 @@
     }
     .next-button:after {
         border-color: $secondary-color-dark!important;
+    }
+}
+
+@media (min-width: $tab-screens) {
+    .example-div{
+        padding: 2rem!important;
+    }
+    .main-example{
+        flex-direction: row!important;
+    }
+    .img-div{
+        width: 50% !important;
+        img{
+            width: 100% !important;
+        }
+    }
+    code[class*="language-"] {
+        font-size: 22px!important;
+        border-top: hidden!important;
     }
 }

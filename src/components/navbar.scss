@@ -77,7 +77,7 @@
             }
         }
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $mobile-screens) {
             .navbar-toggler-button {
                 visibility: visible;
             }
