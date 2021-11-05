@@ -2,7 +2,7 @@
 
 .index-main-div {
     display: flex;
-    padding: 2rem;
+    padding: 1rem;
     padding-left: 0;
     padding-right: 0;
     align-items: center;
@@ -11,7 +11,7 @@
     margin-right: auto;
     height: 100%;
     flex-direction: column;
-    font-size: 26px;
+    font-size: 20px;
     text-align: center;
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
@@ -28,7 +28,7 @@
                 text-decoration: none;
                 color: inherit;
                 font-weight: 700;
-                font-size: 24px;
+                font-size: 20px;
                 margin: 0 0 1rem 0;
                 border-radius: 0.5rem;
                 border: 0;
@@ -39,5 +39,15 @@
 .dark {
     .get-started-link {
         background: $button-background-dark !important;
+    }
+}
+
+@media (min-width: $tab-screens) {
+    .index-main-div {
+        font-size: 26px;
+        padding: 2rem;
+    }
+    .get-started-link {
+        font-size: 24px !important;
     }
 }
