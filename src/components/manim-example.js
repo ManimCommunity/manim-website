@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./manim-example.scss";
 import {useStaticQuery, graphql} from "gatsby";
+import {ExampleIcon} from "./icons";
 
 let number_of_examples = 0;
 let currently_showing = 0;
@@ -35,6 +36,7 @@ const ManimExample = () => {
     number_of_examples = data.allManimExample.totalCount - 1;
     return (
         <div className="example-div">
+            <ExampleIcon />
             <h2>Examples</h2>
             {examples.map((element, key) => {
                 return (

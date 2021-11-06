@@ -4,15 +4,21 @@
 .cli-icon,
 .gift-icon,
 .copied-icon,
-.cloud-icon {
+.cloud-icon,
+.heart-icon,
+.example-icon {
     margin-right: 10px;
 }
 
-.cloud-icon {
+.cloud-icon,
+.heart-icon,
+.example-icon {
     stroke: $text-color;
 }
 .dark {
-    .cloud-icon {
+    .cloud-icon,
+    .heart-icon,
+    .example-icon {
         stroke: $text-color-dark;
     }
 }

@@ -157,7 +157,7 @@ const CloudIcon = () => {
             role="img"
             aria-labelledby="thunderIconTitle"
             stroke="#000000"
-            stroke-width="1"
+            stroke-width="2"
             stroke-linecap="square"
             stroke-linejoin="miter"
             fill="none"
@@ -165,6 +165,58 @@ const CloudIcon = () => {
         >
             <polyline points="13 15 14 18 12 18 13 21" />
             <path d="M19.051177,17.9568482 C20.5,17.9709234 22,16.2454604 22,14.5 C22,12.7095527 20.6555928,11.2331085 18.9211951,11.0250841 C18.4554927,8.17503894 15.9817502,6 13,6 C10.711801,6 8.72277,7.28089089 7.71081142,9.16476838 C7.3255638,9.05739789 6.9194849,9 6.5,9 C4.01471863,9 2,11.0147186 2,13.5 C2,15.8113421 3.5,17.9709234 5.98562648,17.9709234 C5.98562648,17.9709234 6.32375099,17.9709234 7,17.9709234" />
+        </svg>
+    );
+};
+
+// Created by Naveen M K
+// Licensed under CC0
+
+const HeartIcon = () => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="heart-icon"
+        >
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+    );
+};
+
+// Created by Naveen M K
+// License CC0
+const ExampleIcon = () => {
+    return (
+        <svg
+            width="50"
+            height="50"
+            viewBox="0 0 13.229166 13.229167"
+            version="1.1"
+            id="svg5"
+            fill="none"
+            stroke="#000000"
+            stroke-width="0.8"
+            className="example-icon"
+        >
+            <g id="layer1">
+                <g id="g1224">
+                    <rect
+                        width="6.5033894"
+                        height="6.5033898"
+                        x="1.6436923"
+                        y="1.6436923"
+                    />
+                    <circle cx="7.9553561" cy="7.967411" r="4" />
+                </g>
+            </g>
         </svg>
     );
 };
@@ -176,5 +228,7 @@ export {
     GiftIcon,
     PypiLogo,
     CopiedIcon,
-    CloudIcon
+    CloudIcon,
+    HeartIcon,
+    ExampleIcon
 };

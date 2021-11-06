@@ -1,0 +1,25 @@
+@import "../variables";
+.opensource-div{
+    font-size: 20px;
+    .button-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 20px;
+        background: $button-background-light;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: inherit;
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0 0 1rem 0;
+        border-radius: 4px;
+        border: 0;
+    }
+}
+.dark{
+    .opensource-div{
+        .button-link{
+            background: $button-background-dark;
+        }
+    }
+}

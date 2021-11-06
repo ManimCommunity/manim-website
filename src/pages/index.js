@@ -13,6 +13,7 @@ import {
     PypiLogo,
     CopiedIcon
 } from "../components/icons";
+import {OpenSource} from "../components/manim-opensource";
 import Tippy from "@tippyjs/react";
 
 const onClickCopy = () => {
@@ -97,6 +98,7 @@ const IndexPage = () => {
                     </div>
                 </div>
                 <ManimExample />
+                <OpenSource />
                 <Sponsors />
             </div>
             <Footer />
