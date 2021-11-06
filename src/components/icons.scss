@@ -1,6 +1,18 @@
+@import "../variables";
+
 .github-icon,
 .cli-icon,
 .gift-icon,
-.copied-icon {
+.copied-icon,
+.cloud-icon {
     margin-right: 10px;
+}
+
+.cloud-icon {
+    stroke: $text-color;
+}
+.dark {
+    .cloud-icon {
+        stroke: $text-color-dark;
+    }
 }

@@ -1,6 +1,8 @@
 import * as React from "react";
 import "./icons.scss";
 
+// Created by Naveen M K
+// Licensed under CC0.
 const MoonIcon = () => {
     return (
         <svg
@@ -15,11 +17,13 @@ const MoonIcon = () => {
             stroke-linecap="round"
             stroke-linejoin="round"
         >
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            <path d="M21 12.79A9 9 0 1111.210 3.0 7.0 7.0 0 0021 12.79z"></path>
         </svg>
     );
 };
 
+// Created by Naveen M K using Inkscape
+// Licensed under CC0.
 const SunIcon = () => {
     return (
         <svg
@@ -47,6 +51,8 @@ const SunIcon = () => {
     );
 };
 
+// From https://github.com/logos
+// Converted to SVG using Inkscape
 const GithubIcon = () => {
     return (
         <svg
@@ -65,6 +71,9 @@ const GithubIcon = () => {
         </svg>
     );
 };
+
+// Designed by Naveen
+// License CC0
 const CliIcon = () => {
     return (
         <svg
@@ -85,6 +94,8 @@ const CliIcon = () => {
     );
 };
 
+// Created by Naveen M K
+// License CC0
 const GiftIcon = () => {
     return (
         <svg
@@ -108,9 +119,13 @@ const GiftIcon = () => {
     );
 };
 
+// Taken from https://pypi.org
 const PypiLogo = () => {
     return <img src="pypi.svg" alt="PyPI" width="30" height="30" />;
 };
+
+// Created by Naveen M K
+// License CC0
 const CopiedIcon = () => {
     return (
         <svg
@@ -130,4 +145,36 @@ const CopiedIcon = () => {
         </svg>
     );
 };
-export {MoonIcon, SunIcon, GithubIcon, CliIcon, GiftIcon, PypiLogo, CopiedIcon};
+
+// From https://github.com/mikolajdobrucki/ikonate
+// Licensed under MIT License
+const CloudIcon = () => {
+    return (
+        <svg
+            width="32px"
+            height="32px"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-labelledby="thunderIconTitle"
+            stroke="#000000"
+            stroke-width="1"
+            stroke-linecap="square"
+            stroke-linejoin="miter"
+            fill="none"
+            className="cloud-icon"
+        >
+            <polyline points="13 15 14 18 12 18 13 21" />
+            <path d="M19.051177,17.9568482 C20.5,17.9709234 22,16.2454604 22,14.5 C22,12.7095527 20.6555928,11.2331085 18.9211951,11.0250841 C18.4554927,8.17503894 15.9817502,6 13,6 C10.711801,6 8.72277,7.28089089 7.71081142,9.16476838 C7.3255638,9.05739789 6.9194849,9 6.5,9 C4.01471863,9 2,11.0147186 2,13.5 C2,15.8113421 3.5,17.9709234 5.98562648,17.9709234 C5.98562648,17.9709234 6.32375099,17.9709234 7,17.9709234" />
+        </svg>
+    );
+};
+export {
+    MoonIcon,
+    SunIcon,
+    GithubIcon,
+    CliIcon,
+    GiftIcon,
+    PypiLogo,
+    CopiedIcon,
+    CloudIcon
+};
