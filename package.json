@@ -19,6 +19,7 @@
         "@babel/core": "^7.4.0-0",
         "@fontsource/ibm-plex-sans": "^4.5.1",
         "@fontsource/plus-jakarta-sans": "^4.5.0",
+        "@fontsource/righteous": "^4.5.0",
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
         "@fortawesome/free-brands-svg-icons": "^5.15.4",

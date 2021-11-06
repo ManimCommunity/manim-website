@@ -83,15 +83,14 @@ const IndexPage = () => {
                                 interactiveDebounce="40"
                                 duration={100}
                             >
-                                <Tippy content="Copy to Clipboard"
-                        >
-                                <div
-                                    className="install-manim-text"
-                                    onClick={onClickCopy}
-                                    id="install-manim-command"
-                                >
-                                    pip install manim
-                                </div>
+                                <Tippy content="Copy to Clipboard">
+                                    <div
+                                        className="install-manim-text"
+                                        onClick={onClickCopy}
+                                        id="install-manim-command"
+                                    >
+                                        pip install manim
+                                    </div>
                                 </Tippy>
                             </Tippy>
                         </div>

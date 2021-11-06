@@ -1278,6 +1278,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/plus-jakarta-sans/-/plus-jakarta-sans-4.5.0.tgz#79db20d5de22acc3312794f67d3ceffcb05b2f9f"
   integrity sha512-PUVYjxqIXa8tf7VyQWnRP5FsGTwTlOlmHNrbF7UQ9UOd4c25X4VGkb2ZCZsJaPt6MECXIbJYwl49LLV6Kk6BHg==
 
+"@fontsource/righteous@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/righteous/-/righteous-4.5.0.tgz#e71e760a7dc92bad43fa176acd8d21e9db319b65"
+  integrity sha512-RH7QNpa9dRuAAwh62ijAsJBTH4hbJL8EadKR+gqGONEPnztbkmP1HPv14Oe4AXqRyeudiZMTaL49RIz/mM5Uig==
+
 "@fortawesome/fontawesome-common-types@^0.2.36":
   version "0.2.36"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
