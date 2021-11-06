@@ -57,7 +57,6 @@
             font-weight: 700;
             font-size: 20px;
             .install-manim-text {
-                
                 padding: 10px 14px;
                 display: inline-flex;
                 align-items: center;
@@ -77,10 +76,10 @@
                     background: rgba(0, 0, 0, 0.25);
                     padding: 5px 15px;
                 }
-                .install-manim-text{
+                .install-manim-text {
                     font-size: 18px;
-                cursor: pointer;
-                white-space: nowrap;
+                    cursor: pointer;
+                    white-space: nowrap;
                 }
             }
         }
