@@ -51,10 +51,12 @@ const IndexPage = () => {
                             Install Manim
                         </div>
                         <div className="install-manim-button">
-                            <div>
+                            <div className="install-manim-pypi-logo">
                                 <PypiLogo />
                             </div>
-                            hi hello
+                            <div className="install-manim-text">
+                                pip install manim
+                            </div>
                         </div>
                     </div>
                 </div>

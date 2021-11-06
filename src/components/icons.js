@@ -109,6 +109,6 @@ const GiftIcon = () => {
 };
 
 const PypiLogo = () => {
-    return <img src="pypi.svg" alt="PyPI" width='30' height='30' />;
+    return <img src="pypi.svg" alt="PyPI" width="30" height="30" />;
 };
 export {MoonIcon, SunIcon, GithubIcon, CliIcon, GiftIcon, PypiLogo};
