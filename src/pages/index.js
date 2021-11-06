@@ -6,6 +6,7 @@ import {Footer} from "../components/footer";
 import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
 import {Sponsors} from "../components/sponsors/sponsors.js";
+import {GithubIcon, CliIcon} from "../components/icons";
 
 const IndexPage = () => {
     React.useEffect(() => {
@@ -24,12 +25,24 @@ const IndexPage = () => {
                         Community maintained Python library for creating
                         mathematical animations.
                     </p>
-                    <div className="get-started-link-div">
+                    <div className="button-div">
+                        <a
+                            href="https://github.com/manimCommunity/manim"
+                            className="button-link"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                        >
+                            <GithubIcon />
+                            Star on Github
+                        </a>
                         <a
                             href="https://docs.manim.community/en/stable/tutorials/quickstart.html"
-                            className="get-started-link"
+                            className="button-link"
+                            rel="noreferrer noopener"
+                            target="_blank"
                         >
-                            Get started with Manim
+                            <CliIcon />
+                            Getting Started
                         </a>
                     </div>
                 </div>

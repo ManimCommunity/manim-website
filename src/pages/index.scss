@@ -19,26 +19,39 @@
         "Segoe UI Symbol", "Noto Color Emoji";
     .about-manim-div {
         width: 100%;
-        .get-started-link-div {
+        p {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .button-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
             color: #fff;
-            .get-started-link {
-                display: inline-block;
-                padding: 0.8em 50px 0.8em;
+            .button-link {
+                display: inline-flex;
+                align-items: center;
+                padding: 14px 20px;
                 background: $button-background-light;
                 text-decoration: none;
+                text-transform: uppercase;
                 color: inherit;
-                font-weight: 700;
-                font-size: 20px;
+                font-weight: 400;
+                font-size: 16px;
                 margin: 0 0 1rem 0;
-                border-radius: 0.5rem;
+                border-radius: 4px;
                 border: 0;
             }
         }
     }
 }
 .dark {
-    .get-started-link {
-        background: $button-background-dark !important;
+    .button-div {
+        .button-link {
+            background: $button-background-dark !important;
+        }
     }
 }
 
@@ -47,8 +60,12 @@
         font-size: 26px !important;
         padding: 2rem 0 !important;
     }
-    .get-started-link {
-        font-size: 24px !important;
+    .button-div {
+        flex-direction: row !important;
+        gap: 1rem;
+        .button-link {
+            font-size: 18px !important;
+        }
     }
     .about-manim-div {
         padding-left: 1rem !important;
