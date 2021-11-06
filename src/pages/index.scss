@@ -45,6 +45,26 @@
                 border: 0;
             }
         }
+        .install-manim-div {
+            background-color: $button-background-light;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            .install-manim-text {
+                display: inline-flex;
+                align-items: center;
+                padding: 1rem 0.5rem;
+            }
+            .install-manim-button {
+                margin-top: 0;
+                margin-bottom: 0;
+                display: flex;
+                background: $pip-install-manim-button-bg-light;
+            }
+        }
     }
 }
 .dark {
@@ -52,6 +72,12 @@
         .button-link {
             background: $button-background-dark !important;
         }
+    }
+    .install-manim-div {
+        background: $button-background-dark !important;
+    }
+    .install-manim-button {
+        background: $pip-install-manim-button-bg-dark !important;
     }
 }
 
@@ -68,8 +94,6 @@
         }
     }
     .about-manim-div {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
         p {
             padding-bottom: 1rem !important;
         }

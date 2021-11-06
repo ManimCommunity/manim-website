@@ -6,7 +6,7 @@ import {Footer} from "../components/footer";
 import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
 import {Sponsors} from "../components/sponsors/sponsors.js";
-import {GithubIcon, CliIcon} from "../components/icons";
+import {GithubIcon, CliIcon, GiftIcon, PypiLogo} from "../components/icons";
 
 const IndexPage = () => {
     React.useEffect(() => {
@@ -44,6 +44,18 @@ const IndexPage = () => {
                             <CliIcon />
                             Getting Started
                         </a>
+                    </div>
+                    <div className="install-manim-div">
+                        <div className="install-manim-text">
+                            <GiftIcon />
+                            Install Manim
+                        </div>
+                        <div className="install-manim-button">
+                            <div>
+                                <PypiLogo />
+                            </div>
+                            hi hello
+                        </div>
                     </div>
                 </div>
                 <ManimExample />
