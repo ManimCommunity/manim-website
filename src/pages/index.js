@@ -21,8 +21,8 @@ const IndexPage = () => {
                 <ManimBanner />
                 <div className="about-manim-div">
                     <p>
-                        <b>Manim</b> is a community-maintained Python library
-                        for creating mathematical animations.
+                        Community maintained Python library for creating
+                        mathematical animations.
                     </p>
                     <div className="get-started-link-div">
                         <a
