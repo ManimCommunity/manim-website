@@ -24,7 +24,7 @@ const MagicScriptTag = () => {
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
     `;
-    const minified = minify(codeToRunOnClient)
+    const minified = minify(codeToRunOnClient);
     // eslint-disable-next-line react/no-danger
     return <script dangerouslySetInnerHTML={{__html: minified.code}} />;
 };
