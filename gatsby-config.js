@@ -3,7 +3,16 @@ module.exports = {
         siteUrl: `https://plugins.manim.community`
     },
     plugins: [
-        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                implementation: require("node-sass"),
+            },
+            postCssPlugins: [require('autoprefixer')],
+            sassOptions: {
+                precision: 6,
+            },
+        },
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
