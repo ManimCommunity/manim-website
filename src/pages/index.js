@@ -89,6 +89,7 @@ const IndexPage = () => {
                                         className="install-manim-text"
                                         onClick={onClickCopy}
                                         id="install-manim-command"
+                                        role="button"
                                     >
                                         pip install manim
                                     </div>
