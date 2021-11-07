@@ -1,14 +1,17 @@
 @import "../variables";
 .opensource-div{
+    width: 100%;
     font-size: 20px;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid $border-color-light;
     .button-link {
+        color: #fff;
         display: inline-flex;
         align-items: center;
         padding: 14px 20px;
         background: $button-background-light;
         text-decoration: none;
         text-transform: capitalize;
-        color: inherit;
         font-weight: 400;
         font-size: 16px;
         margin: 0 0 1rem 0;
@@ -18,8 +21,9 @@
 }
 .dark{
     .opensource-div{
+        border-bottom: 1px solid $border-color-dark;
         .button-link{
-            background: $button-background-dark;
+            background: $button-background-dark!important;
         }
     }
 }

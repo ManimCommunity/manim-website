@@ -30,6 +30,7 @@
     }
     .about-manim-div {
         width: 100%;
+        border-bottom: 1px solid $border-color-light;
         p {
             padding-left: 0.5rem;
             padding-right: 0.5rem;
@@ -108,6 +109,9 @@
     }
     .install-manim-button {
         background: $pip-install-manim-button-bg-dark !important;
+    }
+    .about-manim-div{
+        border-bottom: 1px solid $border-color-dark!important;
     }
 }
 

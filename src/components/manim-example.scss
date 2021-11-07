@@ -8,6 +8,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid $border-color-light;
 
     h2 {
         width: 100%;
@@ -98,6 +99,9 @@
     }
     .next-button:after {
         border-color: $secondary-color-dark !important;
+    }
+    .example-div{
+        border-bottom: 1px solid $border-color-dark;
     }
 }
 
