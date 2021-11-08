@@ -6,12 +6,12 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sass`,
             options: {
-                implementation: require("node-sass"),
+                implementation: require("node-sass")
             },
-            postCssPlugins: [require('autoprefixer')],
+            postCssPlugins: [require("autoprefixer")],
             sassOptions: {
-                precision: 6,
-            },
+                precision: 6
+            }
         },
         `gatsby-transformer-json`,
         {

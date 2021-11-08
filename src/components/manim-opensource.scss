@@ -1,5 +1,5 @@
 @import "../variables";
-.opensource-div{
+.opensource-div {
     width: 100%;
     font-size: 20px;
     padding: 2rem 0rem;
@@ -22,11 +22,11 @@
         border: 0;
     }
 }
-.dark{
-    .opensource-div{
+.dark {
+    .opensource-div {
         border-bottom: 1px solid $border-color-dark;
-        .button-link{
-            background: $button-background-dark!important;
+        .button-link {
+            background: $button-background-dark !important;
         }
     }
 }
