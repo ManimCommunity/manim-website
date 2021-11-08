@@ -2,8 +2,11 @@
 .opensource-div{
     width: 100%;
     font-size: 20px;
-    padding: 1rem 0rem;
+    padding: 2rem 0rem;
     border-bottom: 1px solid $border-color-light;
+    p {
+        padding-top: 0.5rem;
+    }
     .button-link {
         color: #fff;
         display: inline-flex;
@@ -13,7 +16,7 @@
         text-decoration: none;
         text-transform: capitalize;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 20px;
         margin: 0 0 1rem 0;
         border-radius: 4px;
         border: 0;

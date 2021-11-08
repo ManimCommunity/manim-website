@@ -1,5 +1,5 @@
 import * as React from "react";
-import { HeartIcon } from "./icons";
+import { HeartIcon, CliIcon } from "./icons";
 import "./manim-opensource.scss"
 
 const OpenSource = () => {
@@ -14,6 +14,7 @@ const OpenSource = () => {
                 rel="noreferrer noopener"
                 target="_blank"
             >
+                <CliIcon />
                 Contribute to Manim
             </a>
         </div>
