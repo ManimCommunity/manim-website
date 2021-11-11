@@ -11,7 +11,8 @@ import {
     CliIcon,
     GiftIcon,
     PypiLogo,
-    CopiedIcon
+    CopiedIcon,
+    ChocoLogo
 } from "../components/icons";
 import {OpenSource} from "../components/manim-opensource";
 import Tippy from "@tippyjs/react";
@@ -92,6 +93,34 @@ const IndexPage = () => {
                                         role="button"
                                     >
                                         pip install manim
+                                    </div>
+                                </Tippy>
+                            </Tippy>
+                        </div>
+                        <div className="install-manim-button">
+                            <div className="install-manim-pypi-logo">
+                                <ChocoLogo />
+                            </div>
+                            <Tippy
+                                content={
+                                    <span className="tippy-text">
+                                        <CopiedIcon />
+                                        Copied to Clipboard
+                                    </span>
+                                }
+                                trigger="click"
+                                interactive={true}
+                                interactiveDebounce="40"
+                                duration={100}
+                            >
+                                <Tippy content="Copy to Clipboard">
+                                    <div
+                                        className="install-manim-text"
+                                        onClick={onClickCopy}
+                                        id="install-manim-command"
+                                        role="button"
+                                    >
+                                        choco install manimce
                                     </div>
                                 </Tippy>
                             </Tippy>

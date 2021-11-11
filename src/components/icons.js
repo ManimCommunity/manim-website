@@ -121,7 +121,12 @@ const GiftIcon = () => {
 
 // Taken from https://pypi.org
 const PypiLogo = () => {
-    return <img src="pypi.svg" alt="PyPI" width="30" height="30" />;
+    return <img src="/pypi.svg" alt="PyPI" width="30" height="30" />;
+};
+
+// Taken from https://chocolater.org
+const ChocoLogo = () => {
+    return <img src="/chocolatey.svg" alt="Chocolatey" width="30" height="30" />;
 };
 
 // Created by Naveen M K
@@ -230,5 +235,6 @@ export {
     CopiedIcon,
     CloudIcon,
     HeartIcon,
-    ExampleIcon
+    ExampleIcon,
+    ChocoLogo
 };
