@@ -1,11 +1,11 @@
 import * as React from "react";
-import { ThemeContext } from "./ThemeContext.js";
-import { MoonIcon, SunIcon } from "./icons.js";
+import {ThemeContext} from "./ThemeContext.js";
+import {MoonIcon, SunIcon} from "./icons.js";
 import "./ThemeToggler.scss";
 import Tippy from "@tippyjs/react";
 
 const DarkToggle = () => {
-    const { colorMode, setColorMode } = React.useContext(ThemeContext);
+    const {colorMode, setColorMode} = React.useContext(ThemeContext);
     const changeTheme = () => {
         if (colorMode === "dark") {
             setColorMode("light");
@@ -16,11 +16,7 @@ const DarkToggle = () => {
     if (colorMode === "dark") {
         return (
             <Tippy
-                content={
-                    <span className="tippy-text">
-                        Turn on the light
-                    </span>
-                }
+                content={<span className="tippy-text">Turn on the light</span>}
             >
                 <button
                     id="theme-toggle-dark"
@@ -35,22 +31,18 @@ const DarkToggle = () => {
     } else {
         return (
             <Tippy
-                content={
-                    <span className="tippy-text">
-                        Turn off the light
-                    </span>
-                }
+                content={<span className="tippy-text">Turn off the light</span>}
             >
-            <button
-                id="theme-toggle-light"
-                aria-label="Turn off the light"
-                className="theme-toggle-button"
-                onClick={changeTheme}
-            >
-                <MoonIcon />
-            </button>
+                <button
+                    id="theme-toggle-light"
+                    aria-label="Turn off the light"
+                    className="theme-toggle-button"
+                    onClick={changeTheme}
+                >
+                    <MoonIcon />
+                </button>
             </Tippy>
         );
     }
 };
-export { DarkToggle };
+export {DarkToggle};

@@ -126,7 +126,9 @@ const PypiLogo = () => {
 
 // Taken from https://chocolater.org
 const ChocoLogo = () => {
-    return <img src="/chocolatey.svg" alt="Chocolatey" width="30" height="30" />;
+    return (
+        <img src="/chocolatey.svg" alt="Chocolatey" width="30" height="30" />
+    );
 };
 
 // Created by Naveen M K
