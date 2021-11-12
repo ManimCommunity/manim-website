@@ -1,6 +1,12 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://plugins.manim.community`
+        title: "Manim Community",
+        titleTemplate: "%s",
+        description:
+            "Manim is a community-maintained Python library for creating mathematical animations.",
+        url: `https://manim.community`, // No trailing slash allowed!
+        image: "/banner.png", // Path to the image placed in the 'static' folder, in the project's root directory.
+        twitterUsername: "@manim_community"
     },
     plugins: [
         {

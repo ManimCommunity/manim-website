@@ -16,6 +16,7 @@ import {
 } from "../components/icons";
 import {OpenSource} from "../components/manim-opensource";
 import Tippy from "@tippyjs/react";
+import SEO from "../components/seo";
 
 const onClickCopy = () => {
     if (navigator.clipboard) {
@@ -35,7 +36,7 @@ const IndexPage = () => {
 
     return (
         <div>
-            <title>Manim Community - Homepage</title>
+            <SEO />
             <NavBar />
             <div className="index-main-div">
                 <ManimBanner />
