@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./manim-example.scss";
-import {useStaticQuery, graphql} from "gatsby";
-import {ExampleIcon} from "./icons";
+import { useStaticQuery, graphql } from "gatsby";
+import { ExampleIcon } from "./icons";
 import Tippy from "@tippyjs/react";
 
 let number_of_examples = 0;
@@ -82,16 +82,10 @@ const ManimExample = () => {
                     </div>
                 );
             })}
-            <Tippy
-                content={
-                    <span className="tippy-text">Show another example.</span>
-                }
-            >
-                <button className="next-button" onClick={OnClickHandler}>
-                    Another Example
-                </button>
-            </Tippy>
+            <button className="next-button" onClick={OnClickHandler}>
+                Another Example
+            </button>
         </div>
     );
 };
-export {ManimExample};
+export { ManimExample };
