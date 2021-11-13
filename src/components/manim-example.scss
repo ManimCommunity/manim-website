@@ -70,7 +70,7 @@
         visibility: collapse;
         width: 100%;
         flex-direction: column;
-        .example-child{
+        .example-child {
             flex: 50%;
         }
 
@@ -116,7 +116,7 @@
     }
     .main-example {
         gap: 20px;
-        flex-direction: row!important;
+        flex-direction: row !important;
     }
     .img-div {
         img {

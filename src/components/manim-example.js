@@ -1,7 +1,11 @@
 import * as React from "react";
 import "./manim-example.scss";
-import {useStaticQuery, graphql} from "gatsby";
-import {ExampleIcon} from "./icons";
+import { useStaticQuery, graphql } from "gatsby";
+import { ExampleIcon } from "./icons";
+import {
+    loadingdefault,
+    loading_visible
+} from "./manim-examples-loading.module.scss";
 import Tippy from "@tippyjs/react";
 
 let number_of_examples = 0;
@@ -14,9 +18,20 @@ const OnClickHandler = () => {
     }
     const curr_show = document.getElementById("example-" + old_number);
     const new_show = document.getElementById("example-" + currently_showing);
+    const loading_item = document.getElementById("loading-item");
 
-    new_show.className = new_show.className.replace("hidden", "visible");
     curr_show.className = curr_show.className.replace("visible", "hidden");
+    loading_item.className = loading_item.className.replace(
+        "hidden",
+        loading_visible
+    );
+    setTimeout(function () {
+        new_show.className = new_show.className.replace("hidden", "visible");
+        loading_item.className = loading_item.className.replace(
+            loading_visible,
+            "hidden"
+        );
+    }, 1000);
 };
 
 const ManimExample = () => {
@@ -39,6 +54,26 @@ const ManimExample = () => {
         <div className="example-div">
             <ExampleIcon />
             <h2>Examples</h2>
+            <Tippy content={
+                <span className="tippy-text">
+                    Please wait loading.
+                </span>
+            }>
+                <div class={loadingdefault + " hidden"} id="loading-item">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </Tippy>
             {examples.map((element, key) => {
                 return (
                     <div
@@ -88,4 +123,4 @@ const ManimExample = () => {
         </div>
     );
 };
-export {ManimExample};
+export { ManimExample };
