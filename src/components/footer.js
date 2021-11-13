@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./footer.scss";
-import {Link} from "gatsby";
 
 const Footer = () => {
     return (
@@ -15,7 +14,7 @@ const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <Link href="/plugin">Manim Plugins</Link>
+                            <a href="https://plugins.manim.community">Manim Plugins</a>
                         </li>
                         <li>
                             <a href="https://docs.manim.community/en/stable/tutorials/quickstart.html">
