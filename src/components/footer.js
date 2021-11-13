@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ExtLink} from './external-link';
+import {ExtLink} from "./external-link";
 import "./footer.scss";
 
 const Footer = () => {
@@ -65,7 +65,9 @@ const Footer = () => {
                             </ExtLink>
                         </li>
                         <li>
-                            <ExtLink href="https://www.reddit.com/r/manim/">Reddit</ExtLink>
+                            <ExtLink href="https://www.reddit.com/r/manim/">
+                                Reddit
+                            </ExtLink>
                         </li>
                         <li>
                             <ExtLink href="https://manim.community/discord">

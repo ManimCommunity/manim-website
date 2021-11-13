@@ -131,6 +131,21 @@ const ChocoLogo = () => {
     );
 };
 
+// Taken from https://commons.wikimedia.org/wiki/File:Windows_logo_-_2021.svg
+const WindowsLogo = () => {
+    return <img src="/windows.svg" alt="Windows" width="30" height="30" />;
+};
+
+// Taken from https://github.com/garrett/Tux/blob/main/tux.svg
+const LinuxLogo = () => {
+    return <img src="/tux.svg" alt="Tux" width="25" height="30" />;
+};
+
+// Taken from https://commons.wikimedia.org/wiki/File:MacOS_wordmark_(2017).svg
+const MacLogo = () => {
+    return <img src="/macos.svg" alt="macOS Logo" width="40" height="30" />;
+};
+
 // Created by Naveen M K
 // License CC0
 const CopiedIcon = () => {
@@ -238,5 +253,8 @@ export {
     CloudIcon,
     HeartIcon,
     ExampleIcon,
-    ChocoLogo
+    ChocoLogo,
+    WindowsLogo,
+    LinuxLogo,
+    MacLogo
 };

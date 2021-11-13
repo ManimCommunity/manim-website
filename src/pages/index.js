@@ -7,27 +7,18 @@ import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
 import {Sponsors} from "../components/sponsors/sponsors.js";
 import {
+    MacLogo,
     GithubIcon,
     CliIcon,
     GiftIcon,
-    PypiLogo,
-    CopiedIcon,
-    ChocoLogo
+    WindowsLogo,
+    LinuxLogo
 } from "../components/icons";
 import {OpenSource} from "../components/manim-opensource";
 import Tippy from "@tippyjs/react";
 import SEO from "../components/seo";
+import {ExtLink} from "../components/external-link";
 
-const onClickCopy = () => {
-    if (navigator.clipboard) {
-        const element = document.getElementById("install-manim-command");
-        let text = element.innerText.trim();
-        if (text.startsWith("$")) {
-            text = text.substr(1).trimLeft();
-        }
-        navigator.clipboard.writeText(text);
-    }
-};
 const IndexPage = () => {
     React.useEffect(() => {
         // call the highlightAll() function to style our code blocks
@@ -71,59 +62,52 @@ const IndexPage = () => {
                             Install Manim
                         </div>
                         <div className="install-manim-button">
-                            <div className="install-manim-pypi-logo">
-                                <PypiLogo />
+                            <div className="install-manim-logo">
+                                <WindowsLogo />
                             </div>
-                            <Tippy
-                                content={
-                                    <span className="tippy-text">
-                                        <CopiedIcon />
-                                        Copied to Clipboard
-                                    </span>
-                                }
-                                trigger="click"
-                                interactive={true}
-                                interactiveDebounce="40"
-                                duration={100}
-                            >
-                                <Tippy content="Copy to Clipboard">
-                                    <div
-                                        className="install-manim-text"
-                                        onClick={onClickCopy}
-                                        id="install-manim-command"
-                                        role="button"
-                                    >
-                                        pip install manim
-                                    </div>
-                                </Tippy>
+                            <Tippy content="View installation docs for Windows.">
+                                <div
+                                    className="install-manim-text"
+                                    id="install-manim-command"
+                                    role="button"
+                                >
+                                    <ExtLink href="https://docs.manim.community/en/stable/installation/windows.html">
+                                        Install on Windows
+                                    </ExtLink>
+                                </div>
+                            </Tippy>
+                        </div>
+
+                        <div className="install-manim-button">
+                            <div className="install-manim-logo">
+                                <LinuxLogo />
+                            </div>
+                            <Tippy content="View installation docs for Linux.">
+                                <div
+                                    className="install-manim-text"
+                                    id="install-manim-command"
+                                    role="button"
+                                >
+                                    <ExtLink href="https://docs.manim.community/en/stable/installation/linux.html">
+                                        Install on Linux
+                                    </ExtLink>
+                                </div>
                             </Tippy>
                         </div>
                         <div className="install-manim-button">
-                            <div className="install-manim-pypi-logo">
-                                <ChocoLogo />
+                            <div className="install-manim-logo">
+                                <MacLogo />
                             </div>
-                            <Tippy
-                                content={
-                                    <span className="tippy-text">
-                                        <CopiedIcon />
-                                        Copied to Clipboard
-                                    </span>
-                                }
-                                trigger="click"
-                                interactive={true}
-                                interactiveDebounce="40"
-                                duration={100}
-                            >
-                                <Tippy content="Copy to Clipboard">
-                                    <div
-                                        className="install-manim-text"
-                                        onClick={onClickCopy}
-                                        id="install-manim-command"
-                                        role="button"
-                                    >
-                                        choco install manimce
-                                    </div>
-                                </Tippy>
+                            <Tippy content="View installation docs for macOS.">
+                                <div
+                                    className="install-manim-text"
+                                    id="install-manim-command"
+                                    role="button"
+                                >
+                                    <ExtLink href="https://docs.manim.community/en/stable/installation/macos.html">
+                                        Install on macOS
+                                    </ExtLink>
+                                </div>
                             </Tippy>
                         </div>
                     </div>

@@ -79,20 +79,23 @@
                 margin-bottom: 0;
                 display: flex;
                 background: $pip-install-manim-button-bg-light;
-                font-family: monospace;
                 font-size: 16px;
                 font-weight: 400;
                 margin: 5px;
-                .install-manim-pypi-logo {
+                .install-manim-logo {
                     display: inline-flex;
                     align-items: center;
-                    background: rgba(0, 0, 0, 0.25);
+                    background: rgba(255, 255, 255, 0.25);
                     padding: 5px 15px;
                 }
                 .install-manim-text {
                     font-size: 18px;
                     cursor: pointer;
                     white-space: nowrap;
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
             }
         }
