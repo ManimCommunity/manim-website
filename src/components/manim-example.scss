@@ -66,10 +66,13 @@
     }
 
     .main-example {
-        display: grid;
+        display: flex;
         visibility: collapse;
         width: 100%;
-        grid-template-columns: repeat(1, fit-content(500px));
+        flex-direction: column;
+        .example-child{
+            flex: 50%;
+        }
 
         pre {
             code[class*="language-"] {
@@ -79,6 +82,8 @@
             width: 100%;
             padding-left: 1rem;
             padding-right: 1rem;
+            overflow-x: scroll;
+            overflow-y: scroll;
         }
         .img-div {
             width: 100%;
@@ -110,8 +115,8 @@
         padding: 2rem !important;
     }
     .main-example {
-        grid-gap: 20px;
-        grid-template-columns: repeat(2, fit-content(700px)) !important;
+        gap: 20px;
+        flex-direction: row!important;
     }
     .img-div {
         img {
