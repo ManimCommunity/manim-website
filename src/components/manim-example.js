@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./manim-example.scss";
-import { useStaticQuery, graphql } from "gatsby";
-import { ExampleIcon } from "./icons";
+import {useStaticQuery, graphql} from "gatsby";
+import {ExampleIcon} from "./icons";
 import {
     loadingdefault,
     loading_visible
@@ -54,11 +54,11 @@ const ManimExample = () => {
         <div className="example-div">
             <ExampleIcon />
             <h2>Examples</h2>
-            <Tippy content={
-                <span className="tippy-text">
-                    Please wait loading.
-                </span>
-            }>
+            <Tippy
+                content={
+                    <span className="tippy-text">Please wait loading.</span>
+                }
+            >
                 <div class={loadingdefault + " hidden"} id="loading-item">
                     <div></div>
                     <div></div>
@@ -123,4 +123,4 @@ const ManimExample = () => {
         </div>
     );
 };
-export { ManimExample };
+export {ManimExample};

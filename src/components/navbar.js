@@ -61,7 +61,6 @@ export default function NavBar() {
                                     <li role="none">
                                         <a
                                             href="https://try.manim.community"
-                                            href="https://try.manim.community/"
                                             class="nav-link"
                                             target="_blank"
                                             rel="noopener noreferrer"

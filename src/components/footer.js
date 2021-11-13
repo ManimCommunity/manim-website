@@ -1,4 +1,5 @@
 import * as React from "react";
+import {ExtLink} from './external-link';
 import "./footer.scss";
 
 const Footer = () => {
@@ -9,22 +10,24 @@ const Footer = () => {
                     <h2>Learn More</h2>
                     <ul>
                         <li>
-                            <a href="https://docs.manim.community/en/stable/installation/versions.html">
+                            <ExtLink href="https://docs.manim.community/en/stable/installation/versions.html">
                                 About Manim
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://plugins.manim.community">Manim Plugins</a>
+                            <ExtLink href="https://plugins.manim.community">
+                                Manim Plugins
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://docs.manim.community/en/stable/tutorials/quickstart.html">
+                            <ExtLink href="https://docs.manim.community/en/stable/tutorials/quickstart.html">
                                 Getting Started
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://docs.manim.community/en/stable/conduct.html">
+                            <ExtLink href="https://docs.manim.community/en/stable/conduct.html">
                                 Code of Conduct
-                            </a>
+                            </ExtLink>
                         </li>
                     </ul>
                 </div>
@@ -32,19 +35,19 @@ const Footer = () => {
                     <h2>Get Involved</h2>
                     <ul>
                         <li>
-                            <a href="https://docs.manim.community/en/stable/contributing.html">
+                            <ExtLink href="https://docs.manim.community/en/stable/contributing.html">
                                 Contribute to Manim
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://docs.manim.community/en/stable/reporting_bugs.html">
+                            <ExtLink href="https://docs.manim.community/en/stable/reporting_bugs.html">
                                 Submit a Bug
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://translate.manim.community">
+                            <ExtLink href="https://translate.manim.community">
                                 Translate
-                            </a>
+                            </ExtLink>
                         </li>
                     </ul>
                 </div>
@@ -52,22 +55,22 @@ const Footer = () => {
                     <h2>Follow Us</h2>
                     <ul>
                         <li>
-                            <a href="https://github.com/ManimCommunity/manim">
+                            <ExtLink href="https://github.com/ManimCommunity/manim">
                                 Github
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://twitter.com/manim_community">
+                            <ExtLink href="https://twitter.com/manim_community">
                                 Twitter
-                            </a>
+                            </ExtLink>
                         </li>
                         <li>
-                            <a href="https://www.reddit.com/r/manim/">Reddit</a>
+                            <ExtLink href="https://www.reddit.com/r/manim/">Reddit</ExtLink>
                         </li>
                         <li>
-                            <a href="https://manim.community/discord">
+                            <ExtLink href="https://manim.community/discord">
                                 Join Discord
-                            </a>
+                            </ExtLink>
                         </li>
                     </ul>
                 </div>
