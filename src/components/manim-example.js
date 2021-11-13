@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./manim-example.scss";
-import { useStaticQuery, graphql } from "gatsby";
-import { ExampleIcon } from "./icons";
+import {useStaticQuery, graphql} from "gatsby";
+import {ExampleIcon} from "./icons";
 import Tippy from "@tippyjs/react";
 
 let number_of_examples = 0;
@@ -88,4 +88,4 @@ const ManimExample = () => {
         </div>
     );
 };
-export { ManimExample };
+export {ManimExample};
