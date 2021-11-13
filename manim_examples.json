@@ -22,14 +22,16 @@
     },
     {
         "code": "class WarpSquare(Scene):\n    def construct(self):\n        square = Square()\n        self.play(\n            ApplyPointwiseFunction(\n                lambda point: complex_to_R3(np.exp(R3_to_complex(point))),\n                square,\n            ),\n        )\n        self.wait()\n",
-        "type": "video",
         "output": "WarpSquare",
-        "visible": false
+        "name": "WarpSquare",
+        "visible": false,
+        "type": "video"
     },
     {
         "code": "class SquareToCircle(Scene):\n    def construct(self):\n        circle = Circle()\n        square = Square()\n        square.flip(RIGHT)\n        square.rotate(-3 * TAU / 8)\n        circle.set_fill(PINK, opacity=0.5)\n\n        self.play(Create(square))\n        self.play(Transform(square, circle))\n        self.play(FadeOut(square))\n",
         "output": "SquareToCircle",
         "name": "SquareToCircle",
-        "visible": false
+        "visible": false,
+        "type": "video"
     }
 ]
