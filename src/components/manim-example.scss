@@ -102,6 +102,7 @@
     .next-button {
         background-color: $button-background-dark !important;
     }
+    .next-button:before,
     .next-button:after {
         border-color: $secondary-color-dark !important;
     }
