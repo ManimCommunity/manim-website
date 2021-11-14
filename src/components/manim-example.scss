@@ -17,10 +17,12 @@
         visibility: visible;
         width: max-content;
         height: 350px;
+        opacity: 1;
     }
     .hidden {
         height: 0;
         width: 0;
+        opacity: 0;     
     }
     .next-button {
         color: white;
@@ -40,6 +42,7 @@
         visibility: collapse;
         width: 100%;
         flex-direction: column;
+        transition:visibility 2s, opacity 1s; 
         .example-child {
             flex: 50%;
         }
@@ -135,5 +138,11 @@
     .next-button:hover:after {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media (min-width: $very-large-screens){
+    .visible{
+        height: 500px!important;
     }
 }

@@ -1,4 +1,5 @@
 // from https://loading.io/css/ CC0 license
+@import "../variables";
 .loadingdefault {
     display: inline-block;
     position: relative;
@@ -90,5 +91,11 @@
     }
     50% {
         transform: scale(1.5);
+    }
+}
+
+@media (min-width: $very-large-screens){
+    .loading_visible{
+        height: 500px!important;
     }
 }
