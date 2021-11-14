@@ -70,9 +70,9 @@
         }
 
         @media (max-width: $mobile-screens) {
-            .navbar-toggler-button {
-                visibility: visible;
-            }
+            // .navbar-toggler-button {
+            //     visibility: visible;
+            // }
             .logo-and-links-div {
                 .nav-items {
                     display: none;
