@@ -11,8 +11,9 @@
 .loading_visible {
     visibility: visible;
     width: 100px;
-    height: 250px;
-    margin-top: 100px;
+    height: 100px;
+    margin-top: 125px;
+    margin-bottom: 125px;
 }
 .loadingdefault div {
     position: absolute;
@@ -94,8 +95,8 @@
     }
 }
 
-@media (min-width: $very-large-screens){
-    .loading_visible{
-        height: 500px!important;
+@media (min-width: $very-large-screens) {
+    .loading_visible {
+        height: 500px !important;
     }
 }

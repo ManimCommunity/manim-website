@@ -13,6 +13,10 @@
     h2 {
         width: 100%;
     }
+    .loading-image-div{
+        height: 350px;
+        margin-bottom: 1.5rem;
+    }
     .visible {
         visibility: visible;
         width: max-content;
@@ -22,7 +26,7 @@
     .hidden {
         height: 0;
         width: 0;
-        opacity: 0;     
+        opacity: 0;
     }
     .next-button {
         color: white;
@@ -42,7 +46,7 @@
         visibility: collapse;
         width: 100%;
         flex-direction: column;
-        transition:visibility 2s, opacity 1s; 
+        transition: visibility 2s, opacity 1s;
         .example-child {
             flex: 50%;
         }
@@ -141,8 +145,11 @@
     }
 }
 
-@media (min-width: $very-large-screens){
-    .visible{
-        height: 500px!important;
+@media (min-width: $very-large-screens) {
+    .visible {
+        height: 500px !important;
+    }
+    .loading-image-div{
+        height: 500px !important;
     }
 }

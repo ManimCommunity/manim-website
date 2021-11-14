@@ -31,10 +31,10 @@ const OnClickHandler = () => {
             loading_visible,
             "hidden"
         );
-        let videoElement = new_show.getElementsByTagName('video');
-        if (videoElement.length != 0){
-            videoElement.currentTime = 0
-            videoElement[0].play()
+        let videoElement = new_show.getElementsByTagName("video");
+        if (videoElement.length != 0) {
+            videoElement.currentTime = 0;
+            videoElement[0].play();
         }
     }, 1000);
 };
@@ -59,83 +59,85 @@ const ManimExample = () => {
         <div className="example-div">
             <ExampleIcon />
             <h2>Examples</h2>
-            <Tippy
-                content={
-                    <span className="tippy-text">Please wait loading.</span>
-                }
-            >
-                <div class={loadingdefault + " hidden"} id="loading-item">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </Tippy>
-            {examples.map((element, key) => {
-                return (
-                    <div
-                        className={"main-example " + element.visible}
-                        key={key}
-                        id={"example-" + key}
-                    >
-                        <pre className="example-child">
-                            <code className="language-python">
-                                {element.code}
-                            </code>
-                        </pre>
-                        <div className="example-child img-div">
-                            {element.type === "image" ? (
-                                <img
-                                    src={"/examples/" + element.output}
-                                    className="example-child"
-                                    alt={element.name}
-                                />
-                            ) : (
-                                <video loop="" controls={true}>
-                                    <source
-                                        src={
-                                            "/examples/" +
-                                            element.output +
-                                            ".webm"
-                                        }
-                                        type="video/webm"
+            <div className="loading-image-div">
+                <Tippy
+                    content={
+                        <span className="tippy-text">Please wait loading.</span>
+                    }
+                >
+                    <div class={loadingdefault + " hidden"} id="loading-item">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </Tippy>
+                {examples.map((element, key) => {
+                    return (
+                        <div
+                            className={"main-example " + element.visible}
+                            key={key}
+                            id={"example-" + key}
+                        >
+                            <pre className="example-child">
+                                <code className="language-python">
+                                    {element.code}
+                                </code>
+                            </pre>
+                            <div className="example-child img-div">
+                                {element.type === "image" ? (
+                                    <img
+                                        src={"/examples/" + element.output}
+                                        className="example-child"
+                                        alt={element.name}
                                     />
-                                    <source
-                                        src={
-                                            "/examples/" +
-                                            element.output +
-                                            ".mp4"
-                                        }
-                                        type="video/mp4"
-                                    />
-                                    <p>
-                                        Your browser doesn't support HTML5
-                                        video. Here is a{" "}
-                                        <a
-                                            href={
+                                ) : (
+                                    <video loop="" controls={true}>
+                                        <source
+                                            src={
+                                                "/examples/" +
+                                                element.output +
+                                                ".webm"
+                                            }
+                                            type="video/webm"
+                                        />
+                                        <source
+                                            src={
                                                 "/examples/" +
                                                 element.output +
                                                 ".mp4"
                                             }
-                                        >
-                                            link to the video
-                                        </a>{" "}
-                                        instead.
-                                    </p>
-                                </video>
-                            )}
+                                            type="video/mp4"
+                                        />
+                                        <p>
+                                            Your browser doesn't support HTML5
+                                            video. Here is a{" "}
+                                            <a
+                                                href={
+                                                    "/examples/" +
+                                                    element.output +
+                                                    ".mp4"
+                                                }
+                                            >
+                                                link to the video
+                                            </a>{" "}
+                                            instead.
+                                        </p>
+                                    </video>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
             <button className="next-button" onClick={OnClickHandler}>
                 Another Example
             </button>
