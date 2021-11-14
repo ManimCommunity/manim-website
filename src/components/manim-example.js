@@ -31,6 +31,11 @@ const OnClickHandler = () => {
             loading_visible,
             "hidden"
         );
+        let videoElement = new_show.getElementsByTagName('video');
+        if (videoElement.length != 0){
+            videoElement.currentTime = 0
+            videoElement[0].play()
+        }
     }, 1000);
 };
 
