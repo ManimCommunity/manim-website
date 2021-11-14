@@ -13,9 +13,9 @@
     h2 {
         width: 100%;
     }
-    .loading-image-div{
-        height: 350px;
-        margin-bottom: 1.5rem;
+    .loading-image-div {
+        height: 360px;
+        overflow: hidden;
     }
     .visible {
         visibility: visible;
@@ -149,7 +149,7 @@
     .visible {
         height: 500px !important;
     }
-    .loading-image-div{
+    .loading-image-div {
         height: 500px !important;
     }
 }

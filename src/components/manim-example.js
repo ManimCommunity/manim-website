@@ -11,21 +11,27 @@ import Tippy from "@tippyjs/react";
 let number_of_examples = 0;
 let currently_showing = 0;
 const OnClickHandler = () => {
+    const hideAllExample = () => {
+        for (let i = 0; i < number_of_examples + 1; i += 1) {
+            const exp = document.getElementById("example-" + i);
+            exp.className = exp.className.replace("visible", "hidden");
+        }
+        loading_item.className = loading_item.className.replace(
+            "hidden",
+            loading_visible
+        );
+    };
     let old_number = currently_showing;
     currently_showing += 1;
     if (currently_showing > number_of_examples) {
         currently_showing = 0;
     }
-    const curr_show = document.getElementById("example-" + old_number);
     const new_show = document.getElementById("example-" + currently_showing);
     const loading_item = document.getElementById("loading-item");
 
-    curr_show.className = curr_show.className.replace("visible", "hidden");
-    loading_item.className = loading_item.className.replace(
-        "hidden",
-        loading_visible
-    );
+    hideAllExample();
     setTimeout(function () {
+        hideAllExample();
         new_show.className = new_show.className.replace("hidden", "visible");
         loading_item.className = loading_item.className.replace(
             loading_visible,
@@ -36,7 +42,7 @@ const OnClickHandler = () => {
             videoElement.currentTime = 0;
             videoElement[0].play();
         }
-    }, 1000);
+    }, 500);
 };
 
 const ManimExample = () => {
@@ -60,26 +66,6 @@ const ManimExample = () => {
             <ExampleIcon />
             <h2>Examples</h2>
             <div className="loading-image-div">
-                <Tippy
-                    content={
-                        <span className="tippy-text">Please wait loading.</span>
-                    }
-                >
-                    <div class={loadingdefault + " hidden"} id="loading-item">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </Tippy>
                 {examples.map((element, key) => {
                     return (
                         <div
@@ -137,6 +123,26 @@ const ManimExample = () => {
                         </div>
                     );
                 })}
+                <Tippy
+                    content={
+                        <span className="tippy-text">Please wait loading.</span>
+                    }
+                >
+                    <div class={loadingdefault + " hidden"} id="loading-item">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </Tippy>
             </div>
             <button className="next-button" onClick={OnClickHandler}>
                 Another Example
