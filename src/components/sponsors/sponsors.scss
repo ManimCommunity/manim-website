@@ -24,7 +24,7 @@
         .sponsor {
             flex: 0 0 50%;
             text-align: center;
-            
+
             padding: 20px;
             transition: transform 0.4s ease-out 0s;
             a {
@@ -48,8 +48,8 @@
 }
 
 @media (min-width: $tab-screens) {
-    .sponsor{
-        max-width: 25%!important;
-        flex: 0 0 33.3333%!important;
+    .sponsor {
+        max-width: 25% !important;
+        flex: 0 0 33.3333% !important;
     }
 }

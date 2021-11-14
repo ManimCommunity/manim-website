@@ -16,7 +16,7 @@
     .visible {
         visibility: visible;
         width: max-content;
-        height: max-content;
+        height: 350px;
     }
     .hidden {
         height: 0;
@@ -101,10 +101,10 @@
         font-size: 22px !important;
         border-top: hidden !important;
     }
-    .next-button{
-        margin: 2rem!important;
-        padding: 0.5rem!important;
-        width: 400px!important;
+    .next-button {
+        margin: 2rem !important;
+        padding: 0.5rem !important;
+        width: 400px !important;
     }
     .next-button:before,
     .next-button:after {
