@@ -1,3 +1,4 @@
+@import "../../variables";
 .sponsors-div {
     max-width: 1200px;
     margin-top: 1rem;
@@ -21,9 +22,9 @@
         justify-content: center;
 
         .sponsor {
-            flex: 0 0 33.3333%;
+            flex: 0 0 50%;
             text-align: center;
-            max-width: 25%;
+            
             padding: 20px;
             transition: transform 0.4s ease-out 0s;
             a {
@@ -43,5 +44,12 @@
         .sponsor:hover {
             transform: scale(1.2);
         }
+    }
+}
+
+@media (min-width: $tab-screens) {
+    .sponsor{
+        max-width: 25%!important;
+        flex: 0 0 33.3333%!important;
     }
 }

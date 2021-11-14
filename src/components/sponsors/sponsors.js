@@ -25,10 +25,6 @@ const Sponsors = () => {
                             placeholder="blurred"
                         />
                         <p className="sponsor-title">Tutanota</p>
-                        <p className="sponsor-textone">
-                            Tutanota is the world's most secure email service,
-                            easy to use and private by design.
-                        </p>
                     </a>
                 </div>
             </div>
