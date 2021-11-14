@@ -28,41 +28,11 @@
         margin-right: auto;
         background-color: $button-background-light;
         border: 0 solid;
-        margin: 2rem;
-        width: 400px;
+        margin: 1rem;
+        width: 200px;
         border-radius: 20px;
-        padding: 0.5rem;
+        padding: 1rem;
         position: relative;
-    }
-    .next-button:before,
-    .next-button:after {
-        border-color: $secondary-color-light;
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s;
-        border-style: solid;
-        border-width: 0;
-        content: "";
-        height: 24px;
-        position: absolute;
-        width: 24px;
-    }
-    .next-button:before {
-        border-left-width: 2px;
-        border-top-width: 2px;
-        left: -5px;
-        top: -5px;
-    }
-
-    .next-button:after {
-        border-bottom-width: 2px;
-        border-right-width: 2px;
-        bottom: -5px;
-        right: -5px;
-    }
-    .next-button:hover:before,
-    .next-button:hover:after {
-        height: 100%;
-        width: 100%;
     }
 
     .main-example {
@@ -130,5 +100,40 @@
     code[class*="language-"] {
         font-size: 22px !important;
         border-top: hidden !important;
+    }
+    .next-button{
+        margin: 2rem!important;
+        padding: 0.5rem!important;
+        width: 400px!important;
+    }
+    .next-button:before,
+    .next-button:after {
+        border-color: $secondary-color-light;
+        -webkit-transition: all 0.25s;
+        transition: all 0.25s;
+        border-style: solid;
+        border-width: 0;
+        content: "";
+        height: 24px;
+        position: absolute;
+        width: 24px;
+    }
+    .next-button:before {
+        border-left-width: 2px;
+        border-top-width: 2px;
+        left: -5px;
+        top: -5px;
+    }
+
+    .next-button:after {
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+        bottom: -5px;
+        right: -5px;
+    }
+    .next-button:hover:before,
+    .next-button:hover:after {
+        height: 100%;
+        width: 100%;
     }
 }
