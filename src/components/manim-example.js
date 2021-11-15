@@ -42,7 +42,7 @@ const OnClickHandler = () => {
             videoElement.currentTime = 0;
             videoElement[0].play();
         }
-    }, 500);
+    }, 1000);
 };
 
 const ManimExample = () => {

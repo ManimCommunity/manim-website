@@ -14,7 +14,7 @@
         width: 100%;
     }
     .loading-image-div {
-        height: 360px;
+        width: 100%;
         overflow: hidden;
     }
     .visible {
@@ -142,6 +142,9 @@
     .next-button:hover:after {
         height: 100%;
         width: 100%;
+    }
+    .loading-image-div {
+        height: 360px !important;
     }
 }
 
