@@ -43,15 +43,23 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
+    - name: Install and cache ffmpeg (all OS)
+      uses: FedericoCarboni/setup-ffmpeg@v1
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      id: setup-ffmpeg
+
+    - name: Setup TinyTeX
+      uses: r-lib/actions/setup-tinytex@v1
+
+    - name: Install extra Latex packages
+      run: |
+        tlmgr install standalone everysel preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont mathastext cbfonts-fd
+
     - name: Install Pip Dependencies
       run: |
         cd scripts
         pip install -r requirements.txt
-
-    - name: Install manim
-      run: |
-        choco install manimce -y
-        choco install manim-latex -y
 
     - name: Get Latest Files
       run: |
