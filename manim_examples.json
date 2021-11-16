@@ -10,7 +10,7 @@
         "code": "class ContinuousMotion(Scene):\n    def construct(self):\n        func = lambda pos: np.sin(pos[0] / 2) * UR + np.cos(pos[1] / 2) * LEFT\n        stream_lines = StreamLines(func, stroke_width=2, max_anchors_per_line=30)\n        self.add(stream_lines)\n        stream_lines.start_animation(warm_up=False, flow_speed=1.5)\n        self.wait(stream_lines.virtual_time / stream_lines.flow_speed)\n",
         "output": "ContinuousMotion",
         "name": "ContinuousMotion",
-        "visible": true,
+        "visible": false,
         "type": "video"
     },
     {
