@@ -46,7 +46,9 @@
         visibility: collapse;
         width: 100%;
         flex-direction: column;
-        transition: visibility 2s, opacity 1s;
+        transition: visibility ease-out 2s, opacity ease-out 2s;
+        overflow-x: hidden;
+        overflow-y: hidden;
         .example-child {
             flex: 50%;
         }
@@ -59,8 +61,8 @@
             width: 100%;
             padding-left: 1rem;
             padding-right: 1rem;
-            overflow-x: scroll;
-            overflow-y: scroll;
+            overflow-x: auto;
+            overflow-y: auto;
         }
         .img-div {
             display: flex;
