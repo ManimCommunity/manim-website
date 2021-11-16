@@ -8,6 +8,8 @@ from pathlib import Path
 EXAMPLE_JSON = Path(__file__).parent.parent / "manim_examples.json"
 OUTPUT_DIR = Path(__file__).parent.parent / "static" / "examples"
 
+OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
+
 with open(EXAMPLE_JSON, encoding="utf-8") as f:
     examples = json.load(f)
 
