@@ -6,10 +6,11 @@ const OpenSource = () => {
     return (
         <div className="opensource-div">
             <HeartIcon />
-            <h2>Free Open-Source, MIT License</h2>
+            <h2>Free and Open Source</h2>
             <p>
-                Manim is a free, open-source project originally written by
-                3blue1brown and maintained by Manim Community.
+                Manim is a free and open-source project originally written by
+                Grant Sanderson. It is now maintained by the Manim Community and
+                permissively released under the MIT license.
             </p>
             <a
                 href="https://docs.manim.community/en/stable/contributing.html"
