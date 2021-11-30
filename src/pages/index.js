@@ -33,7 +33,7 @@ const IndexPage = () => {
                 <ManimBanner />
                 <div className="about-manim-div">
                     <p>
-                        Community maintained Python library for creating
+                        A community maintained Python library for creating
                         mathematical animations.
                     </p>
                     <div className="button-div">

@@ -10,7 +10,7 @@ const Sponsors = () => {
                 <CloudIcon />
             </div>
             <h2>Our Sponsors</h2>
-            <p>Manim is proudly sponsored by the following organizations</p>
+            <p>We are grateful for the support received by the following organizations:</p>
             <div className="sponsor-flex">
                 <div className="sponsor">
                     <a
