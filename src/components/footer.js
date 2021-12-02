@@ -10,7 +10,10 @@ const Footer = () => {
                     <h2>Learn More</h2>
                     <ul>
                         <li>
-                            <ExtLink href="https://docs.manim.community/en/stable/installation/versions.html">
+                            <ExtLink
+                                href="https://docs.manim.community/en/stable/installation/versions.html"
+                                refer={true}
+                            >
                                 About Manim
                             </ExtLink>
                         </li>
@@ -20,12 +23,18 @@ const Footer = () => {
                             </ExtLink>
                         </li>
                         <li>
-                            <ExtLink href="https://docs.manim.community/en/stable/tutorials/quickstart.html">
+                            <ExtLink
+                                href="https://docs.manim.community/en/stable/tutorials/quickstart.html"
+                                refer={true}
+                            >
                                 Getting Started
                             </ExtLink>
                         </li>
                         <li>
-                            <ExtLink href="https://docs.manim.community/en/stable/conduct.html">
+                            <ExtLink
+                                href="https://docs.manim.community/en/stable/conduct.html"
+                                refer={true}
+                            >
                                 Code of Conduct
                             </ExtLink>
                         </li>
@@ -35,12 +44,18 @@ const Footer = () => {
                     <h2>Get Involved</h2>
                     <ul>
                         <li>
-                            <ExtLink href="https://docs.manim.community/en/stable/contributing.html">
+                            <ExtLink
+                                href="https://docs.manim.community/en/stable/contributing.html"
+                                refer={true}
+                            >
                                 Contribute to Manim
                             </ExtLink>
                         </li>
                         <li>
-                            <ExtLink href="https://docs.manim.community/en/stable/reporting_bugs.html">
+                            <ExtLink
+                                href="https://docs.manim.community/en/stable/reporting_bugs.html"
+                                refer={true}
+                            >
                                 Submit a Bug
                             </ExtLink>
                         </li>
@@ -55,7 +70,10 @@ const Footer = () => {
                     <h2>Follow Us</h2>
                     <ul>
                         <li>
-                            <ExtLink href="https://github.com/ManimCommunity/manim">
+                            <ExtLink
+                                href="https://github.com/ManimCommunity/manim"
+                                refer={true}
+                            >
                                 Github
                             </ExtLink>
                         </li>
