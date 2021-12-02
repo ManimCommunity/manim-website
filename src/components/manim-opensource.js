@@ -15,8 +15,6 @@ const OpenSource = () => {
             <a
                 href="https://docs.manim.community/en/stable/contributing.html"
                 className="button-link"
-                rel="noreferrer noopener"
-                target="_blank"
             >
                 <CliIcon />
                 Contribute to Manim

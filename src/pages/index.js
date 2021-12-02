@@ -40,8 +40,6 @@ const IndexPage = () => {
                         <a
                             href="https://github.com/manimCommunity/manim"
                             className="button-link"
-                            rel="noreferrer noopener"
-                            target="_blank"
                         >
                             <GithubIcon />
                             Star on Github
@@ -49,8 +47,6 @@ const IndexPage = () => {
                         <a
                             href="https://docs.manim.community/en/stable/tutorials/quickstart.html"
                             className="button-link"
-                            rel="noreferrer noopener"
-                            target="_blank"
                         >
                             <CliIcon />
                             Getting Started
@@ -71,7 +67,10 @@ const IndexPage = () => {
                                     id="install-manim-command"
                                     role="button"
                                 >
-                                    <ExtLink href="https://docs.manim.community/en/stable/installation/windows.html">
+                                    <ExtLink
+                                        href="https://docs.manim.community/en/stable/installation/windows.html"
+                                        refer={true}
+                                    >
                                         Install on Windows
                                     </ExtLink>
                                 </div>
@@ -88,7 +87,10 @@ const IndexPage = () => {
                                     id="install-manim-command"
                                     role="button"
                                 >
-                                    <ExtLink href="https://docs.manim.community/en/stable/installation/linux.html">
+                                    <ExtLink
+                                        href="https://docs.manim.community/en/stable/installation/linux.html"
+                                        refer={true}
+                                    >
                                         Install on Linux
                                     </ExtLink>
                                 </div>
@@ -104,7 +106,10 @@ const IndexPage = () => {
                                     id="install-manim-command"
                                     role="button"
                                 >
-                                    <ExtLink href="https://docs.manim.community/en/stable/installation/macos.html">
+                                    <ExtLink
+                                        href="https://docs.manim.community/en/stable/installation/macos.html"
+                                        refer={true}
+                                    >
                                         Install on macOS
                                     </ExtLink>
                                 </div>

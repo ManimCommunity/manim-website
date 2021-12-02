@@ -40,11 +40,7 @@ export default function NavBar() {
                             <nav>
                                 <ul role="menubar">
                                     <li role="none">
-                                        <a
-                                            href="https://docs.manim.community/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
+                                        <a href="https://docs.manim.community/">
                                             Docs
                                         </a>
                                     </li>
@@ -52,8 +48,6 @@ export default function NavBar() {
                                         <a
                                             href="https://github.com/ManimCommunity/manim"
                                             class="nav-link"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
                                         >
                                             Github
                                         </a>
