@@ -86,7 +86,7 @@ const ManimExample = () => {
                                         alt={element.name}
                                     />
                                 ) : (
-                                    <video loop="" controls={true}>
+                                    <video loop={true} controls={true}>
                                         <source
                                             src={
                                                 "/examples/" +
