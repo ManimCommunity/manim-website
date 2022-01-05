@@ -77,10 +77,10 @@ for id in IDS:
 
 front_matter_md = """\
 ---
-slug: "/steering_council"
-title: "Manim's governance model"
+slug: "/governance"
+title: "Manim governance"
 date: {date}
-description: ""
+description: "Manim's governance model"
 ---
 """
 
