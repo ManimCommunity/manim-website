@@ -90,10 +90,10 @@ if GITHUB_TOKEN:
                        headers={"Accept": "application/vnd.github.v3+json", "Authorization": f"token {GITHUB_TOKEN}"})
     last_mod_req = requests.get("https://api.github.com/repos/manimcommunity/official_documents/commits?path=steering_council.md&page=1&per_page=1",
                                 headers={"Accept": "application/vnd.github.v3+json", "Authorization": f"token {GITHUB_TOKEN}"})
-    date = last_mod_req[0]['commit']['committer']['date']
-    contents = base64.b64decode(req['content'])
+    date = last_mod_req.json()[0]['commit']['committer']['date']
+    contents = base64.b64decode(req.json()['content'])
 
-    with open(Path(CONTENT_FOLDER, f"steering_council.md")) as f:
+    with open(Path(CONTENT_FOLDER, f"steering_council.md"), 'w') as f:
         f.write(front_matter_md.format(date=date))
         f.write('\n')
-        f.write(contents)
+        f.write(contents.decode())
