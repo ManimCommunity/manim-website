@@ -1,7 +1,14 @@
+@import "../variables";
+
 .out_div {
-    padding: 2rem;
+    padding: 1rem;
 }
 
+@media (min-width: $tab-screens) {
+    .out_div {
+        padding: 2rem;
+    }
+}
 .html_body {
     code {
             background-color: inherit !important;
