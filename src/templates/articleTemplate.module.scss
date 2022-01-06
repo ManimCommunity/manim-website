@@ -3,16 +3,18 @@
 .out_div {
     padding: 1rem;
 }
+.html_body {
+    code {
+        background-color: inherit !important;
+        font-size: 16px !important;
+    }
+}
 
 @media (min-width: $tab-screens) {
     .out_div {
         padding: 2rem;
     }
-}
-.html_body {
     code {
-            background-color: inherit !important;
-            font-size: 20px!important;
-        
+        font-size: 20px !important;
     }
 }
