@@ -1,6 +1,6 @@
 import * as React from "react";
 import {ExtLink} from "./external-link";
-import {Link } from 'gatsby';
+import {Link} from "gatsby";
 import "./footer.scss";
 
 const Footer = () => {
@@ -40,7 +40,7 @@ const Footer = () => {
                             </ExtLink>
                         </li>
                         <li>
-                            <Link to='/governance'>Governance</Link>
+                            <Link to="/governance">Governance</Link>
                         </li>
                     </ul>
                 </div>
