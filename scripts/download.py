@@ -93,7 +93,7 @@ if GITHUB_TOKEN:
     date = last_mod_req.json()[0]['commit']['committer']['date']
     contents = base64.b64decode(req.json()['content'])
 
-    with open(Path(CONTENT_FOLDER, f"steering_council.md"), 'w') as f:
+    with open(Path(CONTENT_FOLDER, f"steering_council.md"), 'w', encoding='utf-8') as f:
         f.write(front_matter_md.format(date=date))
         f.write('\n')
-        f.write(contents.decode())
+        f.write(contents.decode('utf-8'))
