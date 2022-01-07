@@ -1,5 +1,6 @@
 import * as React from "react";
 import {ExtLink} from "./external-link";
+import {Link } from 'gatsby';
 import "./footer.scss";
 
 const Footer = () => {
@@ -37,6 +38,9 @@ const Footer = () => {
                             >
                                 Code of Conduct
                             </ExtLink>
+                        </li>
+                        <li>
+                            <Link to='/governance'>Governance</Link>
                         </li>
                     </ul>
                 </div>
