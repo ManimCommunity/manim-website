@@ -1,0 +1,23 @@
+@import "../variables";
+
+.out_div {
+    padding: 1rem;
+}
+h2 {
+    font-size: 2rem;
+}
+.html_body {
+    code {
+        background-color: inherit !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: $tab-screens) {
+    .out_div {
+        padding: 2rem;
+    }
+    code {
+        font-size: 20px !important;
+    }
+}

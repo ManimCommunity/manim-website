@@ -1,5 +1,7 @@
+import base64
 import cgi
 import json
+import os
 import re
 from pathlib import Path
 
@@ -14,6 +16,8 @@ IDS = []
 
 # shamelessly copied from
 # https://github.com/pypa/warehouse/blob/7fc3ce5bd7ecc93ef54c1652787fb5e7757fe6f2/warehouse/utils/readme.py
+
+
 def render_readme(
     value,
     content_type=None,
@@ -66,7 +70,30 @@ for id in IDS:
         c["info"]["description"],
         content_type=c["info"]["description_content_type"],
     )
-    c["info"]["description"] = description # convert md to html
+    c["info"]["description"] = description  # convert md to html
 
     with open(file, "w", encoding="utf-8") as f:
         json.dump(c, f)
+
+front_matter_md = """\
+---
+slug: "/governance"
+title: "Manim governance"
+date: {date}
+description: "Manim's governance model"
+---
+"""
+
+GITHUB_TOKEN = os.environ.get('TOKEN_FOR_API_GITHUB_PRIVATE')
+if GITHUB_TOKEN:
+    req = requests.get("https://api.github.com/repos/manimcommunity/official_documents/contents/steering_council.md",
+                       headers={"Accept": "application/vnd.github.v3+json", "Authorization": f"token {GITHUB_TOKEN}"})
+    last_mod_req = requests.get("https://api.github.com/repos/manimcommunity/official_documents/commits?path=steering_council.md&page=1&per_page=1",
+                                headers={"Accept": "application/vnd.github.v3+json", "Authorization": f"token {GITHUB_TOKEN}"})
+    date = last_mod_req.json()[0]['commit']['committer']['date']
+    contents = base64.b64decode(req.json()['content'])
+
+    with open(Path(CONTENT_FOLDER, f"steering_council.md"), 'w') as f:
+        f.write(front_matter_md.format(date=date))
+        f.write('\n')
+        f.write(contents.decode())

@@ -1,6 +1,7 @@
 const fs = require("fs");
+const path = require(`path`);
 
-exports.createPages = ({actions}) => {
+exports.createPages = async ({graphql, actions, reporter}) => {
     const {createPage} = actions;
     let files = fs.readdirSync("./content");
     files.forEach(file => {
@@ -18,6 +19,49 @@ exports.createPages = ({actions}) => {
             });
         }
     });
+
+    const articleTemplatePath = path.resolve(
+        `./src/templates/articlesTemplate.js`
+    );
+
+    const result = await graphql(
+        `
+            {
+                allMarkdownRemark(
+                    sort: {fields: [frontmatter___date], order: ASC}
+                    limit: 500
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            slug
+                        }
+                    }
+                }
+            }
+        `
+    );
+    if (result.errors) {
+        reporter.panicOnBuild(
+            `There was an error loading your blog posts`,
+            result.errors
+        );
+        return;
+    }
+    const posts = result.data.allMarkdownRemark.nodes;
+
+    // Create pages if there is atleast one
+    if (posts.length > 0) {
+        posts.forEach(post => {
+            createPage({
+                path: post.frontmatter.slug,
+                component: articleTemplatePath,
+                context: {
+                    id: post.id
+                }
+            });
+        });
+    }
 };
 
 exports.sourceNodes = ({actions, createNodeId, createContentDigest}) => {
