@@ -3,15 +3,50 @@ import os
 import shutil
 import subprocess
 import tempfile
+import re
+
 from pathlib import Path
 
 EXAMPLE_JSON = Path(__file__).parent.parent / "manim_examples.json"
+EXAMPLE_FOLDER = Path(__file__).parent.parent / "examples"
 OUTPUT_DIR = Path(__file__).parent.parent / "static" / "examples"
+DETAILS_PARSE_REGEX = re.compile(
+    r"^#[\s]*(?P<var>[a-zA-Z]*):[\s]*(?P<value>[\S]*)",
+    re.MULTILINE,
+)
 
 OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
-with open(EXAMPLE_JSON, encoding="utf-8") as f:
-    examples = json.load(f)
+examples = []
+for example in EXAMPLE_FOLDER.glob("*.py"):
+    temp = {}
+    with example.open(encoding="utf-8") as f:
+        code = f.read()
+
+    for reg_val in DETAILS_PARSE_REGEX.finditer(code):
+        try:
+            var = reg_val.group("var").strip()
+            val = reg_val.group("value").strip()
+        except AttributeError:
+            print(f"Invalid file: {example}, skipping")
+            break
+        if val == "True":
+            val = True
+        elif val == "False":
+            val = False
+        temp[var] = val
+    else:
+        code_final = ""
+        for _code in code.split("\n"):
+            if _code.startswith("#"):
+                continue
+            code_final += _code + "\n"
+        temp["code"] = code_final.strip()
+        examples.append(temp)
+
+with open(EXAMPLE_JSON, "w", encoding="utf-8") as f:
+    print(f"Created {EXAMPLE_JSON}")
+    json.dump(examples, f, indent=4)
 
 manim = shutil.which("manim")
 if not manim:

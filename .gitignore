@@ -116,6 +116,10 @@ dist/*.css
 .yarn/install-state.gz
 .pnp.*
 
+# vim
+*.swp
+
+
 scripts/*.html
 .vscode
 dist/*.txt
@@ -125,3 +129,5 @@ public/
 content/
 .venv
 static/examples
+./manim_examples.json
+
