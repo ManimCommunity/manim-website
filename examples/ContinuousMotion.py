@@ -3,8 +3,6 @@
 # visible: False
 # type: video
 
-from manim import *
-
 
 class ContinuousMotion(Scene):
     def construct(self):

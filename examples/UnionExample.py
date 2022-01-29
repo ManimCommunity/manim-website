@@ -3,8 +3,6 @@
 # visible: False
 # type: image
 
-from manim import *
-
 
 class UnionExample(Scene):
     def construct(self):
