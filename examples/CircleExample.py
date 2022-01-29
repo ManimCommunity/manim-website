@@ -3,8 +3,6 @@
 # visible: True
 # type: image
 
-from manim import *
-
 
 class CircleExample(Scene):
     def construct(self):
