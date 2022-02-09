@@ -20,6 +20,8 @@
         display: flex;
         width: 100%;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
         .sponsor {
             flex: 0 0 50%;
@@ -27,6 +29,7 @@
 
             padding: 20px;
             transition: transform 0.4s ease-out 0s;
+            max-width: 50%;
             a {
                 text-decoration: none;
                 color: inherit;
@@ -51,5 +54,8 @@
     .sponsor {
         max-width: 25% !important;
         flex: 0 0 33.3333% !important;
+    }
+    .sponsor-flex{
+        flex-direction: row!important;
     }
 }
