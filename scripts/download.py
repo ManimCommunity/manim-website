@@ -97,3 +97,10 @@ if GITHUB_TOKEN:
         f.write(front_matter_md.format(date=date))
         f.write('\n')
         f.write(contents.decode('utf-8'))
+else:
+    # Create a empty file so that the build doesn't error
+    # out for people with no access to Steering Council repo
+    with open(Path(CONTENT_FOLDER, f"steering_council.md"), 'w', encoding='utf-8') as f:
+        f.write(front_matter_md.format(date='2021-12-05'))
+        f.write('\n')
+        f.write('# This is a stub file.')
