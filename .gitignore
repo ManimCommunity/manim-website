@@ -129,5 +129,4 @@ public/
 content/
 .venv
 static/examples
-./manim_examples.json
-
+manim_examples.json
