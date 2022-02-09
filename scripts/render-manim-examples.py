@@ -44,6 +44,16 @@ for example in EXAMPLE_FOLDER.glob("*.py"):
         temp["code"] = code_final.strip()
         examples.append(temp)
 
+# If None of the examples are marked as visible
+# make sure to add the first one as visible so
+# that atleast one example is visible.
+
+for example in examples:
+    if example["visible"] == True:
+        break
+else:
+    examples[0]["visible"] = True
+
 with open(EXAMPLE_JSON, "w", encoding="utf-8") as f:
     print(f"Created {EXAMPLE_JSON}")
     json.dump(examples, f, indent=4)
