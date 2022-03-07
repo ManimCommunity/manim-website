@@ -6,7 +6,7 @@ This is a [Gatsby](https://www.gatsbyjs.com/) project.
 
 ## Build Site Locally
 1. Install [Node](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/en/docs/install)
-2. Install [LaTex](https://www.latex-project.org/)
+2. Install [Manim Dependecies](https://docs.manim.community/en/stable/installation.html) (namely Latex and ffmpeg)
 3. Install python dependencies (`pip install -r scripts/requirements.txt`)
 4. Run `python scripts/download.py` to download necessary files.
 5. Run `python scripts/render-manim-examples.py` to render examples to videos/images.
