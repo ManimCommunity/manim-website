@@ -4,13 +4,14 @@ import os
 import shutil
 import subprocess
 from pathlib import Path
-from re import Pattern
 
 import readme_renderer.markdown
 import readme_renderer.rst
 import readme_renderer.txt
 import requests
 from tqdm import tqdm
+
+from constants import EXAMPLE_FOLDER, PARSE_PARAMETERS, PLUGIN_REGEX
 
 
 def render_readme(
@@ -38,13 +39,11 @@ def render_readme(
 
 
 def get_manim_plugins(pypi_packages: list[str], default_plugins: str) -> list[str]:
-    PLUGINS = []
+    plugins = []
     with open(Path(__file__).parent / default_plugins) as f:
         default = json.load(f)
 
-    for package in tqdm(
-        pypi_packages, total=len(pypi_packages), desc="Parsing PyPi packages"
-    ):
+    for package in pypi_packages:
         if "manim" in package:
             manim_plugin = PLUGIN_REGEX.search(package)
             if manim_plugin:
@@ -52,10 +51,10 @@ def get_manim_plugins(pypi_packages: list[str], default_plugins: str) -> list[st
                     "manim-" + manim_plugin.group("name")
                     not in default["exclude"] + default["archive"]
                 ):
-                    PLUGINS.append("manim-" + manim_plugin.group("name"))
+                    plugins.append("manim-" + manim_plugin.group("name"))
 
-    PLUGINS.extend(default["extras"])
-    return PLUGINS
+    plugins.extend(default["extras"])
+    return plugins
 
 
 def convert_mp4_to_webm(input: Path, output: Path):
@@ -81,7 +80,7 @@ def convert_mp4_to_webm(input: Path, output: Path):
     )
 
 
-def write_plugins_json(manim_plugins: list, content_folder: Path):
+def write_plugins_to_json(manim_plugins: list, content_folder: Path):
     for manim_plugin in tqdm(
         manim_plugins, total=len(manim_plugins), desc="Writing plugin files"
     ):
@@ -99,21 +98,20 @@ def write_plugins_json(manim_plugins: list, content_folder: Path):
         plugin_content["info"]["description"] = description  # convert md to html
 
         with open(file, "w", encoding="utf-8") as f:
+            print(f"Created {file}")
             json.dump(plugin_content, f)
 
 
-def parse_examples_to_obtain_parameters(
-    example_folder: Path, parse_regex: Pattern
-) -> list[dict[str, str]]:
+def parse_examples_folder() -> list[dict[str, str]]:
     examples = []
-    for example in example_folder.glob("*.py"):
+    for example in tqdm(EXAMPLE_FOLDER.glob("*.py"), desc="Parsing Examples Folder"):
         temp = {}
         with example.open(encoding="utf-8") as f:
             code = f.readlines()
 
         parameters = code[:4]
         for parameter in parameters:
-            details = parse_regex.search(parameter)
+            details = PARSE_PARAMETERS.search(parameter)
             if details:
                 var = details.group("var").strip()
                 val = details.group("value").strip()
