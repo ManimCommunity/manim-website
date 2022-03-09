@@ -12,12 +12,10 @@ PARSE_PARAMETERS = re.compile(
 EXAMPLE_JSON = Path(__file__).parent.parent / "manim_examples.json"
 EXAMPLE_FOLDER = Path(__file__).parent.parent / "examples"
 CONTENT_FOLDER = Path(__file__).parent.parent / "content"
-TEMPORARY_FOLDER = Path(__file__).parent.parent / "temp"
 OUTPUT_DIR = Path(__file__).parent.parent / "static" / "examples"
 GITHUB_TOKEN = os.environ.get("TOKEN_FOR_API_GITHUB_PRIVATE")
 
-front_matter_md = """
----
+front_matter_md = """---
 slug: "/governance"
 title: "Manim governance"
 date: {date}

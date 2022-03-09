@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import base64
 import cgi
 import tempfile
@@ -21,7 +23,6 @@ from constants import (
     PARSE_PARAMETERS,
     PLUGIN_REGEX,
     EXAMPLE_JSON,
-    TEMPORARY_FOLDER,
     ffmpeg,
     front_matter_md,
     manim,
@@ -52,7 +53,7 @@ def render_readme(
     return rendered
 
 
-def render_manim_example(op_type: str, code: str, name: str):
+def render_manim_example(op_type, code, name):
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir = Path(tmpdir)
         with (tmpdir / "test.py").open("w", encoding="utf-8") as f:
@@ -169,7 +170,7 @@ def write_example_json(examples):
         json.dump(examples, f, indent=4)
 
 
-def parse_examples_folder() -> list[dict[str, str]]:
+def parse_examples_folder() -> list[dict[str, str | bool]]:
     examples = []
     for example in EXAMPLE_FOLDER.glob("*.py"):
         temp = {}
@@ -204,4 +205,3 @@ def parse_examples_folder() -> list[dict[str, str]]:
 def guarantee_existence_of_folders():
     OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
     CONTENT_FOLDER.mkdir(exist_ok=True, parents=True)
-    TEMPORARY_FOLDER.mkdir(exist_ok=True, parents=True)

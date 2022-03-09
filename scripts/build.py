@@ -20,12 +20,15 @@ examples = parse_examples_folder()
 # make sure to add the first one as visible so
 # that atleast one example is visible.
 for example in examples:
-    if example["visible"] == "True":
+    example["visible"] = example["visible"] == "True"
+    if example["visible"] == True:
         break
 else:
-    examples[0]["visible"] = "True"
+    examples[0]["visible"] = True
 
 write_example_json(examples)
 
 for example in examples:
-    render_manim_example(op_type=example["type"], code=example["code"], name=example["name"])
+    render_manim_example(
+        op_type=example["type"], code=example["code"], name=example["name"]
+    )
