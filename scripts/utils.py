@@ -1,4 +1,6 @@
+import base64
 import cgi
+import tempfile
 import json
 import os
 import shutil
@@ -11,7 +13,19 @@ import readme_renderer.txt
 import requests
 from tqdm import tqdm
 
-from constants import EXAMPLE_FOLDER, PARSE_PARAMETERS, PLUGIN_REGEX
+from constants import (
+    CONTENT_FOLDER,
+    EXAMPLE_FOLDER,
+    GITHUB_TOKEN,
+    OUTPUT_DIR,
+    PARSE_PARAMETERS,
+    PLUGIN_REGEX,
+    EXAMPLE_JSON,
+    TEMPORARY_FOLDER,
+    ffmpeg,
+    front_matter_md,
+    manim,
+)
 
 
 def render_readme(
@@ -38,7 +52,30 @@ def render_readme(
     return rendered
 
 
-def get_manim_plugins(pypi_packages: list[str], default_plugins: str) -> list[str]:
+def render_manim_example(op_type: str, code: str, name: str):
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir = Path(tmpdir)
+        with (tmpdir / "test.py").open("w", encoding="utf-8") as f:
+            f.write("from manim import *\n")
+            f.write(code)
+
+        subprocess.run([str(manim), "test.py", "-qm", "-o", f"{name}"], cwd=tmpdir, check=True)
+
+        if op_type == "image":
+            file = tmpdir / "media" / "images" / "test" / f"{name}.png"
+            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / name))
+
+        elif op_type == "video":
+            file = tmpdir / "media" / "videos" / "test" / "720p30" / f"{name}.mp4"
+            print("Converting mp4 to webm")
+            convert_mp4_to_webm(file, OUTPUT_DIR / (name + ".webm"))
+            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / (op_type + ".mp4")))
+        else:
+            print(f"Invalid output type specified: {op_type}")
+
+
+def get_manim_plugins(default_plugins: str) -> list[str]:
+    pypi_packages = requests.get("https://pypi.org/simple").text.split("\n")
     plugins = []
     with open(Path(__file__).parent / default_plugins) as f:
         default = json.load(f)
@@ -58,12 +95,9 @@ def get_manim_plugins(pypi_packages: list[str], default_plugins: str) -> list[st
 
 
 def convert_mp4_to_webm(input: Path, output: Path):
-    ffmpeg = shutil.which("ffmpeg")
-    if not ffmpeg:
-        raise Exception("Ffmpeg is required to run this script.")
     subprocess.run(
         [
-            ffmpeg,
+            str(ffmpeg),
             "-y",
             "-loglevel",
             "quiet",
@@ -80,11 +114,11 @@ def convert_mp4_to_webm(input: Path, output: Path):
     )
 
 
-def write_plugins_to_json(manim_plugins: list, content_folder: Path):
+def write_plugins_to_json(manim_plugins: list):
     for manim_plugin in tqdm(
         manim_plugins, total=len(manim_plugins), desc="Writing plugin files"
     ):
-        file = Path(content_folder, f"{manim_plugin}.json")
+        file = Path(CONTENT_FOLDER, f"{manim_plugin}.json")
         if file.exists():
             continue
         plugin_content = requests.get(
@@ -98,13 +132,46 @@ def write_plugins_to_json(manim_plugins: list, content_folder: Path):
         plugin_content["info"]["description"] = description  # convert md to html
 
         with open(file, "w", encoding="utf-8") as f:
-            print(f"Created {file}")
             json.dump(plugin_content, f)
+
+
+def write_governance_file():
+    if GITHUB_TOKEN:
+        req = requests.get(
+            "https://api.github.com/repos/manimcommunity/official_documents/contents/steering_council.md",
+            headers={
+                "Accept": "application/vnd.github.v3+json",
+                "Authorization": f"token {GITHUB_TOKEN}",
+            },
+        )
+        last_mod_req = requests.get(
+            "https://api.github.com/repos/manimcommunity/official_documents/commits?path=steering_council.md&page=1&per_page=1",
+            headers={
+                "Accept": "application/vnd.github.v3+json",
+                "Authorization": f"token {GITHUB_TOKEN}",
+            },
+        )
+        date = last_mod_req.json()[0]["commit"]["committer"]["date"]
+        contents = base64.b64decode(req.json()["content"]).decode("utf-8")
+    else:
+        date = "2021-12-05"
+        contents = "# This is a stub file."
+
+    with open(CONTENT_FOLDER / "steering_council.md", "w", encoding="utf-8") as f:
+        f.write(front_matter_md.format(date=date))
+        f.write("\n")
+        f.write(contents)
+
+
+def write_example_json(examples):
+    with open(EXAMPLE_JSON, "w", encoding="utf-8") as f:
+        print(f"Created {EXAMPLE_JSON}")
+        json.dump(examples, f, indent=4)
 
 
 def parse_examples_folder() -> list[dict[str, str]]:
     examples = []
-    for example in tqdm(EXAMPLE_FOLDER.glob("*.py"), desc="Parsing Examples Folder"):
+    for example in EXAMPLE_FOLDER.glob("*.py"):
         temp = {}
         with example.open(encoding="utf-8") as f:
             code = f.readlines()
@@ -132,3 +199,9 @@ def parse_examples_folder() -> list[dict[str, str]]:
             )
 
     return examples
+
+
+def guarantee_existence_of_folders():
+    OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
+    CONTENT_FOLDER.mkdir(exist_ok=True, parents=True)
+    TEMPORARY_FOLDER.mkdir(exist_ok=True, parents=True)
