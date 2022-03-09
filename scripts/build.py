@@ -7,7 +7,9 @@ from utils import (
     write_example_json,
     guarantee_existence_of_folders,
 )
+from cli import parser
 
+config = parser.parse_args()
 guarantee_existence_of_folders()
 
 MANIM_PLUGINS = []
@@ -28,7 +30,10 @@ else:
 
 write_example_json(examples)
 
-for example in examples:
-    render_manim_example(
-        op_type=example["type"], code=example["code"], name=example["name"]
-    )
+if config.no_render_examples:
+    print("Skipping Examples rendering")
+else:
+    for example in examples:
+        render_manim_example(
+            op_type=example["type"], code=example["code"], name=example["name"]
+        )
