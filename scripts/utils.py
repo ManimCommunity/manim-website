@@ -218,7 +218,6 @@ def guarantee_one_visible(example_dict):
         if example["visible"] == True:
             break
     else:
-        print(len(example_dict))
         example_dict[0]["visible"] = True
 
     return example_dict

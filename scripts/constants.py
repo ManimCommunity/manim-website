@@ -22,6 +22,3 @@ date: {date}
 description: "Manim's governance model"
 ---
 """
-
-manim = shutil.which("manim")
-ffmpeg = shutil.which("ffmpeg")
