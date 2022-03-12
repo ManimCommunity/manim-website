@@ -61,15 +61,11 @@ jobs:
         cd scripts
         pip install -r requirements.txt
 
-    - name: Get Latest Files
+    - name: Build Manim Examples and json files
       env:
         TOKEN_FOR_API_GITHUB_PRIVATE: ${{ secrets.TOKEN_FOR_API_GITHUB_PRIVATE }}
       run: |
-        python scripts/download.py
-
-    - name: Build Manim Examples
-      run: |
-        python scripts/render-manim-examples.py
+        python scripts/build.py
 
     - name: Install Yarn Dependencies
       run: |
