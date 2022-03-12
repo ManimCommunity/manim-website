@@ -24,9 +24,4 @@ description: "Manim's governance model"
 """
 
 manim = shutil.which("manim")
-if not manim:
-    raise ModuleNotFoundError("Manim is required to run the build script")
-
 ffmpeg = shutil.which("ffmpeg")
-if not ffmpeg:
-    raise ModuleNotFoundError("FFmpeg is required to run the build script")

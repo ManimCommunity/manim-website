@@ -1,3 +1,5 @@
+import shutil
+import argparse
 from utils import (
     get_manim_plugins,
     parse_examples_folder,
@@ -6,34 +8,38 @@ from utils import (
     render_manim_example,
     write_example_json,
     guarantee_existence_of_folders,
+    guarantee_one_visible,
 )
-from cli import parser
 
+manim = shutil.which("manim")
+ffmpeg = shutil.which("ffmpeg")
+if manim is None or ffmpeg is None:
+    raise FileNotFoundError("Manim and FFmpeg are required for running this script")
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--no-render-examples", action="store_true")
 config = parser.parse_args()
-guarantee_existence_of_folders()
 
 MANIM_PLUGINS = []
 MANIM_PLUGINS = get_manim_plugins(default_plugins="default.json")
-write_plugins_to_json(manim_plugins=MANIM_PLUGINS)
-write_governance_file()
 
 examples = parse_examples_folder()
-# If None of the examples are marked as visible
-# make sure to add the first one as visible so
-# that atleast one example is visible.
-for example in examples:
-    example["visible"] = example["visible"] == "True"
-    if example["visible"] == True:
-        break
-else:
-    examples[0]["visible"] = True
+examples = guarantee_one_visible(examples)
 
-write_example_json(examples)
+if __name__ == "__main__":
+    guarantee_existence_of_folders()
+    write_plugins_to_json(manim_plugins=MANIM_PLUGINS)
+    write_governance_file()
+    write_example_json(examples=examples)
 
-if config.no_render_examples:
-    print("Skipping Examples rendering")
-else:
-    for example in examples:
-        render_manim_example(
-            op_type=example["type"], code=example["code"], name=example["name"]
-        )
+    if config.no_render_examples:
+        print("Skipping Examples rendering")
+    else:
+        for example in examples:
+            render_manim_example(
+                op_type=example["type"],
+                code=example["code"],
+                name=example["name"],
+                manim_path=manim,
+                ffmpeg_path=ffmpeg,
+            )

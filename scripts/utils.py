@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import argparse
 import base64
 import cgi
 import tempfile
@@ -24,9 +23,7 @@ from constants import (
     PARSE_PARAMETERS,
     PLUGIN_REGEX,
     EXAMPLE_JSON,
-    ffmpeg,
     front_matter_md,
-    manim,
 )
 
 
@@ -54,24 +51,28 @@ def render_readme(
     return rendered
 
 
-def render_manim_example(op_type, code, name):
+def render_manim_example(op_type, code, name, manim_path, ffmpeg_path):
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir = Path(tmpdir)
         with (tmpdir / "test.py").open("w", encoding="utf-8") as f:
             f.write("from manim import *\n")
             f.write(code)
 
-        subprocess.run([str(manim), "test.py", "-qm", "-o", f"{name}"], cwd=tmpdir, check=True)
+        subprocess.run(
+            [str(manim_path), "test.py", "-qm", "-o", f"{name}"], cwd=tmpdir, check=True
+        )
 
         if op_type == "image":
             file = tmpdir / "media" / "images" / "test" / f"{name}.png"
-            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / name))
+            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / f"{name}.png"))
 
         elif op_type == "video":
             file = tmpdir / "media" / "videos" / "test" / "720p30" / f"{name}.mp4"
             print("Converting mp4 to webm")
-            convert_mp4_to_webm(file, OUTPUT_DIR / (name + ".webm"))
-            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / (op_type + ".mp4")))
+            convert_mp4_to_webm(
+                file, OUTPUT_DIR / (name + ".webm"), ffmpeg_path=ffmpeg_path
+            )
+            shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / f"{name}.mp4"))
         else:
             print(f"Invalid output type specified: {op_type}")
 
@@ -96,10 +97,10 @@ def get_manim_plugins(default_plugins: str) -> list[str]:
     return plugins
 
 
-def convert_mp4_to_webm(input: Path, output: Path):
+def convert_mp4_to_webm(input: Path, output: Path, ffmpeg_path: str):
     subprocess.run(
         [
-            str(ffmpeg),
+            str(ffmpeg_path),
             "-y",
             "-loglevel",
             "quiet",
@@ -206,3 +207,18 @@ def parse_examples_folder() -> list[dict[str, str | bool]]:
 def guarantee_existence_of_folders():
     OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
     CONTENT_FOLDER.mkdir(exist_ok=True, parents=True)
+
+
+def guarantee_one_visible(example_dict):
+    # If None of the examples are marked as visible
+    # make sure to add the first one as visible so
+    # that atleast one example is visible.
+    for example in example_dict:
+        example["visible"] = example["visible"] == "True"
+        if example["visible"] == True:
+            break
+    else:
+        print(len(example_dict))
+        example_dict[0]["visible"] = True
+
+    return example_dict
