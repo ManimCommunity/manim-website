@@ -67,7 +67,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 exports.sourceNodes = ({actions, createNodeId, createContentDigest}) => {
     let files = require("fs");
 
-    let examples = {};
+    let examples = [];
     examples = JSON.parse(files.readFileSync("./manim_examples.json", "utf8"));
     examples.forEach(example => {
         let visible = "";

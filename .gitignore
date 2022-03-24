@@ -130,3 +130,4 @@ content/
 .venv
 static/examples
 manim_examples.json
+**/__pycache__/

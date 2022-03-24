@@ -21,7 +21,6 @@ const OnClickHandler = () => {
             loading_visible
         );
     };
-    let old_number = currently_showing;
     currently_showing += 1;
     if (currently_showing > number_of_examples) {
         currently_showing = 0;
@@ -38,7 +37,7 @@ const OnClickHandler = () => {
             "hidden"
         );
         let videoElement = new_show.getElementsByTagName("video");
-        if (videoElement.length != 0) {
+        if (videoElement.length !== 0) {
             videoElement.currentTime = 0;
             videoElement[0].play();
         }
