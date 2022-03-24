@@ -4,4 +4,4 @@ updates:
   - directory: "/scripts"
     package-ecosystem: "pip"
     schedule:
-      interval: "daily"
+      interval: "weekly"
