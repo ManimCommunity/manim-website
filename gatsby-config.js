@@ -4,9 +4,10 @@ module.exports = {
         titleTemplate: "%s",
         description:
             "Manim is a community-maintained Python library for creating mathematical animations.",
-        url: `https://manim.community`, // No trailing slash allowed!
+        url: `https://www.manim.community`, // No trailing slash allowed!
         image: "/banner.png", // Path to the image placed in the 'static' folder, in the project's root directory.
-        twitterUsername: "@manim_community"
+        twitterUsername: "@manim_community",
+        siteUrl: `https://www.manim.community`,
     },
     plugins: [
         {
@@ -35,6 +36,7 @@ module.exports = {
                 // Plugins configs
                 plugins: [`gatsby-remark-prismjs`]
             }
-        }
+        },
+        `gatsby-plugin-sitemap`
     ]
 };
