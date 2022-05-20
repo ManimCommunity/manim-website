@@ -22,7 +22,7 @@
         text-decoration: none;
         text-transform: capitalize;
         font-weight: 400;
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin: 0 0 1rem 0;
         border-radius: 4px;
         border: 0;
@@ -33,6 +33,14 @@
         border-bottom: 1px solid $border-color-dark;
         .button-link {
             background: $button-background-dark !important;
+        }
+    }
+}
+
+@media (min-width: $tab-screens) {
+    .opensource-div {
+        .button-link {
+            font-size: 1.25rem !important;
         }
     }
 }
