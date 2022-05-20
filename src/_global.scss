@@ -10,7 +10,8 @@ body {
         Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
-    font-size: 16px;
+    /* Approximately 16px on major browser - user customizable*/
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
 
@@ -19,7 +20,7 @@ body {
     color: $text-color;
 }
 h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 .dark {
     body {
@@ -36,9 +37,9 @@ h2 {
 
 @media (min-width: $mobile-screens) {
     body {
-        font-size: 18px;
+        font-size: 1rem;
     }
     h2 {
-        font-size: 32px;
+        font-size: 1.5rem;
     }
 }
