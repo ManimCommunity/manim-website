@@ -7,7 +7,7 @@ module.exports = {
         url: `https://www.manim.community`, // No trailing slash allowed!
         image: "/banner.png", // Path to the image placed in the 'static' folder, in the project's root directory.
         twitterUsername: "@manim_community",
-        siteUrl: `https://www.manim.community`,
+        siteUrl: `https://www.manim.community`
     },
     plugins: [
         {
@@ -34,7 +34,24 @@ module.exports = {
                 // GitHub Flavored Markdown mode
                 gfm: true,
                 // Plugins configs
-                plugins: [`gatsby-remark-prismjs`]
+                plugins: [
+                    {
+                        resolve: `gatsby-transformer-remark`,
+                        options: {
+                          plugins: [
+                            {
+                              resolve: `gatsby-remark-autolink-headers`,
+                              options: {
+                                offsetY: `100`,
+                                isIconAfterHeader: true,
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    `gatsby-remark-prismjs`,
+                    `gatsby-remark-smartypants`
+                ]
             }
         },
         `gatsby-plugin-sitemap`

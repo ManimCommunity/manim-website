@@ -33,6 +33,11 @@ h2 {
     code[class*="language-"] {
         color: $code-text-dark !important;
     }
+    .anchor{
+        svg{
+            fill: $code-text-dark;
+        }
+    }
 }
 
 @media (min-width: $mobile-screens) {
