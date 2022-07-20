@@ -12,7 +12,7 @@ const Footer = () => {
                     <ul>
                         <li>
                             <ExtLink
-                                href="https://docs.manim.community/en/stable/installation/versions.html"
+                                href="https://docs.manim.community/en/stable/faq/installation.html"
                                 refer={true}
                             >
                                 About Manim
