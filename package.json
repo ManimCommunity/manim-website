@@ -48,6 +48,7 @@
         "gatsby-transformer-json": "^3.13.0",
         "gatsby-transformer-remark": "^4.10.0",
         "gatsby-transformer-sharp": "^3.14.0",
+        "infinite-scroll": "^4.0.1",
         "jquery": "^3.6.0",
         "popper.js": "^1.16.1",
         "postcss": "^8.1.0",
