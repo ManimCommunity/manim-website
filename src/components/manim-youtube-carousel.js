@@ -22,7 +22,7 @@ const YoutubeSlide = ({id, isSelected, onPauseCB, startAt=0, play=false}) => {
                 url={`https://www.youtube.com/embed/${id}`}
                 light={play ? false : `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`}
                 playIcon={
-                    <YouTubeIcon surround_fill="#212121" play_fill="#fff" width={64} />
+                    <YouTubeIcon play_fill="#fff" width={64} />
                 }
                 onPause={onPauseCB}
                 playing={isSelected}
@@ -56,12 +56,10 @@ const ManimYoutubeCarousel = () => {
 
     const customRenderItem = (item, props) => <item.type {...item.props} {...props} />;
 
-
-
     return (
         <div className="youtube-carousel-div">
             <YouTubeIcon />
-            <h2>Made with Manim</h2>
+            <h2>Made With Manim</h2>
             <Carousel
                 autoPlay={autoPlay}
                 showArrows={true}
@@ -84,6 +82,9 @@ const ManimYoutubeCarousel = () => {
                     )
                 })}
             </Carousel>
+            <button className="more-button">
+                More Made With Manim
+            </button>
         </div>
     );
 }

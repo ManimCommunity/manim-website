@@ -15,10 +15,18 @@
 .example-icon {
     stroke: $text-color;
 }
+
+.youtube-icon-surround {
+    fill: $text-color;
+}
+
 .dark {
     .cloud-icon,
     .heart-icon,
     .example-icon {
         stroke: $text-color-dark;
+    }
+    .youtube-icon-surround {
+        fill: $text-color-dark;
     }
 }

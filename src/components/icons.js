@@ -245,7 +245,7 @@ const ExampleIcon = () => {
 
 // Created by Owen S
 // Licensed under CC0
-const YouTubeIcon = ({surround_fill="#fff", play_fill="none", width="50"}) => {
+const YouTubeIcon = ({play_fill="none", width="50"}) => {
     return (
         <svg
             className="youtube-icon"
@@ -263,7 +263,6 @@ const YouTubeIcon = ({surround_fill="#fff", play_fill="none", width="50"}) => {
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M44.9265 1.09805C47.0809 1.65055 48.3382 3.40719 48.9118 5.48258C49.9559 9.24379 50 17 50 17C50 17 49.9559 24.7562 48.9118 28.5174C48.3382 30.5928 47.0809 32.3494 44.9265 32.902C41.0221 33.9078 25 33.9999 25 33.9999C25 33.9999 8.97794 33.9078 5.07353 32.902C2.91912 32.3494 1.66177 30.5928 1.08824 28.5174C0.0441183 24.7562 0 17 0 17C0 17 0.0441183 9.24379 1.08824 5.48258C1.66912 3.40719 2.91912 1.65055 5.07353 1.09805C8.97794 0.0922216 25 0.000137329 25 0.000137329C25 0.000137329 41.0221 0.0922216 44.9265 1.09805ZM19.8529 9.91677L33.0882 17L19.8529 24.0832V9.91677Z"
-                fill={surround_fill}
             />
         </svg>
     )
