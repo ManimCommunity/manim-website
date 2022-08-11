@@ -5,6 +5,7 @@ import "./index.scss";
 import {Footer} from "../components/footer";
 import Prism from "prismjs";
 import {ManimExample} from "../components/manim-example.js";
+import ManimYoutubeCarousel from "../components/manim-youtube-carousel";
 import {Sponsors} from "../components/sponsors/sponsors.js";
 import {
     MacLogo,
@@ -118,6 +119,7 @@ const IndexPage = () => {
                     </div>
                 </div>
                 <ManimExample />
+                <ManimYoutubeCarousel />
                 <OpenSource />
                 <Sponsors />
             </div>
