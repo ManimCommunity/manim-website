@@ -1,38 +1,48 @@
 import React, {useState} from "react";
-import ReactPlayer from 'react-player/lazy';
-import {Carousel} from 'react-responsive-carousel';
+import ReactPlayer from "react-player/lazy";
+import {Carousel} from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {Link} from "gatsby";
 
 import {YouTubeIcon} from "./icons";
 import "./manim-youtube-carousel.scss";
 
 const CAROUSEL_SPEED = 3000;
 const VIDEO_INFO = [
-    { id:'GiDsjIBOVoA', start: 176 },
-    { id: 'AM6BY4btj-M' },
-    { id:'NdqaX9aLkg8' },
-]
+    {id: "GiDsjIBOVoA", start: 176},
+    {id: "AM6BY4btj-M"},
+    {id: "NdqaX9aLkg8"}
+];
 
-const YoutubeSlide = ({id, isSelected, onPauseCB, startAt=0, play=false}) => {
+const YoutubeSlide = ({
+    id,
+    isSelected,
+    onPauseCB,
+    startAt = 0,
+    play = false
+}) => {
     return (
-        <div className='yt-slide'>
+        <div className="yt-slide">
             <ReactPlayer
                 height={"100%"}
                 width={"100%"}
                 url={`https://www.youtube.com/embed/${id}`}
-                light={play ? false : `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`}
-                playIcon={
-                    <YouTubeIcon play_fill="#fff" width={64} />
+                light={
+                    play
+                        ? false
+                        : `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`
                 }
+                playIcon={<YouTubeIcon play_fill="#fff" width={64} />}
                 onPause={onPauseCB}
                 playing={isSelected}
-                config={{ youtube: { playerVars: { start: startAt } } }}/>
+                config={{youtube: {playerVars: {start: startAt}}}}
+            />
         </div>
-    )
+    );
 };
 
 const ManimYoutubeCarousel = () => {
-    const [playVideos, setPlayVideos] = useState(VIDEO_INFO.map(() => false))
+    const [playVideos, setPlayVideos] = useState(VIDEO_INFO.map(() => false));
     const [autoPlay, setAutoPlay] = useState(true);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [selectedSlide, setSelectedSlide] = useState(0);
@@ -42,19 +52,21 @@ const ManimYoutubeCarousel = () => {
         if (i === currentSlide) setSelectedSlide(i);
         if (selectedSlide === currentSlide) setSelectedSlide(0);
         setCurrentSlide(i);
-    }
+    };
 
     const onClickCarousel = i => {
         setAutoPlay(false);
         setPlayVideos(playVideos.map((_, idx) => idx === i));
-    }
+    };
 
     const resumeCarousel = () => {
         setAutoPlay(true);
         setPlayVideos(playVideos.map(() => false));
-    }
+    };
 
-    const customRenderItem = (item, props) => <item.type {...item.props} {...props} />;
+    const customRenderItem = (item, props) => (
+        <item.type {...item.props} {...props} />
+    );
 
     return (
         <div className="youtube-carousel-div">
@@ -78,15 +90,16 @@ const ManimYoutubeCarousel = () => {
                             id={info.id}
                             play={playVideos[i]}
                             onPauseCB={resumeCarousel}
-                            startAt={info.start && info.start} />
-                    )
+                            startAt={info.start && info.start}
+                        />
+                    );
                 })}
             </Carousel>
-            <button className="more-button">
-                More Made With Manim
-            </button>
+            <Link to="/made-with-manim">
+                <button className="more-button">More Made With Manim</button>
+            </Link>
         </div>
     );
-}
+};
 
 export default ManimYoutubeCarousel;

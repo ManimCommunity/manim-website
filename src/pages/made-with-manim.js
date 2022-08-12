@@ -1,11 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-// import PluginDiv from "../components/plugin_div.js";
 import NavBar from "../components/navbar.js";
 import {Footer} from "../components/footer.js";
 import {default as InfiniteScroll} from "infinite-scroll";
 import $ from "jquery";
-import "./awesome.scss";
+import "./made-with-manim.scss";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 const DATA_PATH = "https://awesome-manim.uc.r.appspot.com/videos/";
@@ -128,13 +127,13 @@ class IndexPage extends React.Component {
     render() {
         return (
             <div>
-                <title>Awesome Manim Videos</title>
+                <title>Made with Manim</title>
                 <NavBar />
                 <main className="main-div">
                     <div className="wrapper">
-                        <h1>Awesome Manim Videos</h1>
+                        <h1>Made with Manim</h1>
                         <p>
-                            Videos on YouTube made with Manim. The feed is
+                            Lectures and explainers on YouTube which are made with Manim. This feed is
                             auto-generated using channels featured in the GitHub
                             repo{" "}
                             <a
