@@ -6,8 +6,9 @@
     & > .youtube-icon {
         margin-bottom: 7px;
     }
-    .more-button {
+    .more-manim-link {
         @extend .next-button;
+        text-decoration: none;
     }
 }
 
@@ -20,6 +21,9 @@
         width: fit-content;
         right: 50%;
         transform: translateX(50%);
+        margin-top: 0;
+        margin-bottom: 20px;
+        display: flex;
     }
 }
 

@@ -8,18 +8,16 @@ import {YouTubeIcon} from "./icons";
 import "./manim-youtube-carousel.scss";
 
 const CAROUSEL_SPEED = 3000;
-const VIDEO_INFO = [
-    {id: "GiDsjIBOVoA", start: 176},
-    {id: "AM6BY4btj-M"},
-    {id: "NdqaX9aLkg8"}
+const VIDEO_IDS = [
+    "GiDsjIBOVoA",
+    "AM6BY4btj-M",
+    "NdqaX9aLkg8",
 ];
 
 const YoutubeSlide = ({
     id,
     isSelected,
-    onPauseCB,
-    startAt = 0,
-    play = false
+    play = false,
 }) => {
     return (
         <div className="yt-slide">
@@ -33,22 +31,22 @@ const YoutubeSlide = ({
                         : `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`
                 }
                 playIcon={<YouTubeIcon play_fill="#fff" width={64} />}
-                onPause={onPauseCB}
+                controls={true}
                 playing={isSelected}
-                config={{youtube: {playerVars: {start: startAt}}}}
             />
         </div>
     );
 };
 
 const ManimYoutubeCarousel = () => {
-    const [playVideos, setPlayVideos] = useState(VIDEO_INFO.map(() => false));
+    const [playVideos, setPlayVideos] = useState(VIDEO_IDS.map(() => false));
     const [autoPlay, setAutoPlay] = useState(true);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [selectedSlide, setSelectedSlide] = useState(0);
 
     const onChangeCarousel = i => {
-        resumeCarousel();
+        setAutoPlay(true);
+        setPlayVideos(playVideos.map(() => false));
         if (i === currentSlide) setSelectedSlide(i);
         if (selectedSlide === currentSlide) setSelectedSlide(0);
         setCurrentSlide(i);
@@ -57,11 +55,6 @@ const ManimYoutubeCarousel = () => {
     const onClickCarousel = i => {
         setAutoPlay(false);
         setPlayVideos(playVideos.map((_, idx) => idx === i));
-    };
-
-    const resumeCarousel = () => {
-        setAutoPlay(true);
-        setPlayVideos(playVideos.map(() => false));
     };
 
     const customRenderItem = (item, props) => (
@@ -83,20 +76,18 @@ const ManimYoutubeCarousel = () => {
                 onClickItem={onClickCarousel}
                 renderItem={customRenderItem}
             >
-                {VIDEO_INFO.map((info, i) => {
+                {VIDEO_IDS.map((id, i) => {
                     return (
                         <YoutubeSlide
                             key={`ytv${i}`}
-                            id={info.id}
+                            id={id}
                             play={playVideos[i]}
-                            onPauseCB={resumeCarousel}
-                            startAt={info.start && info.start}
                         />
                     );
                 })}
             </Carousel>
-            <Link to="/made-with-manim">
-                <button className="more-button">More Made With Manim</button>
+            <Link to="/made-with-manim" className="more-manim-link">
+                More Made With Manim
             </Link>
         </div>
     );
