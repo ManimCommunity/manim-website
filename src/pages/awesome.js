@@ -4,7 +4,7 @@ import NavBar from "../components/navbar.js";
 import {Footer} from "../components/footer.js";
 import {default as InfiniteScroll} from "infinite-scroll";
 import $ from "jquery";
-import "./made-with-manim.scss";
+import "./awesome.scss";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 const DATA_PATH = "https://awesome-manim.uc.r.appspot.com/videos/";

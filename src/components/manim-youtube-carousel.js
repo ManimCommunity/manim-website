@@ -86,7 +86,7 @@ const ManimYoutubeCarousel = () => {
                     );
                 })}
             </Carousel>
-            <Link to="/made-with-manim" className="more-manim-link">
+            <Link to="/awesome" className="more-manim-link">
                 More Made With Manim
             </Link>
         </div>
