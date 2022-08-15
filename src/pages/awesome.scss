@@ -1,15 +1,14 @@
 @use "sass:math";
 
 .card-title {
-    // margin-bottom: 1em;
     display: block;
-    // display: inline;
 }
+
 .video-title {
-    // font-size: large;
     font-weight: bold;
     margin-bottom: 0.5ex;
 }
+
 .video-author {
     margin-bottom: 0.25ex;
     font-size: smaller;
@@ -19,19 +18,9 @@
     font-size: smaller;
 }
 
-.video-card {
-    // border: 1px solid gray;
-    // margin: 1rem;
-    // grid-row: 1;
-    // margin-bottom: 1em;
-    // width: 40%;
-}
-
 .thumbnail {
     margin-bottom: 0.75rem;
     aspect-ratio: 16 / 9;
-    // object-fit: cover;
-    // height: auto;
     object-fit: cover;
     width: 100%;
     max-height: 100%;
@@ -45,21 +34,19 @@
     margin-bottom: 1rem;
 }
 
-.wrapper {
+.main-div {
     max-width: 90%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 1.5rem;
-    // padding-right: 15px;
-    // padding-left: 15px;
 }
 
-.wrapper > h1 {
+.main-div > h1 {
     margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 75%) {
-    .wrapper {
+    .main-div {
         max-width: calc(75% - (30px * 2));
     }
 }
@@ -68,7 +55,7 @@
     .card-container {
         grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
     }
-    .wrapper {
+    .main-div {
         max-width: calc(80% - (30px));
         padding-right: 15px;
         padding-left: 15px;
@@ -81,71 +68,56 @@
     }
 }
 
-.alert {
-    position: relative;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    // color: #856404;
-    background-color: #313131;
-    // background-color: #fff3cd;
-    // border-color: #ffeeba;
-    font-weight: bold;
-    // line-height:2rem;
-}
-
-.alert:before {
-    // content: url(/assets/img/warning.svg);
-    // transform: zoom(2);
-    content: "";
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-    background-size: 2rem 2rem;
-    background-image: url(/assets/img/warning.svg);
-    background-repeat: no-repeat;
-    vertical-align: -40%;
-    padding-right: 0.5rem;
-}
-
-.post-content h1,
-.post-content h2,
-.post-content h3 {
-    margin-top: 2rem;
-}
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-    margin-top: 1rem;
-}
-.first-col {
-    font-weight: bold;
-    width: 12rem;
+.fade-in {
+    animation: fadeInAnimation ease 1s;
 }
 
 .video-card a,
 .video-card a:visited,
 .video-card a *,
 .video-card a:visited * {
-    // border: none;
-    // outline: none;
     text-decoration: none;
     color: inherit;
 }
 
 .video-card a:hover,
 .video-card a:hover * {
-    // border: none;
-    // outline: none;
     text-decoration: underline;
     color: inherit;
 }
 
-.card-empty {
-    background: rgb(43, 43, 63);
+.video-card {
+    .loading-container {
+        background: rgb(43, 43, 63);
+        overflow: hidden;
+    }
+
+    .loading-container:first-of-type {
+        aspect-ratio: 16/9;
+        margin-bottom: 10px;
+    }
+    .loading-container:not(:first-of-type) {
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .loading-container:nth-of-type(2) {
+        height: 24px;
+        width: 75%;
+    }
+
+    .loading-container:nth-of-type(3) {
+        width: 30%;
+        height: 20px;
+    }
+
+    .loading-container:nth-of-type(4) {
+        width: 45%;
+        height: 20px;
+    }
 }
-.card-loading {
+
+.content-loading {
     background: linear-gradient(
             to right,
             rgba(rgb(72, 72, 72), 0) 30%,
@@ -153,18 +125,25 @@
             rgba(rgb(72, 72, 72), 0) 70%
         )
         50% 50%;
-    animation: phAnimation 0.8s linear infinite;
-
-    // height: 200px;
-    aspect-ratio: 16 / 9;
+    animation: phAnimation 2s linear infinite;
+    height: 100%;
 }
 
 @keyframes phAnimation {
     0% {
-        transform: translate3d(-30%, 0, 0);
+        transform: translate3d(-70%, 0, 0);
     }
 
     100% {
-        transform: translate3d(30%, 0, 0);
+        transform: translate3d(70%, 0, 0);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
