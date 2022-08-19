@@ -1,15 +1,20 @@
-import * as React from "react";
+import React, {useState} from "react";
 import "./navbar.scss";
 import Headroom from "react-headroom";
 import {DarkToggle} from "./ThemeToggler.js";
 
+const NavBar = () => {
+    const [openMenu, setOpenMenu] = useState(false);
+   
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu);
+    }
 
-export default function NavBar() {
     return (
-        <Headroom>
+        <Headroom onUnpin={() => setOpenMenu(false)} >
             <header className="main-header">
                 <div className="main-header-div">
-                    <div className="logo-and-links-div">
+                    <div className={`logo-and-links-div ${openMenu && "mobile-menu-open"}`}>
                         <div className="manim-logo-div">
                             <a
                                 className="manim-logo-a"
@@ -29,7 +34,10 @@ export default function NavBar() {
                             <nav>
                                 <ul role="menubar">
                                     <li role="none">
-                                        <a href="https://docs.manim.community/">
+                                        <a 
+                                          href="https://docs.manim.community/"
+                                          className="nav-link"
+                                        >
                                             Docs
                                         </a>
                                     </li>
@@ -55,11 +63,15 @@ export default function NavBar() {
                             </nav>
                         </div>
                         <DarkToggle />
+                        <button className="menu-btn" onClick={() => toggleMenu()}>
+                            <div className="line-top"/>
+                            <div className="line-btm"/>
+                        </button>
                     </div>
-                   
-                    
                 </div>
             </header>
         </Headroom>
     );
 }
+
+export default NavBar;
