@@ -7,20 +7,20 @@ import {faHome} from "@fortawesome/free-solid-svg-icons";
 export default function PluginDiv({element}) {
     let date1 = element.urls[0].upload_time_iso_8601;
     return (
-        <div class="child-plugin-div hover-card">
-            <strong class="author-name">{element.info.author}</strong>
-            <h3 class="plugin-name">
+        <div className="child-plugin-div hover-card">
+            <strong className="author-name">{element.info.author}</strong>
+            <h3 className="plugin-name">
                 {element.info.name} v{element.info.version}
             </h3>
-            <div class="plugin-date text-muted">{date1}</div>
-            <p class="plugin-summary">{element.info.summary}</p>
-            <div class="row no-gutters flex-md-row position-relative">
+            <div className="plugin-date text-muted">{date1}</div>
+            <p className="plugin-summary">{element.info.summary}</p>
+            <div className="row no-gutters flex-md-row position-relative">
                 <a
                     href={element.info.package_url}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <button type="button" class="btn btn-outline-primary m-1">
+                    <button type="button" className="btn btn-outline-primary m-1">
                         <FontAwesomeIcon icon={faPython} /> PyPi Page
                     </button>
                 </a>
@@ -29,7 +29,7 @@ export default function PluginDiv({element}) {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <button type="button" class="btn btn-outline-info m-1">
+                    <button type="button" className="btn btn-outline-info m-1">
                         <FontAwesomeIcon icon={faHome} /> Home Page
                     </button>
                 </a>

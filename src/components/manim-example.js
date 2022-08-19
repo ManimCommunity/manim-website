@@ -127,7 +127,7 @@ const ManimExample = () => {
                         <span className="tippy-text">Please wait loading.</span>
                     }
                 >
-                    <div class={loadingdefault + " hidden"} id="loading-item">
+                    <div className={loadingdefault + " hidden"} id="loading-item">
                         <div></div>
                         <div></div>
                         <div></div>
