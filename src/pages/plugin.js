@@ -34,7 +34,7 @@ const IndexPage = () => {
         <div>
             <title>Manim Community Plugin Library</title>
             <NavBar />
-            <main class="main-div">
+            <main className="main-div">
                 <div className="welcome-screen">
                     <h1 className="welcome-title">
                         Welcome to the{" "}

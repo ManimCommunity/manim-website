@@ -26,7 +26,7 @@ const Sponsors = () => {
                         <StaticImage
                             src="./tutanota-logo-red-black-font.png"
                             alt="Tutanota Logo"
-                            height="100"
+                            height={100}
                             placeholder="blurred"
                         />
                         <p className="sponsor-title">Tutanota</p>
@@ -41,7 +41,7 @@ const Sponsors = () => {
                         <StaticImage
                             src="./nuclino-logo.png"
                             alt="Nuclino Logo"
-                            height="100"
+                            height={100}
                             placeholder="blurred"
                         />
                         <p className="sponsor-title">Nuclino</p>
@@ -57,7 +57,7 @@ const Sponsors = () => {
                             <StaticImage
                                 src="./1password/White/1P-wordmark.svg"
                                 alt="1Password Logo"
-                                height="100"
+                                height={100}
                                 placeholder="blurred"
                             />
                             <p className="sponsor-title">1Password</p>
@@ -73,7 +73,7 @@ const Sponsors = () => {
                             <StaticImage
                                 src="./1password/Black/1P-wordmark.svg"
                                 alt="1Password Logo"
-                                height="100"
+                                height={100}
                                 placeholder="blurred"
                             />
                             <p className="sponsor-title">1Password</p>
