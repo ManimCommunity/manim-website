@@ -3,7 +3,7 @@
     top: 0px;
     position: sticky;
     background-color: $navbar-background-light;
-
+    overflow-x: clip;
     .main-header-div {
         padding: 5px 1rem;
         width: 100%;
