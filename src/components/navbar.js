@@ -65,6 +65,7 @@ const NavBar = () => {
                         <DarkToggle />
                         <button className="menu-btn" onClick={() => toggleMenu()}>
                             <div className="line-top"/>
+                            <div className="line-mid"/>
                             <div className="line-btm"/>
                         </button>
                     </div>

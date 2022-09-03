@@ -3,7 +3,7 @@
     top: 0px;
     position: sticky;
     background-color: $navbar-background-light;
-
+    overflow-x: clip;
     .main-header-div {
         padding: 5px 1rem;
         width: 100%;
@@ -63,9 +63,16 @@
                     background-color: WHITE;
                     height: 3px;
                     width: 24px;
-                    margin: 5px 0;
-                    border-radius: 2px;
+                    border-radius: 3px;
+                }
+                .line-top, .line-btm {
                     transition: background-color .2s, transform .5s;
+                    margin: 1px 0;
+                }
+                .line-mid {
+                    opacity: 1;
+                    margin: 5px 0;
+                    transition: opacity .2s;
                 }
             }
         }
@@ -81,6 +88,8 @@
                     right: -300px;
                     background-color: $navbar-background-light;
                     padding: 0 0 10px 10px;
+                    border-bottom: 1px solid #3b2c25;
+                    border-left: 1px solid #3b2c25;
                     border-bottom-left-radius: 10px;
                     width: 300px;
                     box-shadow: -8px 8px 8px -8px rgba(0, 0, 0, 0.2);
@@ -98,14 +107,17 @@
                         right: 0;
                     }
                     .menu-btn {
-                        div {
+                        .line-top, .line-btm {
                             background-color: rgb(224, 122, 95);
                         }
                         .line-top {
-                            transform: translateY(4px) rotate(-45deg);
+                            transform: translateY(8px) rotate(-45deg);
+                        }
+                        .line-mid {
+                            opacity: 0;
                         }
                         .line-btm {
-                            transform: translateY(-4px) rotate(45deg);
+                            transform: translateY(-8px) rotate(45deg);
                         }
                     }
                 }
@@ -118,7 +130,7 @@
     .main-header {
         background-color: $navbar-background-dark;
         .logo-and-links-div {
-            .menu-btn {
+            .menu-btn, .nav-items {
                 border-color: rgb(2, 39, 78);
             }
         }
