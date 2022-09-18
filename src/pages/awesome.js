@@ -17,7 +17,7 @@ const useGetAwesomeVideos = (page) => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: `https://awesome-manim.uc.r.appspot.com/videos/${page}`
+            url: `https://api.manim.community/videos/${page}`
         })
             .then (res=> {
                 setVideos(prev => [...prev, ...res.data.data]);
