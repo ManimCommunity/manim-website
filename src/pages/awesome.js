@@ -3,6 +3,7 @@ import axios from 'axios';
 import {v4} from 'uuid';
 import "@fortawesome/fontawesome-free/css/all.css";
 
+import SEO from "../components/seo";
 import NavBar from "../components/navbar.js";
 import {Footer} from "../components/footer.js";
 import AwesomeCard from "../components/awesome-card.js";
@@ -48,7 +49,10 @@ const AwesomePage = () => {
 
     return (
         <>
-            <title>Made with Manim</title>
+            <SEO
+                title="Made with Manim"
+                description="Lectures and explainers on YouTube which are made with Manim."
+            />
             <NavBar />
             <main className="main-div">
                 <h1>Made with Manim</h1>
