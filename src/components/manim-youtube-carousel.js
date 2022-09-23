@@ -28,7 +28,7 @@ const YoutubeSlide = ({
                 light={
                     play
                         ? false
-                        : `https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`
+                        : `https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp`
                 }
                 playIcon={<YouTubeIcon play_fill="#fff" width={64} />}
                 controls={true}
