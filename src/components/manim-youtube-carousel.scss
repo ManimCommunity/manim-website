@@ -1,0 +1,48 @@
+@import "../variables";
+@import "./manim-example.scss";
+
+.youtube-carousel-div {
+    @extend .example-div;
+    & > .youtube-icon {
+        margin-bottom: 7px;
+    }
+    .more-manim-link {
+        @extend .next-button;
+        text-decoration: none;
+    }
+}
+
+.carousel-root {
+    width: 100%;
+    max-width: 800px;
+    margin: 0.5em 0;
+    background-color: black;
+    .carousel .control-dots {
+        width: fit-content;
+        right: 50%;
+        transform: translateX(50%);
+        margin-top: 0;
+        margin-bottom: 20px;
+        display: flex;
+    }
+}
+
+.carousel
+.slide
+.yt-slide {
+    aspect-ratio: 16/9;
+    position: relative;
+    iframe {
+        margin: 0;
+        width: 100%;
+    }
+    .youtube-icon-surround {
+        fill: $text-color;
+        transition: fill .1s cubic-bezier(0.4,0,1,1), fill-opacity .1s cubic-bezier(0.4,0,1,1);
+        fill-opacity: .8;
+    }
+    .react-player__preview:hover .youtube-icon-surround {
+        fill: #ff0000;
+        fill-opacity: 1;
+    }
+}

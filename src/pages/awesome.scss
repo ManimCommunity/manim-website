@@ -1,0 +1,149 @@
+@use "sass:math";
+
+.card-title {
+    display: block;
+}
+
+.video-title {
+    font-weight: bold;
+    margin-bottom: 0.5ex;
+}
+
+.video-author {
+    margin-bottom: 0.25ex;
+    font-size: smaller;
+}
+
+.video-date {
+    font-size: smaller;
+}
+
+.thumbnail {
+    margin-bottom: 0.75rem;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.card-container {
+    display: grid;
+    margin: 0 auto;
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.main-div {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1.5rem;
+}
+
+.main-div > h1 {
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 75%) {
+    .main-div {
+        max-width: calc(75% - (30px * 2));
+    }
+}
+
+@media (min-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+    }
+    .main-div {
+        max-width: calc(80% - (30px));
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.fade-in {
+    animation: fadeInAnimation ease 1s;
+}
+
+.video-card a,
+.video-card a:visited,
+.video-card a *,
+.video-card a:visited * {
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-card a:hover,
+.video-card a:hover * {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.video-card {
+    .loading-container {
+        background: rgb(43, 43, 63);
+        overflow: hidden;
+    }
+
+    .loading-container:first-of-type {
+        aspect-ratio: 16/9;
+        margin-bottom: 10px;
+    }
+    .loading-container:not(:first-of-type) {
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .loading-container:nth-of-type(2) {
+        height: 24px;
+        width: 75%;
+    }
+
+    .loading-container:nth-of-type(3) {
+        width: 30%;
+        height: 20px;
+    }
+
+    .loading-container:nth-of-type(4) {
+        width: 45%;
+        height: 20px;
+    }
+}
+
+.content-loading {
+    background: linear-gradient(
+            to right,
+            rgba(rgb(72, 72, 72), 0) 30%,
+            rgba(rgb(72, 72, 72), 0.35) 50%,
+            rgba(rgb(72, 72, 72), 0) 70%
+        )
+        50% 50%;
+    animation: phAnimation 2s linear infinite;
+    height: 100%;
+}
+
+@keyframes phAnimation {
+    0% {
+        transform: translate3d(-70%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(70%, 0, 0);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
