@@ -57,17 +57,17 @@ const AwesomePage = () => {
             <main className="main-div">
                 <h1>Made with Manim</h1>
                 <p>
-                    Lectures and explainers on YouTube which are made with Manim. This feed is
-                    auto-generated using channels featured in the GitHub
-                    repo{" "}
+                    Manim is used by a diverse ecosystem of creators and educators.
+                    This auto-generated feed features lectures and explainers on YouTube which were made with Manim.
+                    Check out the instructions on the GitHub repo{" "}
                     <a
                         target="_blank"
                         href="https://github.com/ManimCommunity/awesome-manim"
                         rel="noreferrer"
                     >
                         ManimCommunity/awesome-manim
-                    </a>
-                    .
+                    </a>{" "}
+                    if you would like to have your videos included here.
                 </p>
                 <div className="home">
                     <div id="videos" className="card-container">
@@ -77,7 +77,7 @@ const AwesomePage = () => {
                             }
                             return <AwesomeCard key={`v${i}`} info={vid} />
                         })}
-                        {loading 
+                        {loading
                             && [...Array(6)].map(_ => {
                                     return (
                                         <div key={v4()} className="video-card">

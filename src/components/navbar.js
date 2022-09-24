@@ -5,7 +5,7 @@ import {DarkToggle} from "./ThemeToggler.js";
 
 const NavBar = () => {
     const [openMenu, setOpenMenu] = useState(false);
-   
+
     const toggleMenu = () => {
         setOpenMenu(!openMenu);
     }
@@ -34,7 +34,7 @@ const NavBar = () => {
                             <nav>
                                 <ul role="menubar">
                                     <li role="none">
-                                        <a 
+                                        <a
                                           href="https://docs.manim.community/"
                                           className="nav-link"
                                         >
@@ -57,6 +57,16 @@ const NavBar = () => {
                                             rel="noopener noreferrer"
                                         >
                                             Try Manim Online
+                                        </a>
+                                    </li>
+                                    <li role="none">
+                                        <a
+                                            href="https://manim.community/awesome"
+                                            class="nav-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Made with Manim
                                         </a>
                                     </li>
                                 </ul>
