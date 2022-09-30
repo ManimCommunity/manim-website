@@ -57,7 +57,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <ExtLink
-                                href="https://docs.manim.community/en/stable/reporting_bugs.html"
+                                href="https://docs.manim.community/en/stable/faq/help.html#the-library-does-not-behave-as-documented-or-something-broke-in-a-new-release-what-should-i-do"
                                 refer={true}
                             >
                                 Submit a Bug
