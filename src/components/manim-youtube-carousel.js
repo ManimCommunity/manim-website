@@ -24,7 +24,7 @@ const YoutubeSlide = ({
             <ReactPlayer
                 height={"100%"}
                 width={"100%"}
-                url={`https://www.youtube.com/embed/${id}`}
+                url={`https://www.youtube-nocookie.com/embed/${id}`}
                 light={
                     play
                         ? false
