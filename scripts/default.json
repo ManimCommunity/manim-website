@@ -5,7 +5,8 @@
         "manim-live",
         "manim-notebook",
         "manim-express",
-        "manim-kunyuan"
+        "manim-kunyuan",
+        "manim-community-auoie"
     ],
     "archive": ["manim-graphing"]
 }
