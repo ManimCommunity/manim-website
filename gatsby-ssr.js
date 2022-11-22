@@ -28,7 +28,6 @@ const MagicScriptTag = () => {
     // eslint-disable-next-line react/no-danger
     return <script dangerouslySetInnerHTML={{__html: minified.code}} />;
 };
-export const onRenderBody = ({setPreBodyComponents, setHtmlAttributes}) => {
+export const onRenderBody = ({setPreBodyComponents}) => {
     setPreBodyComponents(<MagicScriptTag key="unique" />);
-    setHtmlAttributes({ lang: "en" });
 };
