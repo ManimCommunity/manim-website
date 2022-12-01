@@ -61,10 +61,8 @@ const NavBar = () => {
                                     </li>
                                     <li role="none">
                                         <a
-                                            href="https://manim.community/awesome"
+                                            href="/awesome"
                                             class="nav-link"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
                                         >
                                             Made with Manim
                                         </a>
