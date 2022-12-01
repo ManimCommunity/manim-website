@@ -1,0 +1,12 @@
+.about-div {
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text-div {
+    width: 100%;
+}

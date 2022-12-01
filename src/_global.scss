@@ -5,6 +5,10 @@
 @import "~@fontsource/righteous/index.css";
 @import "~tippy.js/dist/tippy.css";
 
+:root {
+    --nav-height: 72px;
+}
+
 body {
     font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",

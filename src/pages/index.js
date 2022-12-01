@@ -19,102 +19,113 @@ import {OpenSource} from "../components/manim-opensource";
 import Tippy from "@tippyjs/react";
 import SEO from "../components/seo";
 import {ExtLink} from "../components/external-link";
+import * as styles from "./index.module.scss";
 
 const IndexPage = () => {
     React.useEffect(() => {
         // call the highlightAll() function to style our code blocks
         Prism.highlightAll();
     });
-
+    React.useEffect(() => {
+        const nav_height =
+            document.getElementsByClassName("headroom-wrapper")[0].style.height;
+        document
+            .querySelector(":root")
+            .style.setProperty("--nav-height", nav_height);
+    });
     return (
-        <div>
+        <>
             <SEO />
             <NavBar />
             <div className="index-main-div">
-                <ManimBanner />
-                <div className="about-manim-div">
-                    <p>
-                        A community maintained Python library for creating
-                        mathematical animations.
-                    </p>
-                    <div className="button-div">
-                        <a
-                            href="https://github.com/manimCommunity/manim"
-                            className="button-link"
-                        >
-                            <GithubIcon />
-                            Star on Github
-                        </a>
-                        <a
-                            href="https://docs.manim.community/en/stable/tutorials/quickstart.html"
-                            className="button-link"
-                        >
-                            <CliIcon />
-                            Getting Started
-                        </a>
+                <div className={styles.aboutDiv}>
+                    <div>
+                        <ManimBanner />
+                        <p>
+                            A community maintained Python library for creating
+                            mathematical animations.
+                        </p>
+                        <div className="button-div">
+                            <a
+                                href="https://github.com/manimCommunity/manim"
+                                className="button-link"
+                            >
+                                <GithubIcon />
+                                Star on Github
+                            </a>
+                            <a
+                                href="https://docs.manim.community/en/stable/tutorials/quickstart.html"
+                                className="button-link"
+                            >
+                                <CliIcon />
+                                Getting Started
+                            </a>
+                        </div>
                     </div>
-                    <div className="install-manim-div">
-                        <div className="install-manim-text">
-                            <GiftIcon />
-                            Install Manim
-                        </div>
-                        <div className="install-manim-button">
-                            <div className="install-manim-logo">
-                                <WindowsLogo />
+                    <div className="about-manim-div">
+                        <div className="install-manim-div">
+                            <div className="install-manim-text">
+                                <GiftIcon />
+                                Install Manim
                             </div>
-                            <Tippy content="View installation docs for Windows.">
-                                <div
-                                    className="install-manim-text"
-                                    id="install-manim-command"
-                                    role="button"
-                                >
-                                    <ExtLink
-                                        href="https://docs.manim.community/en/stable/installation/windows.html"
-                                        refer={true}
-                                    >
-                                        Install on Windows
-                                    </ExtLink>
+                            <div className="install-manim-button">
+                                <div className="install-manim-logo">
+                                    <WindowsLogo />
                                 </div>
-                            </Tippy>
-                        </div>
+                                <Tippy content="View installation docs for Windows.">
+                                    <div
+                                        className="install-manim-text"
+                                        id="install-manim-command"
+                                        role="button"
+                                    >
+                                        <ExtLink
+                                            href="https://docs.manim.community/en/stable/installation/windows.html"
+                                            refer={true}
+                                        >
+                                            Install on Windows
+                                        </ExtLink>
+                                    </div>
+                                </Tippy>
+                            </div>
 
-                        <div className="install-manim-button">
-                            <div className="install-manim-logo">
-                                <LinuxLogo />
-                            </div>
-                            <Tippy content="View installation docs for Linux.">
-                                <div
-                                    className="install-manim-text"
-                                    id="install-manim-command"
-                                    role="button"
-                                >
-                                    <ExtLink
-                                        href="https://docs.manim.community/en/stable/installation/linux.html"
-                                        refer={true}
-                                    >
-                                        Install on Linux
-                                    </ExtLink>
+                            <div className="install-manim-button">
+                                <div className="install-manim-logo">
+                                    <LinuxLogo />
                                 </div>
-                            </Tippy>
-                        </div>
-                        <div className="install-manim-button">
-                            <div className="install-manim-logo">
-                                <MacLogo />
-                            </div>
-                            <Tippy content="View installation docs for macOS.">
-                                <div
-                                    className="install-manim-text"
-                                    id="install-manim-command"
-                                    role="button"
-                                >
-                                    <ExtLink
-                                        href="https://docs.manim.community/en/stable/installation/macos.html"
-                                        refer={true}
+                                <Tippy content="View installation docs for Linux.">
+                                    <div
+                                        className="install-manim-text"
+                                        id="install-manim-command"
+                                        role="button"
                                     >
-                                        Install on macOS
-                                    </ExtLink>
+                                        <ExtLink
+                                            href="https://docs.manim.community/en/stable/installation/linux.html"
+                                            refer={true}
+                                        >
+                                            Install on Linux
+                                        </ExtLink>
+                                    </div>
+                                </Tippy>
+                            </div>
+                            <div className="install-manim-button">
+                                <div className="install-manim-logo">
+                                    <MacLogo />
                                 </div>
-                            </Tippy>
+                                <Tippy content="View installation docs for macOS.">
+                                    <div
+                                        className="install-manim-text"
+                                        id="install-manim-command"
+                                        role="button"
+                                    >
+                                        <ExtLink
+                                            href="https://docs.manim.community/en/stable/installation/macos.html"
+                                            refer={true}
+                                        >
+                                            Install on macOS
+                                        </ExtLink>
+                                    </div>
+                                </Tippy>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,7 +135,7 @@ const IndexPage = () => {
                 <Sponsors />
             </div>
             <Footer />
-        </div>
+        </>
     );
 };
 export default IndexPage;
