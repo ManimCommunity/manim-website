@@ -22,6 +22,7 @@ body {
     text-align: left;
     background-color: $body-bg-light;
     color: $text-color;
+    transition: color 350ms ease 0s, background 350ms ease 0s, background-color 350ms ease 0s;
 }
 h2 {
     font-size: 1.5rem;
