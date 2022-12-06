@@ -2,7 +2,11 @@ name: Build and Deploy
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -69,6 +73,7 @@ jobs:
     name: Deploy Site
     needs: [build] # The second job must depend on the first one to complete before running, and uses ubuntu-latest instead of windows.
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'ManimCommunity' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
