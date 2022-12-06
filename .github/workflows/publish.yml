@@ -42,6 +42,7 @@ jobs:
     - name: Install extra Latex packages
       run: |
         tlmgr install standalone everysel preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont mathastext cbfonts-fd
+        latex --version
 
     - name: Install Pip Dependencies
       run: |
