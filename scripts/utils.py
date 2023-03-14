@@ -127,7 +127,8 @@ def write_plugins_to_json(manim_plugins: list):
         plugin_content = requests.get(
             f"https://pypi.org/pypi/{manim_plugin}/json"
         ).json()
-
+        if plugin_content["message"] == 'Not Found':
+            continue
         description = render_readme(
             plugin_content["info"]["description"],
             content_type=plugin_content["info"]["description_content_type"],
