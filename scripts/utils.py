@@ -124,11 +124,12 @@ def write_plugins_to_json(manim_plugins: list):
         file = Path(CONTENT_FOLDER, f"{manim_plugin}.json")
         if file.exists():
             continue
-        plugin_content = requests.get(
+        plugin_content_req = requests.get(
             f"https://pypi.org/pypi/{manim_plugin}/json"
-        ).json()
-        if plugin_content["message"] == 'Not Found':
+        )
+        if plugin_content_req.status_code != 200:
             continue
+        plugin_content = plugin_content_req.json()
         description = render_readme(
             plugin_content["info"]["description"],
             content_type=plugin_content["info"]["description_content_type"],
