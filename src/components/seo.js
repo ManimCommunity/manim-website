@@ -25,67 +25,74 @@ const SEO = ({title, description, image, article}) => {
     };
 
     return (
-        <Helmet title={seo.title} titleTemplate={titleTemplate}>
-            <link rel="canonical" href={seo.url} />
-            <meta property="og:author" content="Manim Community" />
-            <meta name="description" content={seo.description} />
-            <meta
-                property="og:type"
-                content={article ? "article" : "website"}
-            />
-            <meta name="og:description" content={seo.description} />
-            {seo.url && <meta property="og:url" content={seo.url} />}
-            {seo.title && <meta property="og:title" content={seo.title} />}
-            <meta name="image" content={seo.image} />
-            {seo.image && <meta property="og:image" content={seo.image} />}
+        <>
+            <Helmet title={seo.title} titleTemplate={titleTemplate}>
+                <link rel="canonical" href={seo.url} />
+                <meta property="og:author" content="Manim Community" />
+                <meta name="description" content={seo.description} />
+                <meta
+                    property="og:type"
+                    content={article ? "article" : "website"}
+                />
+                <meta name="og:description" content={seo.description} />
+                {seo.url && <meta property="og:url" content={seo.url} />}
+                {seo.title && <meta property="og:title" content={seo.title} />}
+                <meta name="image" content={seo.image} />
+                {seo.image && <meta property="og:image" content={seo.image} />}
 
-            <link
-                rel="apple-touch-icon"
-                sizes="180x180"
-                href="/apple-touch-icon.png"
-            />
-            <link
-                rel="icon"
-                type="image/png"
-                sizes="32x32"
-                href="/favicon-32x32.png"
-            />
-            <link
-                rel="icon"
-                type="image/png"
-                sizes="16x16"
-                href="/favicon-16x16.png"
-            />
-            <meta name="msapplication-TileColor" content="#ffffff" />
-            <meta name="theme-color" content="#ece6e2" />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/apple-touch-icon.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/favicon-16x16.png"
+                />
+                <meta name="msapplication-TileColor" content="#ffffff" />
+                <meta name="theme-color" content="#ece6e2" />
 
-            <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:card" content="summary_large_image" />
 
-            {twitterUsername && (
-                <meta name="twitter:creator" content={twitterUsername} />
-            )}
+                {twitterUsername && (
+                    <meta name="twitter:creator" content={twitterUsername} />
+                )}
 
-            {seo.title && <meta name="twitter:title" content={seo.title} />}
+                {seo.title && <meta name="twitter:title" content={seo.title} />}
 
-            {seo.description && (
-                <meta name="twitter:description" content={seo.description} />
-            )}
+                {seo.description && (
+                    <meta
+                        name="twitter:description"
+                        content={seo.description}
+                    />
+                )}
 
-            {seo.image && <meta name="twitter:image" content={seo.image} />}
-
-            <script type="application/ld+json">
-                {`
-            {
-                "@context": "https://schema.org/",
-                "@type": "Organization",
-                "name": "Manim Community",
-                "url": "https://www.manim.community",
-                "logo": "https://www.manim.community/logo.png",
-                "email": "devs(at)manim.community",
-                "description": "Manim is a community-maintained Python library for creating mathematical animations."   
-            }`}
-            </script>
-        </Helmet>
+                {seo.image && <meta name="twitter:image" content={seo.image} />}
+            </Helmet>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: `
+                {
+                    "@context": "https://schema.org/",
+                    "@type": "Organization",
+                    "name": "Manim Community",
+                    "url": "https://www.manim.community",
+                    "logo": "https://www.manim.community/logo.png",
+                    "email": "contact(at)manim.community",
+                    "description": "Manim is a community-maintained Python library for creating mathematical animations."   
+                }`
+                }}
+            ></script>
+        </>
     );
 };
 
