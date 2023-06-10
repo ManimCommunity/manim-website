@@ -18,7 +18,7 @@ const useGetAwesomeVideos = (page) => {
         setLoading(true)
         axios({
             method: 'GET',
-            url: `https://api.manim.community/videos/${page}`
+            url: `https://manim-website-api.vercel.app/videos/${page}`
         })
             .then (res=> {
                 setVideos(prev => [...prev, ...res.data.data]);
