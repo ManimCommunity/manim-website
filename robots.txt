@@ -1,0 +1,4 @@
+Sitemap: https://www.manim.community/sitemap/sitemap-index.xml
+
+User-agent: *
+Disallow:
