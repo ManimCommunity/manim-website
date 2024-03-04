@@ -1,3 +1,3 @@
 requests==2.31.0
-readme-renderer[md]==42.0
+readme-renderer[md]==43.0
 manim==0.18.0
