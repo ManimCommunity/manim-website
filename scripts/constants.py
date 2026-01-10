@@ -1,7 +1,6 @@
 import re
 from pathlib import Path
 import os
-import shutil
 
 PLUGIN_REGEX = re.compile(r"<(.*)>manim-(?P<name>.*)<(.*)>")
 PARSE_PARAMETERS = re.compile(

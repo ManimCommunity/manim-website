@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import base64
 import tempfile
 import json
 import os
@@ -17,12 +16,10 @@ from tqdm import tqdm
 from constants import (
     CONTENT_FOLDER,
     EXAMPLE_FOLDER,
-    GITHUB_TOKEN,
     OUTPUT_DIR,
     PARSE_PARAMETERS,
     PLUGIN_REGEX,
     EXAMPLE_JSON,
-    front_matter_md,
 )
 
 
@@ -182,7 +179,7 @@ def guarantee_one_visible(example_dict):
     # that atleast one example is visible.
     for example in example_dict:
         example["visible"] = example["visible"] == "True"
-        if example["visible"] == True:
+        if example["visible"]:
             break
     else:
         example_dict[0]["visible"] = True
