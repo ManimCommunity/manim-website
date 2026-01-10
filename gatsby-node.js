@@ -28,7 +28,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         `
             {
                 allMarkdownRemark(
-                    sort: {frontmatter: {date: ASC}}
+                    sort: {fields: frontmatter___date, order: ASC}
                     limit: 500
                 ) {
                     nodes {
