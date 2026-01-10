@@ -13,7 +13,6 @@ This is a [Gatsby](https://www.gatsbyjs.com/) project.
 8. Run `yarn develop`
 9. See the site at `http://localhost:8000`
 
-**Note:** You won't be able to access `/governance` because that page is from a private repository and requires authentication to fetch.
 
 ## Code of Conduct
 

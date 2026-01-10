@@ -4,7 +4,6 @@ from utils import (
     get_manim_plugins,
     parse_examples_folder,
     write_plugins_to_json,
-    write_governance_file,
     render_manim_example,
     write_example_json,
     guarantee_existence_of_folders,
@@ -29,7 +28,6 @@ examples = guarantee_one_visible(examples)
 if __name__ == "__main__":
     guarantee_existence_of_folders()
     write_plugins_to_json(manim_plugins=MANIM_PLUGINS)
-    write_governance_file()
     write_example_json(examples=examples)
 
     if config.no_render_examples:

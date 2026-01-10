@@ -39,9 +39,6 @@ const Footer = () => {
                                 Code of Conduct
                             </ExtLink>
                         </li>
-                        <li>
-                            <Link to="/governance">Governance</Link>
-                        </li>
                     </ul>
                 </div>
                 <div className="column-div">

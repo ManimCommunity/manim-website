@@ -15,10 +15,3 @@ CONTENT_FOLDER = Path(__file__).parent.parent / "content"
 OUTPUT_DIR = Path(__file__).parent.parent / "static" / "examples"
 GITHUB_TOKEN = os.environ.get("TOKEN_FOR_API_GITHUB_PRIVATE")
 
-front_matter_md = """---
-slug: "/governance"
-title: "Manim governance"
-date: {date}
-description: "Manim's governance model"
----
-"""
