@@ -14,44 +14,39 @@ jobs:
     name: Build Files
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
           persist-credentials: false
 
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v6
       with:
-        node-version: 18.x
+        node-version: 22.x
         cache: 'yarn'
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.13'
         cache: 'pip'
-
-    - name: Install and cache ffmpeg (all OS)
-      uses: FedericoCarboni/setup-ffmpeg@v2
-      with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      id: setup-ffmpeg
 
     - name: Setup TinyTeX
       uses: r-lib/actions/setup-tinytex@v2
 
     - name: Install extra Latex packages
       run: |
-        tlmgr install standalone everysel preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont mathastext cbfonts-fd
+        tlmgr install \
+          standalone everysel preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra
+          microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont
+          mathastext cbfonts-fd
         latex --version
 
-    - name: Install Pip Dependencies
+    - name: Install Python Dependencies
       run: |
         cd scripts
         pip install -r requirements.txt
 
     - name: Build Manim Examples and json files
-      env:
-        TOKEN_FOR_API_GITHUB_PRIVATE: ${{ secrets.TOKEN_FOR_API_GITHUB_PRIVATE }}
       run: |
         python scripts/build.py
 
@@ -63,31 +58,23 @@ jobs:
       run: |
         yarn build
 
-    - name: Upload Artifacts 🔺
-      uses: actions/upload-artifact@v1
+    - name: Upload Pages Artifacts
+      id: deployment
+      uses: actions/upload-pages-artifact@v4
       with:
-          name: public
           path: public/
 
 
   deploy:
     name: Deploy Site
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     needs: [build] # The second job must depend on the first one to complete before running, and uses ubuntu-latest instead of windows.
     runs-on: ubuntu-latest
     if: github.repository_owner == 'ManimCommunity' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
 
-      - name: Download Artifacts 🔻 # The built project is downloaded into the 'site' folder.
-        uses: actions/download-artifact@v1
-        with:
-          name: public
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-            BRANCH: gh-pages
-            FOLDER: public
-            single-commit: true
