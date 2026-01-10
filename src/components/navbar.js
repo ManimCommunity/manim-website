@@ -46,7 +46,7 @@ const NavBar = () => {
                                             href="https://github.com/ManimCommunity/manim"
                                             className="nav-link"
                                         >
-                                            Github
+                                            GitHub
                                         </a>
                                     </li>
                                     <li role="none">

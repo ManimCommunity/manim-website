@@ -6,7 +6,7 @@ const DiscordRedirect = () => {
         <Helmet>
             <meta
                 http-equiv="refresh"
-                content="0; url='https://discord.gg/bYCyhM9Kz2'"
+                content="0; url='https://discord.gg/fGG4TFSdKh'"
             />
         </Helmet>
     );

@@ -79,8 +79,8 @@ const Footer = () => {
                             </ExtLink>
                         </li>
                         <li>
-                            <ExtLink href="https://twitter.com/manim_community">
-                                Twitter
+                            <ExtLink href="https://twitter.com/manimcommunity">
+                                X / Twitter
                             </ExtLink>
                         </li>
                         <li>
