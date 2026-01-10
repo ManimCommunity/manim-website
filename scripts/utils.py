@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import base64
-import cgi
 import tempfile
 import json
 import os
@@ -27,6 +26,24 @@ from constants import (
 )
 
 
+def parse_header(header: str) -> tuple[str, dict]:
+    """Parse a header like 'text/markdown; charset=utf-8' into ('text/markdown', {'charset': 'utf-8'}).
+    
+    Replacement for the deprecated cgi.parse_header function.
+    """
+    if not header:
+        return "", {}
+    parts = header.split(';')
+    value = parts[0].strip()
+    params = {}
+    for part in parts[1:]:
+        part = part.strip()
+        if '=' in part:
+            key, val = part.split('=', 1)
+            params[key.strip()] = val.strip().strip('"')
+    return value, params
+
+
 def render_readme(
     value,
     content_type=None,
@@ -42,7 +59,7 @@ def render_readme(
     if value is None:
         return value
 
-    content_type, parameters = cgi.parse_header(content_type or "")
+    content_type, parameters = parse_header(content_type or "")
     renderer = _RENDERERS.get(content_type, readme_renderer.txt)
     rendered = renderer.render(value, **parameters)
     if use_fallback and rendered is None:
@@ -51,7 +68,7 @@ def render_readme(
     return rendered
 
 
-def render_manim_example(op_type, code, name, manim_path, ffmpeg_path):
+def render_manim_example(op_type, code, name, manim_path):
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir = Path(tmpdir)
         with (tmpdir / "test.py").open("w", encoding="utf-8") as f:
@@ -68,10 +85,6 @@ def render_manim_example(op_type, code, name, manim_path, ffmpeg_path):
 
         elif op_type == "video":
             file = tmpdir / "media" / "videos" / "test" / "720p30" / f"{name}.mp4"
-            print("Converting mp4 to webm")
-            convert_mp4_to_webm(
-                file, OUTPUT_DIR / (name + ".webm"), ffmpeg_path=ffmpeg_path
-            )
             shutil.move(os.fspath(file), os.fspath(OUTPUT_DIR / f"{name}.mp4"))
         else:
             print(f"Invalid output type specified: {op_type}")
@@ -95,26 +108,6 @@ def get_manim_plugins(default_plugins: str) -> list[str]:
 
     plugins.extend(default["extras"])
     return plugins
-
-
-def convert_mp4_to_webm(input: Path, output: Path, ffmpeg_path: str):
-    subprocess.run(
-        [
-            str(ffmpeg_path),
-            "-y",
-            "-loglevel",
-            "quiet",
-            "-i",
-            os.fspath(input),
-            "-stats",
-            "-c:v",
-            "libvpx-vp9",
-            "-crf",
-            "27",
-            os.fspath(output),
-        ],
-        check=True,
-    )
 
 
 def write_plugins_to_json(manim_plugins: list):

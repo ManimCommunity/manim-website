@@ -11,9 +11,8 @@ from utils import (
 )
 
 manim = shutil.which("manim")
-ffmpeg = shutil.which("ffmpeg")
-if manim is None or ffmpeg is None:
-    raise FileNotFoundError("Manim and FFmpeg are required for running this script")
+if manim is None:
+    raise FileNotFoundError("Manim is required for running this script")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--no-render-examples", action="store_true")
@@ -39,5 +38,4 @@ if __name__ == "__main__":
                 code=example["code"],
                 name=example["name"],
                 manim_path=manim,
-                ffmpeg_path=ffmpeg,
             )

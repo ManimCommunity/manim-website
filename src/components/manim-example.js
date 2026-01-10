@@ -90,14 +90,6 @@ const ManimExample = () => {
                                             src={
                                                 "/examples/" +
                                                 element.output +
-                                                ".webm"
-                                            }
-                                            type="video/webm"
-                                        />
-                                        <source
-                                            src={
-                                                "/examples/" +
-                                                element.output +
                                                 ".mp4"
                                             }
                                             type="video/mp4"
