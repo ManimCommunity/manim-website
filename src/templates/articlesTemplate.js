@@ -21,22 +21,20 @@ export const query = graphql`
 
 const ArticleTemplate = ({data}) => {
     const post = data.markdownRemark;
+    const fm = post.frontmatter;
 
     return (
         <div>
             <NavBar />
-            <SEO
-                title={post.frontmatter.title}
-                description={post.frontmatter.description || post.excerpt}
-            />
+            <SEO title={fm.title} description={fm.description || post.excerpt} />
             <article
                 className={out_div}
                 itemScope
                 itemType="http://schema.org/Article"
             >
                 <header>
-                    <h1 itemProp="headline">{post.frontmatter.title}</h1>
-                    <p>Last Modified on {post.frontmatter.date}</p>
+                    <h1 itemProp="headline">{fm.title}</h1>
+                    <p>Last Modified on {fm.date}</p>
                 </header>
                 <section
                     dangerouslySetInnerHTML={{__html: post.html}}

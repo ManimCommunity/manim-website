@@ -24,6 +24,14 @@ module.exports = {
                 path: `./content`
             }
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `./articles`,
+                name: `articles`,
+                ignore: [`**/.*`]
+            }
+        },
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,

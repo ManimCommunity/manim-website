@@ -20,39 +20,56 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         }
     });
 
-    const articleTemplatePath = path.resolve(
-        `./src/templates/articlesTemplate.js`
-    );
+    const articleTemplatePath = path.resolve(`./src/templates/articlesTemplate.js`);
 
-    const result = await graphql(
-        `
-            {
-                allMarkdownRemark(
-                    sort: {fields: frontmatter___date, order: ASC}
-                    limit: 500
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            slug
-                        }
-                    }
-                }
+    // Articles live in ./articles. The build should still succeed if there are none.
+    // We can safely query frontmatter once there is at least one markdown node.
+    const countResult = await graphql(`
+        {
+            allMarkdownRemark(limit: 1) {
+                totalCount
             }
-        `
-    );
-    if (result.errors) {
-        reporter.panicOnBuild(
-            `There was an error loading your blog posts`,
-            result.errors
+        }
+    `);
+
+    if (countResult.errors) {
+        reporter.warn(
+            `Skipping article page creation: MarkdownRemark query failed. (${countResult.errors[0].message})`
         );
         return;
     }
-    const posts = result.data.allMarkdownRemark.nodes;
 
-    // Create pages if there is atleast one
-    if (posts.length > 0) {
-        posts.forEach(post => {
+    const total = countResult.data?.allMarkdownRemark?.totalCount || 0;
+    if (total === 0) {
+        reporter.info(`No articles found in ./articles, skipping article page creation.`);
+        return;
+    }
+
+    const result = await graphql(`
+        {
+            allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 500) {
+                nodes {
+                    id
+                    frontmatter {
+                        slug
+                    }
+                }
+            }
+        }
+    `);
+
+    if (result.errors) {
+        reporter.warn(
+            `Skipping article page creation: could not load article slugs. (${result.errors[0].message})`
+        );
+        return;
+    }
+
+    const posts = result.data?.allMarkdownRemark?.nodes || [];
+
+    posts
+        .filter(p => p?.frontmatter?.slug)
+        .forEach(post => {
             createPage({
                 path: post.frontmatter.slug,
                 component: articleTemplatePath,
@@ -61,7 +78,25 @@ exports.createPages = async ({graphql, actions, reporter}) => {
                 }
             });
         });
-    }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+
+    // Ensure MarkdownRemark.frontmatter exists even if there are 0 markdown files.
+    // This keeps builds succeeding when ./articles is empty.
+    createTypes(`
+      type MarkdownRemark implements Node {
+        frontmatter: Frontmatter
+      }
+
+      type Frontmatter {
+        slug: String
+        title: String
+        description: String
+        date: Date @dateformat
+      }
+    `);
 };
 
 exports.sourceNodes = ({actions, createNodeId, createContentDigest}) => {

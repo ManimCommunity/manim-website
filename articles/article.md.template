@@ -1,0 +1,26 @@
+---
+# Copy this file to e.g. `my-article.md` (standard *.md extension) to publish.
+# Files with the `.template` suffix are ignored by Gatsby.
+#
+# Required:
+# - slug: must start and end with a slash, e.g. "/articles/my-article/"
+# - title
+# - date: ISO date string
+# Optional:
+# - description
+slug: "/articles/my-article/"
+title: "My Article Title"
+date: "2026-01-01"
+description: "Short description used for meta tags and previews."
+---
+
+Write your article in Markdown here.
+
+## Headings
+
+- Use standard Markdown.
+- Code blocks are supported.
+
+```python
+print("hello")
+```
