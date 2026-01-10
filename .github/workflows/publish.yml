@@ -18,6 +18,11 @@ jobs:
       with:
           persist-credentials: false
 
+    - name: Install system dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y libpango1.0-dev libpangocairo-1.0-0
+
     - name: Use Node.js 22.x
       uses: actions/setup-node@v6
       with:
